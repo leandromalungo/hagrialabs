@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState, useCallback } from "react";
 
 export function GallerySection() {
@@ -9,17 +11,64 @@ export function GallerySection() {
   const [sectionHeight, setSectionHeight] = useState("100vh");
   const [translateX, setTranslateX] = useState(0);
   const rafRef = useRef<number | null>(null);
-  const lastScrollRef = useRef(0);
 
   const images = [
-    { src: "/images/bottle-bike.png", alt: "Garrafa térmica na bicicleta" },
-    { src: "/images/bottle-lake.png", alt: "Garrafa térmica à beira do lago" },
-    { src: "/images/bottle-water.png", alt: "Garrafa térmica na água" },
-    { src: "/images/bottle-stream.png", alt: "Garrafa térmica no riacho" },
-    { src: "/images/bottle-fire.png", alt: "Garrafa térmica perto da fogueira" },
-    { src: "/images/bottle-snow.png", alt: "Garrafa térmica na neve" },
-    { src: "/images/bottle-mountain.png", alt: "Garrafa térmica na montanha" },
-    { src: "/images/bottle-canyon.png", alt: "Garrafa térmica no cânion" },
+    {
+      src: "/images/bottle-bike.png",
+      alt: "Garrafa térmica na bicicleta",
+      title: "Ciclismo de Performance",
+      description:
+        "Fixação magnética ultraleve e acesso rápido para hidratação contínua em trilhas de alta velocidade.",
+    },
+    {
+      src: "/images/bottle-lake.png",
+      alt: "Garrafa térmica à beira do lago",
+      title: "Expedição Alpina",
+      description:
+        "Isolamento a vácuo de dupla parede que preserva a temperatura ideal mesmo à beira de lagos glaciais.",
+    },
+    {
+      src: "/images/bottle-water.png",
+      alt: "Garrafa térmica na água",
+      title: "Vedação Impermeável",
+      description:
+        "Construção selada com certificação IPX8, pronta para imersão completa e travessias aquáticas.",
+    },
+    {
+      src: "/images/bottle-stream.png",
+      alt: "Garrafa térmica no riacho",
+      title: "Purificação em Movimento",
+      description:
+        "Sistema de filtragem integrado para coletar água limpa diretamente de riachos e nascentes naturais.",
+    },
+    {
+      src: "/images/bottle-fire.png",
+      alt: "Garrafa térmica perto da fogueira",
+      title: "Acampamento Noturno",
+      description:
+        "Autoaquecimento inteligente até 60°C e iluminação LED integrada para noites ao redor da fogueira.",
+    },
+    {
+      src: "/images/bottle-snow.png",
+      alt: "Garrafa térmica na neve",
+      title: "Resistência Subzero",
+      description:
+        "Engenharia térmica testada abaixo de -20°C que impede o congelamento em expedições na neve.",
+    },
+    {
+      src: "/images/bottle-mountain.png",
+      alt: "Garrafa térmica na montanha",
+      title: "Rastreamento em Altitude",
+      description:
+        "Módulo GPS de precisão integrado para localização em tempo real nos picos mais remotos.",
+    },
+    {
+      src: "/images/bottle-canyon.png",
+      alt: "Garrafa térmica no cânion",
+      title: "Durabilidade Extrema",
+      description:
+        "Revestimento em titânio e fibra de carbono resistente a impactos em terrenos rochosos e cânions.",
+    },
   ];
 
   // Calculate section height based on content width (desktop only)
@@ -98,7 +147,7 @@ export function GallerySection() {
           {images.map((image, index) => (
             <div
               key={index}
-              className="relative h-[52vh] min-h-[320px] max-h-[440px] w-[82vw] flex-shrink-0 snap-center overflow-hidden rounded-2xl"
+              className="group relative h-[54vh] min-h-[340px] max-h-[460px] w-[84vw] flex-shrink-0 snap-center overflow-hidden rounded-2xl"
             >
               <Image
                 src={image.src || "/placeholder.svg"}
@@ -107,6 +156,28 @@ export function GallerySection() {
                 className="object-cover"
                 priority={index < 2}
               />
+              {/* Card Overlay */}
+              <div className="pointer-events-none absolute inset-0 bg-black/25 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
+
+              {/* Card Content */}
+              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5">
+                <div className="max-w-[75%]">
+                  <h1 className="text-xl font-semibold tracking-tight text-white sm:text-2xl">
+                    {image.title}
+                  </h1>
+                  <p className="mt-1.5 text-xs leading-relaxed text-white/80 sm:text-sm">
+                    {image.description}
+                  </p>
+                </div>
+
+                <Link
+                  href="#accessories"
+                  aria-label={`Ver detalhes de ${image.title}`}
+                  className="group/btn flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/40 bg-black text-white transition-all duration-300 hover:border-white hover:bg-white hover:text-black active:bg-white active:text-black"
+                >
+                  <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover/btn:translate-x-0.5" />
+                </Link>
+              </div>
             </div>
           ))}
         </div>
@@ -137,7 +208,7 @@ export function GallerySection() {
               {images.map((image, index) => (
                 <div
                   key={index}
-                  className="relative h-[70vh] w-[85vw] flex-shrink-0 overflow-hidden rounded-2xl md:w-[60vw] lg:w-[45vw]"
+                  className="group relative h-[70vh] w-[85vw] flex-shrink-0 overflow-hidden rounded-2xl md:w-[60vw] lg:w-[45vw]"
                   style={{
                     transform: 'translateZ(0)',
                     WebkitTransform: 'translateZ(0)',
@@ -147,9 +218,31 @@ export function GallerySection() {
                     src={image.src || "/placeholder.svg"}
                     alt={image.alt}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                     priority={index < 3}
                   />
+                  {/* Card Overlay */}
+                  <div className="pointer-events-none absolute inset-0 bg-black/25 bg-gradient-to-t from-black/85 via-black/35 to-black/10 transition-opacity duration-300" />
+
+                  {/* Card Content */}
+                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-6 p-8 lg:p-10">
+                    <div className="max-w-md">
+                      <h1 className="text-2xl font-semibold tracking-tight text-white lg:text-3xl">
+                        {image.title}
+                      </h1>
+                      <p className="mt-2.5 text-sm leading-relaxed text-white/80 lg:text-base">
+                        {image.description}
+                      </p>
+                    </div>
+
+                    <Link
+                      href="#accessories"
+                      aria-label={`Ver detalhes de ${image.title}`}
+                      className="group/btn flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/40 bg-black text-white transition-all duration-300 hover:border-white hover:bg-white hover:text-black"
+                    >
+                      <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover/btn:translate-x-0.5" />
+                    </Link>
+                  </div>
                 </div>
               ))}
             </div>
