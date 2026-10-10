@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 export function Header() {
@@ -17,6 +18,8 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const hasWhiteBg = isScrolled || isMenuOpen;
+
   return (
     <header 
       className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-3xl transition-all duration-300 ${
@@ -30,10 +33,37 @@ export function Header() {
         boxShadow: isScrolled && !isMenuOpen ? "rgba(14, 63, 126, 0.04) 0px 0px 0px 1px, rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.04) 0px 6px 6px -3px, rgba(14, 63, 126, 0.04) 0px 12px 12px -6px, rgba(14, 63, 126, 0.04) 0px 24px 24px -12px" : undefined
       }}
     >
-      <div className="flex items-center justify-between transition-all duration-300 px-3 pl-5 py-2.5 md:px-2 md:pl-5 md:py-2">
-        {/* Logo */}
-        <Link href="#" className={`text-lg font-medium tracking-tight transition-colors duration-300 ${isScrolled || isMenuOpen ? "text-foreground" : "text-white"}`}>
-          HAGRIA Labs
+      <div className="flex items-center justify-between transition-all duration-300 px-3 pl-4 py-2.5 md:px-2 md:pl-4 md:py-2">
+        {/* Logo (alterna entre logo-dark.svg no fundo branco e logo-white.svg no fundo transparente) */}
+        <Link
+          href="#"
+          className={`flex items-center gap-2.5 text-lg font-medium tracking-tight transition-colors duration-300 ${
+            hasWhiteBg ? "text-foreground" : "text-white"
+          }`}
+        >
+          <span className="relative h-7 w-7 shrink-0">
+            {/* Logo para quando o fundo está sem cor (transparente) */}
+            <Image
+              src="/logo-white.svg"
+              alt="HAGRIA Labs Logo Claro"
+              fill
+              className={`object-contain transition-opacity duration-300 ${
+                hasWhiteBg ? "opacity-0" : "opacity-100"
+              }`}
+              priority
+            />
+            {/* Logo para quando o fundo está branco */}
+            <Image
+              src="/logo-dark.svg"
+              alt="HAGRIA Labs Logo Escuro"
+              fill
+              className={`object-contain transition-opacity duration-300 ${
+                hasWhiteBg ? "opacity-100" : "opacity-0"
+              }`}
+              priority
+            />
+          </span>
+          <span>HAGRIA Labs</span>
         </Link>
 
         {/* Desktop Navigation */}
