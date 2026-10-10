@@ -25,18 +25,31 @@ const footerLinks = {
 export function FooterSection() {
   return (
     <footer className="relative overflow-hidden bg-[#070707] text-white">
-      {/* Bottom Center Triangular Spotlight Glow */}
+      {/* Bottom Center Atmospheric Bloom Effect */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center overflow-hidden"
-        style={{ height: "340px" }}
+        className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center"
+        style={{
+          height: "420px",
+          filter: "blur(64px)",
+          WebkitFilter: "blur(64px)",
+        }}
       >
+        {/* Conical upward-fading light dispersion */}
         <div
-          className="h-full w-full max-w-5xl blur-2xl"
+          className="absolute bottom-[-40px] h-[380px] w-[115%] max-w-6xl"
           style={{
-            clipPath: "polygon(50% 8%, 0% 100%, 100% 100%)",
+            clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
             background:
-              "linear-gradient(to bottom, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.09) 55%, rgba(255,255,255,0.18) 100%)",
+              "radial-gradient(ellipse 70% 85% at 50% 100%, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.14) 45%, rgba(255,255,255,0.03) 75%, transparent 100%)",
+          }}
+        />
+        {/* Soft core horizon bloom at bottom center */}
+        <div
+          className="absolute bottom-[-60px] h-[220px] w-[80%] max-w-4xl rounded-full"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0.08) 55%, transparent 100%)",
           }}
         />
       </div>
