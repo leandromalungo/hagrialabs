@@ -168,6 +168,9 @@ export function TechnologySection() {
               <br />
               a Natureza.
             </h2>
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-white/85 sm:text-base">
+              Sensores inteligentes, materiais aeroespaciais e autonomia térmica integrados para enfrentar os ambientes mais extremos com total precisão.
+            </p>
           </div>
         </div>
 
@@ -244,36 +247,49 @@ export function TechnologySection() {
               />
               <div className="absolute inset-0 bg-foreground/40" />
               
-              {/* Title Text - Fades out word by word with blur */}
+              {/* Title Text & Description - Fades out word by word with blur */}
               <div 
                 className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
               >
-                <h2 className="max-w-3xl font-medium leading-tight tracking-tight text-white md:text-5xl lg:text-7xl text-5xl">
+                <h2 className="max-w-3xl text-5xl font-medium leading-tight tracking-tight text-white md:text-5xl lg:text-7xl">
                   {["Tecnologia", "Encontra", "a Natureza."].map((word, index) => {
                     // Each word fades out sequentially based on scrollProgress
-                    const wordFadeStart = index * 0.07;
+                    const wordFadeStart = index * 0.06;
                     const wordFadeEnd = wordFadeStart + 0.07;
                     const wordProgress = Math.max(0, Math.min(1, (scrollProgress - wordFadeStart) / (wordFadeEnd - wordFadeStart)));
                     const wordOpacity = 1 - wordProgress;
                     const wordBlur = wordProgress * 10; // 0px to 10px blur
                     
                     return (
-                      <span
-                        key={index}
-                        className="inline-block"
-                        style={{
-                          opacity: wordOpacity,
-                          filter: `blur(${wordBlur}px)`,
-                          transition: 'opacity 0.1s linear, filter 0.1s linear',
-                          marginRight: index < 2 ? '0.3em' : '0',
-                        }}
-                      >
-                        {word}
-                        {index === 1 && <br />}
+                      <span key={index}>
+                        <span
+                          className="inline-block"
+                          style={{
+                            opacity: wordOpacity,
+                            filter: `blur(${wordBlur}px)`,
+                            transition: 'opacity 0.1s linear, filter 0.1s linear',
+                            marginRight: index === 0 ? '0.28em' : '0',
+                          }}
+                        >
+                          {word}
+                        </span>
+                        {index === 0 ? " " : null}
+                        {index === 1 ? <br /> : null}
                       </span>
                     );
                   })}
                 </h2>
+
+                <p
+                  className="mt-6 max-w-xl text-base leading-relaxed text-white/85 md:text-lg lg:text-xl"
+                  style={{
+                    opacity: Math.max(0, 1 - Math.max(0, Math.min(1, (scrollProgress - 0.1) / 0.12))),
+                    filter: `blur(${Math.max(0, Math.min(1, (scrollProgress - 0.1) / 0.12)) * 10}px)`,
+                    transition: "opacity 0.1s linear, filter 0.1s linear",
+                  }}
+                >
+                  Sensores inteligentes, materiais aeroespaciais e autonomia térmica integrados para enfrentar os ambientes mais extremos com total precisão.
+                </p>
               </div>
             </div>
 
