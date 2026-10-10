@@ -1,14 +1,18 @@
 import React from "react"
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
+const Analytics = () => null;
 
 export const metadata: Metadata = {
   title: 'VILDMARK | Go Further',
   description: 'High-performance outdoor gear engineered for the modern explorer. Lightweight, durable, adventure-ready.',
+  openGraph: {
+    title: 'VILDMARK | Go Further',
+    description: 'High-performance outdoor gear engineered for the modern explorer. Lightweight, durable, adventure-ready.',
+  },
   generator: 'v0.app',
   icons: {
     icon: [
