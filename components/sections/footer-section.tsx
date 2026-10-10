@@ -73,12 +73,12 @@ export function FooterSection() {
             {/* Single diagonal stroke (top-right to bottom-left) */}
             <span
               className="absolute top-0 left-1/2 h-full w-[11px] -translate-x-1/2 bg-[#1f1f1f] transition-colors duration-300 group-hover:bg-[#2a2a2a] md:w-[13px]"
-              style={{ transform: " skewX(-35deg)" }}
+              style={{ transform: "skewX(-35deg)" }}
             />
             {/* Hollow double-line diagonal stroke (top-left to bottom-right) */}
             <span
               className="absolute top-0 left-1/2 h-full w-[34px] -translate-x-1/2 border-[9px] border-[#1f1f1f] bg-[#070707] transition-colors duration-300 group-hover:border-[#2a2a2a] md:w-[44px] md:border-[11px]"
-              style={{ transform: " skewX(35deg)" }}
+              style={{ transform: "skewX(35deg)" }}
             />
           </Link>
         </div>
