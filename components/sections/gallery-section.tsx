@@ -22,9 +22,10 @@ export function GallerySection() {
     { src: "/images/bottle-canyon.png", alt: "Thermal bottle at canyon" },
   ];
 
-  // Calculate section height based on content width
+  // Calculate section height based on content width (desktop only)
   useEffect(() => {
     const calculateHeight = () => {
+      if (window.innerWidth < 768) return;
       if (!containerRef.current) return;
       const containerWidth = containerRef.current.scrollWidth;
       const viewportWidth = window.innerWidth;
@@ -44,6 +45,7 @@ export function GallerySection() {
   }, []);
 
   const updateTransform = useCallback(() => {
+    if (window.innerWidth < 768) return;
     if (!galleryRef.current || !containerRef.current) return;
     
     const rect = galleryRef.current.getBoundingClientRect();
@@ -67,6 +69,7 @@ export function GallerySection() {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (window.innerWidth < 768) return;
       // Cancel any pending animation frame
       if (rafRef.current) {
         cancelAnimationFrame(rafRef.current);
@@ -88,47 +91,68 @@ export function GallerySection() {
   }, [updateTransform]);
 
   return (
-    <section 
-      id="gallery"
-      ref={galleryRef}
-      className="relative bg-background"
-      style={{ height: sectionHeight }}
-    >
-      {/* Sticky container */}
-      <div className="sticky top-0 h-screen overflow-hidden">
-        <div className="flex h-full items-center">
-          {/* Horizontal scrolling container */}
-          <div 
-            ref={containerRef}
-            className="flex gap-6 px-6"
-            style={{
-              transform: `translate3d(${translateX}px, 0, 0)`,
-              WebkitTransform: `translate3d(${translateX}px, 0, 0)`,
-              backfaceVisibility: 'hidden',
-              WebkitBackfaceVisibility: 'hidden',
-              perspective: 1000,
-              WebkitPerspective: 1000,
-              touchAction: 'pan-y',
-            }}
-          >
-            {images.map((image, index) => (
-              <div
-                key={index}
-                className="relative h-[70vh] w-[85vw] flex-shrink-0 overflow-hidden rounded-2xl md:w-[60vw] lg:w-[45vw]"
-                style={{
-                  transform: 'translateZ(0)',
-                  WebkitTransform: 'translateZ(0)',
-                }}
-              >
-                <Image
-                  src={image.src || "/placeholder.svg"}
-                  alt={image.alt}
-                  fill
-                  className="object-cover"
-                  priority={index < 3}
-                />
-              </div>
-            ))}
+    <section id="gallery" className="relative bg-background">
+      {/* Mobile Native Horizontal Swipe Carousel (No vertical scroll-jacking) */}
+      <div className="py-8 md:hidden">
+        <div className="flex gap-4 overflow-x-auto px-4 pb-4 snap-x snap-mandatory scrollbar-hide">
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="relative h-[52vh] min-h-[320px] max-h-[440px] w-[82vw] flex-shrink-0 snap-center overflow-hidden rounded-2xl"
+            >
+              <Image
+                src={image.src || "/placeholder.svg"}
+                alt={image.alt}
+                fill
+                className="object-cover"
+                priority={index < 2}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop Scroll-Driven Horizontal Gallery (md and up only) */}
+      <div
+        ref={galleryRef}
+        className="relative hidden md:block"
+        style={{ height: sectionHeight }}
+      >
+        <div className="sticky top-0 h-screen overflow-hidden">
+          <div className="flex h-full items-center">
+            {/* Horizontal scrolling container */}
+            <div 
+              ref={containerRef}
+              className="flex gap-6 px-6"
+              style={{
+                transform: `translate3d(${translateX}px, 0, 0)`,
+                WebkitTransform: `translate3d(${translateX}px, 0, 0)`,
+                backfaceVisibility: 'hidden',
+                WebkitBackfaceVisibility: 'hidden',
+                perspective: 1000,
+                WebkitPerspective: 1000,
+                touchAction: 'pan-y',
+              }}
+            >
+              {images.map((image, index) => (
+                <div
+                  key={index}
+                  className="relative h-[70vh] w-[85vw] flex-shrink-0 overflow-hidden rounded-2xl md:w-[60vw] lg:w-[45vw]"
+                  style={{
+                    transform: 'translateZ(0)',
+                    WebkitTransform: 'translateZ(0)',
+                  }}
+                >
+                  <Image
+                    src={image.src || "/placeholder.svg"}
+                    alt={image.alt}
+                    fill
+                    className="object-cover"
+                    priority={index < 3}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

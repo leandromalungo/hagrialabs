@@ -38,6 +38,7 @@ export function HeroSection() {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (window.innerWidth < 768) return;
       if (!sectionRef.current) return;
       
       const rect = sectionRef.current.getBoundingClientRect();
@@ -72,13 +73,49 @@ export function HeroSection() {
   const borderRadius = imageProgress * 24; // 0px to 24px
   const gap = imageProgress * 16; // 0px to 16px
   
-  // Vertical offset for side columns to move them up on mobile
-  const sideTranslateY = -(imageProgress * 15); // Move up by 15% when fully expanded
+  // Vertical offset for side columns
+  const sideTranslateY = -(imageProgress * 15);
 
   return (
     <section ref={sectionRef} className="relative bg-background">
-      {/* Sticky container for scroll animation */}
-      <div className="sticky top-0 h-screen overflow-hidden">
+      {/* Mobile Static Hero (No scroll-jacking animations) */}
+      <div className="md:hidden">
+        <div className="relative h-[85vh] min-h-[500px] w-full overflow-hidden">
+          <Image
+            src="/images/hero-main.png"
+            alt="Mountain landscape with camping tent at sunset"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
+          <div className="absolute inset-x-0 bottom-6 flex items-end overflow-hidden px-4">
+            <h1 className="w-full text-[21vw] font-medium leading-[0.85] tracking-tighter text-white">
+              {word}
+            </h1>
+          </div>
+        </div>
+
+        {/* Mobile Secondary Bento Grid */}
+        <div className="grid grid-cols-2 gap-3 px-4 pt-4">
+          {sideImages.map((img, idx) => (
+            <div
+              key={idx}
+              className="relative aspect-[4/3] overflow-hidden rounded-xl"
+            >
+              <Image
+                src={img.src || "/placeholder.svg"}
+                alt={img.alt}
+                fill
+                className="object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop Sticky container for scroll animation (md and up only) */}
+      <div className="sticky top-0 hidden h-screen overflow-hidden md:block">
         <div className="flex h-full w-full items-center justify-center">
           {/* Bento Grid Container */}
           <div 
@@ -189,11 +226,11 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll space to enable animation */}
-      <div className="h-[200vh]" />
+      {/* Scroll space to enable animation on desktop only */}
+      <div className="hidden h-[200vh] md:block" />
 
       {/* Tagline Section */}
-      <div className="px-6 pt-32 pb-28 md:pt-48 md:px-12 md:pb-36 lg:px-20 lg:pt-56 lg:pb-44">
+      <div className="px-6 py-16 md:pt-48 md:px-12 md:pb-36 lg:px-20 lg:pt-56 lg:pb-44">
         <p className="mx-auto max-w-2xl text-center text-2xl leading-relaxed text-muted-foreground md:text-3xl lg:text-[2.5rem] lg:leading-snug">
           Lightweight, durable
           <br />

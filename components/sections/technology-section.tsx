@@ -9,6 +9,7 @@ function ScrollRevealText({ text }: { text: string }) {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (window.innerWidth < 768) return;
       if (!containerRef.current) return;
       
       const rect = containerRef.current.getBoundingClientRect();
@@ -34,27 +35,35 @@ function ScrollRevealText({ text }: { text: string }) {
   const words = text.split(" ");
   
   return (
-    <p
-      ref={containerRef}
-      className="text-3xl font-semibold leading-snug md:text-4xl lg:text-5xl"
-    >
-      {words.map((word, index) => {
-        const wordProgress = index / words.length;
-        const isRevealed = progress > wordProgress;
-        
-        return (
-          <span
-            key={index}
-            className="transition-colors duration-150"
-            style={{
-              color: isRevealed ? "var(--foreground)" : "#e4e4e7",
-            }}
-          >
-            {word}{index < words.length - 1 ? " " : ""}
-          </span>
-        );
-      })}
-    </p>
+    <>
+      {/* Mobile static text without scroll-by-word color animation */}
+      <p className="text-xl font-semibold leading-relaxed text-foreground sm:text-2xl md:hidden">
+        {text}
+      </p>
+
+      {/* Desktop scroll-reveal text (md and up) */}
+      <p
+        ref={containerRef}
+        className="hidden font-semibold leading-snug md:block md:text-4xl lg:text-5xl"
+      >
+        {words.map((word, index) => {
+          const wordProgress = index / words.length;
+          const isRevealed = progress > wordProgress;
+          
+          return (
+            <span
+              key={index}
+              className="transition-colors duration-150"
+              style={{
+                color: isRevealed ? "var(--foreground)" : "#e4e4e7",
+              }}
+            >
+              {word}{index < words.length - 1 ? " " : ""}
+            </span>
+          );
+        })}
+      </p>
+    </>
   );
 }
 
@@ -95,6 +104,7 @@ export function TechnologySection() {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (window.innerWidth < 768) return;
       if (!sectionRef.current) return;
       
       const rect = sectionRef.current.getBoundingClientRect();
@@ -128,15 +138,11 @@ export function TechnologySection() {
     };
   }, []);
 
-  // Title fades out first (0 to 0.2)
-  const titleOpacity = Math.max(0, 1 - (scrollProgress / 0.2));
-  
   // Image transforms start after title fades (0.2 to 1)
   const imageProgress = Math.max(0, Math.min(1, (scrollProgress - 0.2) / 0.8));
   
   // Smooth interpolations
   const centerWidth = 100 - (imageProgress * 58); // 100% to 42%
-  const centerHeight = 100 - (imageProgress * 30); // 100% to 70%
   const sideWidth = imageProgress * 22; // 0% to 22%
   const sideOpacity = imageProgress;
   const sideTranslateLeft = -100 + (imageProgress * 100); // -100% to 0%
@@ -144,13 +150,46 @@ export function TechnologySection() {
   const borderRadius = imageProgress * 24; // 0px to 24px
   const gap = imageProgress * 16; // 0px to 16px
 
-  // Calculate grayscale for text section based on textProgress
-  const grayscaleAmount = Math.round((1 - textProgress) * 100);
-
   return (
     <section ref={sectionRef} className="relative bg-foreground">
-      {/* Sticky container for scroll animation */}
-      <div className="sticky top-0 h-screen overflow-hidden">
+      {/* Mobile Static Layout (No scroll-jacking animations) */}
+      <div className="px-4 py-12 md:hidden">
+        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl sm:aspect-[16/10]">
+          <Image
+            src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=2000"
+            alt="Aerial view of camping expedition in wilderness"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-foreground/40" />
+          <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
+            <h2 className="text-3xl font-medium leading-tight tracking-tight text-white sm:text-4xl">
+              Technology Meets
+              <br />
+              Wilderness.
+            </h2>
+          </div>
+        </div>
+
+        <div className="mt-3 grid grid-cols-2 gap-3">
+          {sideImages.map((img, idx) => (
+            <div
+              key={idx}
+              className="relative aspect-[4/3] overflow-hidden rounded-xl"
+            >
+              <Image
+                src={img.src || "/placeholder.svg"}
+                alt={img.alt}
+                fill
+                className="object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop Sticky container for scroll animation (md and up only) */}
+      <div className="sticky top-0 hidden h-screen overflow-hidden md:block">
         <div className="flex h-full w-full items-center justify-center">
           {/* Bento Grid Container */}
           <div 
@@ -271,17 +310,14 @@ export function TechnologySection() {
         </div>
       </div>
 
-      {/* Scroll space to enable animation */}
-      <div className="h-[200vh]" />
+      {/* Scroll space to enable animation on desktop only */}
+      <div className="hidden h-[200vh] md:block" />
 
-      {/* Description Section with Background Image and Scroll Reveal */}
+      {/* Description Section with Scroll Reveal on desktop and static on mobile */}
       <div 
         ref={textSectionRef}
-        className="relative overflow-hidden bg-background px-6 py-24 md:px-12 md:py-32 lg:px-20 lg:py-40"
+        className="relative overflow-hidden bg-background px-6 py-14 md:px-12 md:py-32 lg:px-20 lg:py-40"
       >
-        {/* Background Image with Grayscale Filter */}
-        
-
         {/* Text Content */}
         <div className="relative z-10 mx-auto max-w-4xl">
           <ScrollRevealText text={descriptionText} />

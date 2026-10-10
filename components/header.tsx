@@ -19,14 +19,20 @@ export function Header() {
 
   return (
     <header 
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-3xl transition-all duration-300 ${isScrolled ? "bg-background/80 backdrop-blur-md rounded-full" : "bg-transparent"}`}
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-3xl transition-all duration-300 ${
+        isMenuOpen
+          ? "bg-background/95 backdrop-blur-md rounded-2xl shadow-lg"
+          : isScrolled
+            ? "bg-background/80 backdrop-blur-md rounded-full"
+            : "bg-transparent"
+      }`}
       style={{
-        boxShadow: isScrolled ? "rgba(14, 63, 126, 0.04) 0px 0px 0px 1px, rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.04) 0px 6px 6px -3px, rgba(14, 63, 126, 0.04) 0px 12px 12px -6px, rgba(14, 63, 126, 0.04) 0px 24px 24px -12px" : "none"
+        boxShadow: isScrolled && !isMenuOpen ? "rgba(14, 63, 126, 0.04) 0px 0px 0px 1px, rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.04) 0px 6px 6px -3px, rgba(14, 63, 126, 0.04) 0px 12px 12px -6px, rgba(14, 63, 126, 0.04) 0px 24px 24px -12px" : undefined
       }}
     >
-      <div className="flex items-center justify-between transition-all duration-300 px-2 pl-5 py-2">
+      <div className="flex items-center justify-between transition-all duration-300 px-3 pl-5 py-2.5 md:px-2 md:pl-5 md:py-2">
         {/* Logo */}
-        <Link href="#" className={`text-lg font-medium tracking-tight transition-colors duration-300 ${isScrolled ? "text-foreground" : "text-white"}`}>
+        <Link href="#" className={`text-lg font-medium tracking-tight transition-colors duration-300 ${isScrolled || isMenuOpen ? "text-foreground" : "text-white"}`}>
           EVASION
         </Link>
 
@@ -72,7 +78,7 @@ export function Header() {
         <button
           type="button"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className={`transition-colors md:hidden ${isScrolled ? "text-foreground" : "text-white"}`}
+          className={`p-1.5 transition-colors md:hidden ${isScrolled || isMenuOpen ? "text-foreground" : "text-white"}`}
           aria-label="Toggle menu"
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -81,7 +87,7 @@ export function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="border-t border-border bg-background px-6 py-8 md:hidden rounded-b-2xl">
+        <div className="border-t border-border bg-background/95 px-6 py-6 md:hidden rounded-b-2xl">
           <nav className="flex flex-col gap-6">
             <Link
               href="#products"

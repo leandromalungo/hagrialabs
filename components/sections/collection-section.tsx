@@ -51,40 +51,40 @@ export function CollectionSection() {
   return (
     <section id="accessories" className="bg-background">
       {/* Section Title */}
-      <div className="px-6 py-20 md:px-12 lg:px-20 md:py-10">
-        <h2 className="text-3xl font-medium tracking-tight text-foreground md:text-4xl">
+      <div className="px-4 pt-10 pb-6 sm:px-6 md:px-12 md:py-10 lg:px-20">
+        <h2 className="text-2xl font-medium tracking-tight text-foreground sm:text-3xl md:text-4xl">
           Essential Accessories
         </h2>
       </div>
 
       {/* Accessories Grid/Carousel */}
-      <div className="pb-24">
+      <div className="pb-14 md:pb-24">
         {/* Mobile: Horizontal Carousel */}
-        <div className="flex gap-6 overflow-x-auto px-6 pb-4 md:hidden snap-x snap-mandatory scrollbar-hide">
+        <div className="flex gap-4 overflow-x-auto px-4 pb-4 md:hidden snap-x snap-mandatory scrollbar-hide">
           {accessories.map((accessory) => (
-            <div key={accessory.id} className="group flex-shrink-0 w-[75vw] snap-center">
+            <div key={accessory.id} className="group flex-shrink-0 w-[78vw] sm:w-[60vw] snap-center">
               {/* Image */}
-              <div className="relative aspect-[2/3] overflow-hidden rounded-2xl bg-secondary">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-secondary">
                 <FadeImage
                   src={accessory.image || "/placeholder.svg"}
                   alt={accessory.name}
                   fill
-                  className="object-cover group-hover:scale-105"
+                  className="object-cover"
                 />
               </div>
 
               {/* Content */}
-              <div className="py-6">
-                <div className="flex items-start justify-between gap-4">
+              <div className="pt-4 pb-2">
+                <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <h3 className="text-lg font-medium leading-snug text-foreground">
+                    <h3 className="text-base font-medium leading-snug text-foreground sm:text-lg">
                       {accessory.name}
                     </h3>
-                    <p className="mt-2 text-sm text-muted-foreground">
+                    <p className="mt-1.5 text-sm text-muted-foreground">
                       {accessory.description}
                     </p>
                   </div>
-                  <span className="text-lg font-medium text-foreground">
+                  <span className="text-base font-medium text-foreground sm:text-lg">
                     {accessory.price}
                   </span>
                 </div>
@@ -103,7 +103,7 @@ export function CollectionSection() {
                   src={accessory.image || "/placeholder.svg"}
                   alt={accessory.name}
                   fill
-                  className="object-cover group-hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
 

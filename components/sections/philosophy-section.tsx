@@ -11,6 +11,7 @@ export function PhilosophySection() {
   const rafRef = useRef<number | null>(null);
 
   const updateTransforms = useCallback(() => {
+    if (window.innerWidth < 768) return;
     if (!sectionRef.current) return;
     
     const rect = sectionRef.current.getBoundingClientRect();
@@ -34,6 +35,7 @@ export function PhilosophySection() {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (window.innerWidth < 768) return;
       // Cancel any pending animation frame
       if (rafRef.current) {
         cancelAnimationFrame(rafRef.current);
@@ -56,9 +58,45 @@ export function PhilosophySection() {
 
   return (
     <section id="products" className="bg-background">
-      {/* Scroll-Animated Product Grid */}
-      <div ref={sectionRef} className="relative" style={{ height: "200vh" }}>
-        <div className="sticky top-0 h-screen flex items-center justify-center">
+      {/* Mobile Static Product Grid (No scroll-jacking slide animations) */}
+      <div className="px-4 py-8 md:hidden">
+        <h2 className="mb-8 text-center text-3xl font-medium leading-tight tracking-tight text-foreground sm:text-4xl">
+          Meet Alpine & Forest.
+        </h2>
+        <div className="grid grid-cols-1 gap-4">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <Image
+              src="/images/product-backpack.png"
+              alt="V1 Expedition Backpack in alpine setting"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute bottom-4 left-4">
+              <span className="rounded-full bg-[rgba(255,255,255,0.2)] px-4 py-2 text-sm font-medium text-white backdrop-blur-md">
+                Alpine $299
+              </span>
+            </div>
+          </div>
+
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <Image
+              src="/images/02cdc426-dff4-4dff-b131-1b134c3699b5.png"
+              alt="V1 Thermal mug in forest setting"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute bottom-4 left-4">
+              <span className="rounded-full bg-[rgba(255,255,255,0.2)] px-4 py-2 text-sm font-medium text-white backdrop-blur-md">
+                Forest $199
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Scroll-Animated Product Grid (md and up only) */}
+      <div ref={sectionRef} className="relative hidden md:block" style={{ height: "200vh" }}>
+        <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
           <div className="relative w-full">
             {/* Title - positioned behind the blocks */}
             <div 
@@ -123,12 +161,12 @@ export function PhilosophySection() {
       </div>
 
       {/* Description */}
-      <div className="px-6 py-20 md:px-12 md:py-28 lg:px-20 lg:py-36 lg:pb-14">
-        <div className="text-center">
+      <div className="px-6 py-12 md:px-12 md:py-28 lg:px-20 lg:py-36 lg:pb-14">
+        <div className="mx-auto max-w-4xl text-center">
           <p className="text-xs uppercase tracking-widest text-muted-foreground">
             First generation
           </p>
-          <p className="mt-8 leading-relaxed text-muted-foreground text-3xl text-center">
+          <p className="mt-4 text-center text-lg leading-relaxed text-muted-foreground sm:text-xl md:mt-8 md:text-3xl">
             Alpine & Forest are high-tech outdoor accessories designed for modern adventurers. 
             Lightweight, durable, and engineered for extreme conditions.
           </p>

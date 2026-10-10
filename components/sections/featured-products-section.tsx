@@ -39,19 +39,19 @@ export function FeaturedProductsSection() {
   return (
     <section id="technology" className="bg-background">
       {/* Section Title */}
-      <div className="px-6 py-20 text-center md:px-12 md:py-28 lg:px-20 lg:py-32 lg:pb-20">
-        <h2 className="text-3xl font-medium tracking-tight text-foreground md:text-4xl lg:text-5xl">
+      <div className="px-6 py-12 text-center md:px-12 md:py-28 lg:px-20 lg:py-32 lg:pb-20">
+        <h2 className="text-2xl font-medium tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl">
           Engineered for Excellence.
           <br />
           Designed for Adventure.
         </h2>
-        <p className="mx-auto mt-6 max-w-md text-sm text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-md text-sm text-muted-foreground md:mt-6">
           Technology
         </p>
       </div>
 
       {/* Features Grid */}
-      <div className="grid grid-cols-1 gap-4 px-6 pb-20 md:grid-cols-3 md:px-12 lg:px-20">
+      <div className="grid grid-cols-1 gap-6 px-4 pb-14 sm:px-6 md:grid-cols-3 md:gap-4 md:px-12 md:pb-20 lg:px-20">
         {features.map((feature) => (
           <div key={feature.title} className="group">
             {/* Image */}
@@ -60,26 +60,21 @@ export function FeaturedProductsSection() {
                 src={feature.image || "/placeholder.svg"}
                 alt={feature.title}
                 fill
-                className="object-cover group-hover:scale-105"
+                className="object-cover md:transition-transform md:duration-500 md:group-hover:scale-105"
               />
             </div>
 
             {/* Content */}
-            <div className="py-6">
-              <p className="mb-2 text-xs uppercase tracking-widest text-muted-foreground">
+            <div className="pt-4 pb-2 md:py-6">
+              <p className="mb-1.5 text-xs uppercase tracking-widest text-muted-foreground md:mb-2">
                 {feature.description}
               </p>
-              <h3 className="text-foreground text-xl font-semibold">
+              <h3 className="text-lg font-semibold text-foreground md:text-xl">
                 {feature.title}
               </h3>
             </div>
           </div>
         ))}
-      </div>
-
-      {/* CTA Link */}
-      <div className="flex justify-center px-6 pb-28 md:px-12 lg:px-20">
-        
       </div>
     </section>
   );
