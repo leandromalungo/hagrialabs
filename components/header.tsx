@@ -8,14 +8,30 @@ import { Menu, X, ArrowUpRight } from "lucide-react";
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isInFooter, setIsInFooter] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      const footerEl = document.getElementById("footer") || document.querySelector("footer");
+      if (footerEl) {
+        const footerRect = footerEl.getBoundingClientRect();
+        const inFooter = footerRect.top <= window.innerHeight * 0.75;
+        setIsInFooter(inFooter);
+        if (inFooter) {
+          setIsMenuOpen(false);
+        }
+      }
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   const hasWhiteBg = isScrolled || isMenuOpen;
@@ -23,6 +39,10 @@ export function Header() {
   return (
     <header 
       className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-3xl transition-all duration-300 ${
+        isInFooter
+          ? "pointer-events-none -translate-y-8 opacity-0"
+          : "translate-y-0 opacity-100"
+      } ${
         isMenuOpen
           ? "bg-background/95 backdrop-blur-md rounded-2xl shadow-lg"
           : isScrolled

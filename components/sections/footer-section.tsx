@@ -32,7 +32,7 @@ const socialLinks = [
 
 export function FooterSection() {
   return (
-    <footer className="relative overflow-hidden bg-[#070707] text-white">
+    <footer id="footer" className="relative overflow-hidden bg-[#070707] text-white">
       {/* Bottom Center Atmospheric Bloom Effect */}
       <div
         aria-hidden="true"
