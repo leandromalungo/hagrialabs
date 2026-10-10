@@ -61,13 +61,13 @@ export function PhilosophySection() {
       {/* Mobile Static Product Grid (No scroll-jacking slide animations) */}
       <div className="px-4 py-8 md:hidden">
         <h2 className="mb-8 text-center text-3xl font-medium leading-tight tracking-tight text-foreground sm:text-4xl">
-          Meet Alpine & Forest.
+          Conheça Alpine & Forest.
         </h2>
         <div className="grid grid-cols-1 gap-4">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
             <Image
               src="/images/product-backpack.png"
-              alt="V1 Expedition Backpack in alpine setting"
+              alt="Mochila de expedição V1 em cenário alpino"
               fill
               className="object-cover"
             />
@@ -81,7 +81,7 @@ export function PhilosophySection() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
             <Image
               src="/images/02cdc426-dff4-4dff-b131-1b134c3699b5.png"
-              alt="V1 Thermal mug in forest setting"
+              alt="Garrafa térmica V1 em cenário de floresta"
               fill
               className="object-cover"
             />
@@ -103,8 +103,8 @@ export function PhilosophySection() {
               className="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
               style={{ opacity: titleOpacity }}
             >
-              <h2 className="text-[12vw] font-medium leading-[0.95] tracking-tighter text-foreground md:text-[10vw] lg:text-[8vw] text-center px-6">
-                Meet Alpine & Forest.
+              <h2 className="text-[10vw] font-medium leading-[0.95] tracking-tighter text-foreground md:text-[8.5vw] lg:text-[7vw] text-center px-6">
+                Conheça Alpine & Forest.
               </h2>
             </div>
 
@@ -122,7 +122,7 @@ export function PhilosophySection() {
               >
                 <Image
                   src="/images/product-backpack.png"
-                  alt="V1 Expedition Backpack in alpine setting"
+                  alt="Mochila de expedição V1 em cenário alpino"
                   fill
                   className="object-cover"
                 />
@@ -145,7 +145,7 @@ export function PhilosophySection() {
               >
                 <Image
                   src="/images/02cdc426-dff4-4dff-b131-1b134c3699b5.png"
-                  alt="V1 Thermal mug in forest setting"
+                  alt="Garrafa térmica V1 em cenário de floresta"
                   fill
                   className="object-cover"
                 />
@@ -164,11 +164,11 @@ export function PhilosophySection() {
       <div className="px-6 py-12 md:px-12 md:py-28 lg:px-20 lg:py-36 lg:pb-14">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-xs uppercase tracking-widest text-muted-foreground">
-            First generation
+            Primeira geração
           </p>
           <p className="mt-4 text-center text-lg leading-relaxed text-muted-foreground sm:text-xl md:mt-8 md:text-3xl">
-            Alpine & Forest are high-tech outdoor accessories designed for modern adventurers. 
-            Lightweight, durable, and engineered for extreme conditions.
+            Alpine & Forest são acessórios outdoor de alta tecnologia projetados para aventureiros modernos. 
+            Leves, duráveis e desenvolvidos para condições extremas.
           </p>
         </div>
       </div>

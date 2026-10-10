@@ -7,11 +7,11 @@ const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const Analytics = () => null;
 
 export const metadata: Metadata = {
-  title: 'VILDMARK | Go Further',
-  description: 'High-performance outdoor gear engineered for the modern explorer. Lightweight, durable, adventure-ready.',
+  title: 'HAGRIA Labs | Vá Mais Longe',
+  description: 'Equipamentos outdoor de alta performance projetados para o explorador moderno. Leves, duráveis e prontos para a aventura.',
   openGraph: {
-    title: 'VILDMARK | Go Further',
-    description: 'High-performance outdoor gear engineered for the modern explorer. Lightweight, durable, adventure-ready.',
+    title: 'HAGRIA Labs | Vá Mais Longe',
+    description: 'Equipamentos outdoor de alta performance projetados para o explorador moderno. Leves, duráveis e prontos para a aventura.',
   },
   generator: 'v0.app',
   icons: {
@@ -39,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body className={`${inter.variable} font-sans antialiased`}>
         {children}
         <Analytics />

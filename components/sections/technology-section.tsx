@@ -70,25 +70,25 @@ function ScrollRevealText({ text }: { text: string }) {
 const sideImages = [
   {
     src: "https://images.unsplash.com/photo-1476610182048-b716b8518aae?q=80&w=1000",
-    alt: "Forest trail",
+    alt: "Trilha na floresta",
     position: "left",
     span: 1,
   },
   {
     src: "https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?q=80&w=1000",
-    alt: "Mountain peak",
+    alt: "Pico da montanha",
     position: "left",
     span: 1,
   },
   {
     src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1000",
-    alt: "Alpine landscape",
+    alt: "Paisagem alpina",
     position: "right",
     span: 1,
   },
   {
     src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1000",
-    alt: "Snow mountain",
+    alt: "Montanha nevada",
     position: "right",
     span: 1,
   },
@@ -100,7 +100,7 @@ export function TechnologySection() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [textProgress, setTextProgress] = useState(0);
   
-  const descriptionText = "Experience outdoor gear reimagined with cutting-edge technology. Alpine & Forest accessories combine ultra-lightweight materials, intelligent temperature control, and weather-resistant engineering to elevate every adventure. From mountain peaks to forest trails, your gear adapts to the conditions.";
+  const descriptionText = "Experimente equipamentos outdoor reinventados com tecnologia de ponta. Os acessórios Alpine & Forest combinam materiais ultraleves, controle inteligente de temperatura e engenharia resistente ao clima para elevar cada aventura. Dos picos das montanhas às trilhas na floresta, seu equipamento se adapta às condições.";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -157,16 +157,16 @@ export function TechnologySection() {
         <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl sm:aspect-[16/10]">
           <Image
             src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=2000"
-            alt="Aerial view of camping expedition in wilderness"
+            alt="Vista aérea de expedição de acampamento na natureza"
             fill
             className="object-cover"
           />
           <div className="absolute inset-0 bg-foreground/40" />
           <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
             <h2 className="text-3xl font-medium leading-tight tracking-tight text-white sm:text-4xl">
-              Technology Meets
+              Tecnologia Encontra
               <br />
-              Wilderness.
+              a Natureza.
             </h2>
           </div>
         </div>
@@ -238,7 +238,7 @@ export function TechnologySection() {
             >
               <Image
                 src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=2000"
-                alt="Aerial view of camping expedition in wilderness"
+                alt="Vista aérea de expedição de acampamento na natureza"
                 fill
                 className="object-cover"
               />
@@ -249,9 +249,9 @@ export function TechnologySection() {
                 className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
               >
                 <h2 className="max-w-3xl font-medium leading-tight tracking-tight text-white md:text-5xl lg:text-7xl text-5xl">
-                  {["Technology", "Meets", "Wilderness."].map((word, index) => {
+                  {["Tecnologia", "Encontra", "a Natureza."].map((word, index) => {
                     // Each word fades out sequentially based on scrollProgress
-                    const wordFadeStart = index * 0.07; // Technology: 0, Meets: 0.07, Wilderness: 0.14
+                    const wordFadeStart = index * 0.07;
                     const wordFadeEnd = wordFadeStart + 0.07;
                     const wordProgress = Math.max(0, Math.min(1, (scrollProgress - wordFadeStart) / (wordFadeEnd - wordFadeStart)));
                     const wordOpacity = 1 - wordProgress;

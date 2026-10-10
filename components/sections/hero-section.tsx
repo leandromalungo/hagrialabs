@@ -3,30 +3,30 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const word = "EVASION";
+const word = "HAGRIA Labs";
 
 const sideImages = [
   {
     src: "https://images.unsplash.com/photo-1517824806704-9040b037703b?q=80&w=1000",
-    alt: "Mountain hiking adventure",
+    alt: "Aventura de trilha nas montanhas",
     position: "left",
     span: 1,
   },
   {
     src: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?q=80&w=1000",
-    alt: "Camping under stars",
+    alt: "Acampamento sob as estrelas",
     position: "left",
     span: 1,
   },
   {
     src: "https://images.unsplash.com/photo-1533873984035-25970ab07461?q=80&w=1000",
-    alt: "Forest exploration",
+    alt: "Exploração na floresta",
     position: "right",
     span: 1,
   },
   {
     src: "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?q=80&w=1000",
-    alt: "Lake camping view",
+    alt: "Vista de acampamento no lago",
     position: "right",
     span: 1,
   },
@@ -83,14 +83,14 @@ export function HeroSection() {
         <div className="relative h-[85vh] min-h-[500px] w-full overflow-hidden">
           <Image
             src="/images/hero-main.png"
-            alt="Mountain landscape with camping tent at sunset"
+            alt="Paisagem de montanha com barraca de acampamento ao pôr do sol"
             fill
             className="object-cover"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
           <div className="absolute inset-x-0 bottom-6 flex items-end overflow-hidden px-4">
-            <h1 className="w-full text-[21vw] font-medium leading-[0.85] tracking-tighter text-white">
+            <h1 className="w-full whitespace-nowrap text-[14vw] font-medium leading-[0.85] tracking-tighter text-white">
               {word}
             </h1>
           </div>
@@ -164,7 +164,7 @@ export function HeroSection() {
             >
               <Image
                 src="/images/hero-main.png"
-                alt="Mountain landscape with camping tent at sunset"
+                alt="Paisagem de montanha com barraca de acampamento ao pôr do sol"
                 fill
                 className="object-cover"
                 priority
@@ -172,10 +172,10 @@ export function HeroSection() {
               
               {/* Overlay Text - Fades out first */}
               <div 
-                className="absolute inset-0 flex items-end overflow-hidden"
+                className="absolute inset-0 flex items-end overflow-hidden px-4 pb-4"
                 style={{ opacity: textOpacity }}
               >
-                <h1 className="w-full text-[22vw] font-medium leading-[0.8] tracking-tighter text-white">
+                <h1 className="w-full whitespace-nowrap text-[14vw] font-medium leading-[0.85] tracking-tighter text-white">
                   {word.split("").map((letter, index) => (
                     <span
                       key={index}
@@ -186,7 +186,7 @@ export function HeroSection() {
                         transitionTimingFunction: 'cubic-bezier(0.86, 0, 0.07, 1)',
                       }}
                     >
-                      {letter}
+                      {letter === " " ? "\u00A0" : letter}
                     </span>
                   ))}
                 </h1>
@@ -232,9 +232,9 @@ export function HeroSection() {
       {/* Tagline Section */}
       <div className="px-6 py-16 md:pt-48 md:px-12 md:pb-36 lg:px-20 lg:pt-56 lg:pb-44">
         <p className="mx-auto max-w-2xl text-center text-2xl leading-relaxed text-muted-foreground md:text-3xl lg:text-[2.5rem] lg:leading-snug">
-          Lightweight, durable
+          Leve, durável
           <br />
-          and adventure-ready.
+          e pronto para a aventura.
         </p>
       </div>
     </section>

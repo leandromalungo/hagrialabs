@@ -33,7 +33,7 @@ export function Header() {
       <div className="flex items-center justify-between transition-all duration-300 px-3 pl-5 py-2.5 md:px-2 md:pl-5 md:py-2">
         {/* Logo */}
         <Link href="#" className={`text-lg font-medium tracking-tight transition-colors duration-300 ${isScrolled || isMenuOpen ? "text-foreground" : "text-white"}`}>
-          EVASION
+          HAGRIA Labs
         </Link>
 
         {/* Desktop Navigation */}
@@ -42,25 +42,25 @@ export function Header() {
             href="#products"
             className={`text-sm transition-colors ${isScrolled ? "text-muted-foreground hover:text-foreground" : "text-white/70 hover:text-white"}`}
           >
-            Products
+            Produtos
           </Link>
           <Link
             href="#technology"
             className={`text-sm transition-colors ${isScrolled ? "text-muted-foreground hover:text-foreground" : "text-white/70 hover:text-white"}`}
           >
-            Technology
+            Tecnologia
           </Link>
           <Link
             href="#gallery"
             className={`text-sm transition-colors ${isScrolled ? "text-muted-foreground hover:text-foreground" : "text-white/70 hover:text-white"}`}
           >
-            Gallery
+            Galeria
           </Link>
           <Link
             href="#accessories"
             className={`text-sm transition-colors ${isScrolled ? "text-muted-foreground hover:text-foreground" : "text-white/70 hover:text-white"}`}
           >
-            Accessories
+            Acessórios
           </Link>
         </nav>
 
@@ -70,7 +70,7 @@ export function Header() {
             href="#reserve"
             className={`px-4 py-2 text-sm font-medium transition-all rounded-full ${isScrolled ? "bg-foreground text-background hover:opacity-80" : "bg-white text-foreground hover:bg-white/90"}`}
           >
-            Buy the product
+            Comprar produto
           </Link>
         </div>
 
@@ -79,7 +79,7 @@ export function Header() {
           type="button"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className={`p-1.5 transition-colors md:hidden ${isScrolled || isMenuOpen ? "text-foreground" : "text-white"}`}
-          aria-label="Toggle menu"
+          aria-label="Alternar menu"
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -94,35 +94,35 @@ export function Header() {
               className="text-lg text-foreground"
               onClick={() => setIsMenuOpen(false)}
             >
-              Products
+              Produtos
             </Link>
             <Link
               href="#technology"
               className="text-lg text-foreground"
               onClick={() => setIsMenuOpen(false)}
             >
-              Technology
+              Tecnologia
             </Link>
             <Link
               href="#gallery"
               className="text-lg text-foreground"
               onClick={() => setIsMenuOpen(false)}
             >
-              Gallery
+              Galeria
             </Link>
             <Link
               href="#accessories"
               className="text-lg text-foreground"
               onClick={() => setIsMenuOpen(false)}
             >
-              Accessories
+              Acessórios
             </Link>
             <Link
               href="#reserve"
               className="mt-4 bg-foreground px-5 py-3 text-center text-sm font-medium text-background rounded-full"
               onClick={() => setIsMenuOpen(false)}
             >
-              Reserve
+              Reservar
             </Link>
           </nav>
         </div>
