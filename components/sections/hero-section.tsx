@@ -88,9 +88,13 @@ export function HeroSection() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
-          <div className="absolute inset-x-0 bottom-6 flex items-end overflow-hidden px-4">
-            <h1 className="w-full whitespace-nowrap text-[14vw] font-medium leading-[0.85] tracking-tighter text-white">
+          {/* Subtle Hero Overlay */}
+          <div className="pointer-events-none absolute inset-0 bg-black/20 bg-gradient-to-t from-black/65 via-black/20 to-black/10" />
+          <div className="absolute inset-x-0 bottom-7 flex flex-col items-start justify-end overflow-hidden px-5">
+            <p className="mb-3 max-w-md text-sm leading-relaxed text-white/85 sm:text-base">
+              Equipamentos outdoor de alta performance projetados para o explorador moderno, combinando engenharia ultraleve e tecnologia inteligente para qualquer território.
+            </p>
+            <h1 className="w-full whitespace-nowrap text-[13.5vw] font-medium leading-[0.85] tracking-tighter text-white">
               {word}
             </h1>
           </div>
@@ -169,13 +173,19 @@ export function HeroSection() {
                 className="object-cover"
                 priority
               />
+
+              {/* Subtle Hero Overlay */}
+              <div className="pointer-events-none absolute inset-0 bg-black/20 bg-gradient-to-t from-black/65 via-black/20 to-black/10" />
               
               {/* Overlay Text - Fades out first */}
               <div 
-                className="absolute inset-0 flex items-end overflow-hidden px-4 pb-4"
+                className="absolute inset-0 flex flex-col items-start justify-end overflow-hidden px-8 pb-8 lg:px-12 lg:pb-10"
                 style={{ opacity: textOpacity }}
               >
-                <h1 className="w-full whitespace-nowrap text-[14vw] font-medium leading-[0.85] tracking-tighter text-white">
+                <p className="mb-4 max-w-xl text-base leading-relaxed text-white/85 md:mb-6 md:text-lg lg:max-w-2xl lg:text-xl">
+                  Equipamentos outdoor de alta performance projetados para o explorador moderno, combinando engenharia ultraleve e tecnologia inteligente para qualquer território.
+                </p>
+                <h1 className="w-full whitespace-nowrap text-[13.5vw] font-medium leading-[0.85] tracking-tighter text-white">
                   {word.split("").map((letter, index) => (
                     <span
                       key={index}
