@@ -329,13 +329,17 @@ export function TechnologySection() {
       {/* Scroll space to enable animation on desktop only */}
       <div className="hidden h-[200vh] md:block" />
 
-      {/* Description Section with Scroll Reveal on desktop and static on mobile */}
+      {/* Description Section (Sobre nós) with Scroll Reveal on desktop and static on mobile */}
       <div 
+        id="sobre-nos"
         ref={textSectionRef}
         className="relative overflow-hidden bg-background px-6 py-14 md:px-12 md:py-32 lg:px-20 lg:py-40"
       >
         {/* Text Content */}
         <div className="relative z-10 mx-auto max-w-4xl">
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground md:mb-6 md:text-sm">
+            Sobre nós
+          </p>
           <ScrollRevealText text={descriptionText} />
         </div>
       </div>
