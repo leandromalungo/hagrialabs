@@ -34,7 +34,7 @@ export function EditorialSection() {
       </div>
 
       {/* Full-width Video */}
-      <div className="relative aspect-[16/9] w-full md:aspect-[21/9]">
+      <div className="relative aspect-[16/9] w-full overflow-hidden md:aspect-[21/9]">
         <video
           autoPlay
           loop
@@ -43,6 +43,8 @@ export function EditorialSection() {
           className="absolute inset-0 h-full w-full object-cover"
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bcdafadc-cb7e-4cb7-9cbf-edcbaf2360a5_1-cNBCz5fomcLRmm1cTXSBOKCq10VP91.mp4"
         />
+        {/* Video Overlay */}
+        <div className="pointer-events-none absolute inset-0 bg-black/35 bg-gradient-to-t from-black/65 via-black/25 to-black/20" />
       </div>
     </section>
   );

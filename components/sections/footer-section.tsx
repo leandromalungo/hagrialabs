@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 
 const footerLinks = {
   product: [
@@ -21,6 +22,13 @@ const footerLinks = {
     { label: "Suporte", href: "#" },
   ],
 };
+
+const socialLinks = [
+  { label: "Facebook", href: "#", icon: Facebook },
+  { label: "Instagram", href: "#", icon: Instagram },
+  { label: "LinkedIn", href: "#", icon: Linkedin },
+  { label: "YouTube", href: "#", icon: Youtube },
+];
 
 export function FooterSection() {
   return (
@@ -135,8 +143,24 @@ export function FooterSection() {
           </div>
         </div>
 
-        {/* Bottom Copyright */}
-        <div className="mt-20 text-center md:mt-28">
+        {/* Social Media Icons & Copyright */}
+        <div className="mt-20 flex flex-col items-center gap-6 text-center md:mt-28">
+          <div className="flex items-center justify-center gap-4">
+            {socialLinks.map((social) => {
+              const Icon = social.icon;
+              return (
+                <Link
+                  key={social.label}
+                  href={social.href}
+                  aria-label={social.label}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-[#a3a3a3] transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:text-white"
+                >
+                  <Icon className="h-4 w-4" />
+                </Link>
+              );
+            })}
+          </div>
+
           <p className="text-xs text-[#8a8a8a]">
             © 2026 HAGRIA Labs. Todos os direitos reservados.
           </p>

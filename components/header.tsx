@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -98,9 +98,14 @@ export function Header() {
         <div className="hidden items-center gap-6 md:flex">
           <Link
             href="#reserve"
-            className={`px-4 py-2 text-sm font-medium transition-all rounded-full ${isScrolled ? "bg-foreground text-background hover:opacity-80" : "bg-white text-foreground hover:bg-white/90"}`}
+            className={`group inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition-all rounded-full ${
+              isScrolled
+                ? "bg-foreground text-background hover:opacity-80"
+                : "bg-white text-foreground hover:bg-white/90"
+            }`}
           >
-            Comprar produto
+            <span>Comprar produto</span>
+            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
 
@@ -149,10 +154,11 @@ export function Header() {
             </Link>
             <Link
               href="#reserve"
-              className="mt-4 bg-foreground px-5 py-3 text-center text-sm font-medium text-background rounded-full"
+              className="group mt-4 inline-flex items-center justify-center gap-1.5 bg-foreground px-5 py-3 text-center text-sm font-medium text-background rounded-full"
               onClick={() => setIsMenuOpen(false)}
             >
-              Reservar
+              <span>Comprar produto</span>
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
           </nav>
         </div>
