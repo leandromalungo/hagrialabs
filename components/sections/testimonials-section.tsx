@@ -21,14 +21,14 @@ export function TestimonialsSection() {
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4 md:mt-10">
             <Link
-              href="#footer"
+              href="/agendar-consultoria"
               className="group inline-flex items-center gap-1.5 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all hover:opacity-85"
             >
               <span>Entrar em contacto</span>
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
             <Link
-              href="#accessories"
+              href="/agendar-consultoria"
               className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-6 py-3.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
             >
               <span>Propor uma colaboração</span>

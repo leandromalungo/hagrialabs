@@ -44,7 +44,7 @@ export function HeroSection() {
       if (!sectionRef.current) return;
       
       const rect = sectionRef.current.getBoundingClientRect();
-      const scrollableHeight = window.innerHeight * 2;
+      const scrollableHeight = window.innerHeight * 1.4;
       const scrolled = -rect.top;
       const progress = Math.max(0, Math.min(1, scrolled / scrollableHeight));
       
@@ -121,7 +121,7 @@ export function HeroSection() {
       </div>
 
       {/* Desktop Sticky container for scroll animation (md and up only) */}
-      <div className="sticky top-0 hidden h-screen overflow-hidden md:block">
+      <div className="sticky top-0 z-0 hidden h-screen overflow-hidden md:block">
         <div className="flex h-full w-full items-center justify-center">
           {/* Bento Grid Container */}
           <div 
@@ -239,10 +239,10 @@ export function HeroSection() {
       </div>
 
       {/* Scroll space to enable animation on desktop only */}
-      <div className="hidden h-[200vh] md:block" />
+      <div className="hidden h-[140vh] md:block" />
 
-      {/* Institutional Value Proposition & CTAs Section */}
-      <div className="px-6 py-16 md:pt-48 md:px-12 md:pb-36 lg:px-20 lg:pt-56 lg:pb-44">
+      {/* Institutional Value Proposition & CTAs Section — slides over the sticky Bento images with a solid white background */}
+      <div className="relative z-20 bg-white px-6 py-16 md:px-12 md:py-32 lg:px-20 lg:py-40">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-2xl font-medium leading-relaxed text-foreground md:text-3xl lg:text-[2.5rem] lg:leading-snug">
             Tecnologia para explorar

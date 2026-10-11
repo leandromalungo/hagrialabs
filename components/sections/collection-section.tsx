@@ -74,7 +74,7 @@ export function CollectionSection() {
           </div>
           <div className="shrink-0">
             <Link
-              href="#about"
+              href="/agendar-consultoria"
               className="group inline-flex items-center gap-1.5 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background transition-all hover:opacity-85"
             >
               <span>Propor uma colaboração</span>
