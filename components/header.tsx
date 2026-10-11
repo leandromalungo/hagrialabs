@@ -57,14 +57,14 @@ export function Header() {
         {/* Logo (alterna entre logo-dark.svg no fundo branco e logo-white.svg no fundo transparente) */}
         <Link
           href="#"
-          className={`flex items-center gap-2.5 text-lg font-medium tracking-tight transition-colors duration-300 ${
+          className={`flex items-center gap-1 text-lg font-medium tracking-tight transition-colors duration-300 ${
             hasWhiteBg ? "text-foreground" : "text-white"
           }`}
         >
           <span className="relative h-7 w-7 shrink-0">
             {/* Logo para quando o fundo está sem cor (transparente) */}
             <Image
-              src="/logo-white.svg"
+              src="/logo-white.png"
               alt="HAGRIA Labs Logo Claro"
               fill
               className={`object-contain transition-opacity duration-300 ${
@@ -74,7 +74,7 @@ export function Header() {
             />
             {/* Logo para quando o fundo está branco */}
             <Image
-              src="/logo-dark.svg"
+              src="/logo-dark.png"
               alt="HAGRIA Labs Logo Escuro"
               fill
               className={`object-contain transition-opacity duration-300 ${

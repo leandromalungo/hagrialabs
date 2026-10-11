@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const word = "HAGRIA Labs";
+const word = "INTELIGÊNCIA";
 
 const sideImages = [
   {
