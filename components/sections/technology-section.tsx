@@ -100,7 +100,7 @@ export function TechnologySection() {
   const textSectionRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   
-  const descriptionText = "Experimente equipamentos outdoor reinventados com tecnologia de ponta. Os acessórios Alpine & Forest combinam materiais ultraleves, controle inteligente de temperatura e engenharia resistente ao clima para elevar cada aventura. Dos picos das montanhas às trilhas na floresta, seu equipamento se adapta às condições.";
+  const descriptionText = "O Hagriia Labs explora a intersecção entre tecnologia, investigação e resolução de problemas. O seu trabalho parte da identificação de desafios, da experimentação de ideias e do desenvolvimento de soluções que possam ser testadas e aperfeiçoadas no mundo real.";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -142,7 +142,7 @@ export function TechnologySection() {
         <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl sm:aspect-[16/10]">
           <Image
             src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=2000"
-            alt="Vista aérea de expedição de acampamento na natureza"
+            alt="Hagriia Labs — Investigação aplicada e exploração tecnológica"
             fill
             className="object-cover"
           />
@@ -154,7 +154,7 @@ export function TechnologySection() {
               a Natureza.
             </h2>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-white/85 sm:text-base">
-              Sensores inteligentes, materiais aeroespaciais e autonomia térmica integrados para enfrentar os ambientes mais extremos com total precisão.
+              Investigação aplicada, engenharia de software e experimentação tecnológica orientadas para transformar ideias em soluções concretas.
             </p>
           </div>
         </div>
@@ -227,7 +227,7 @@ export function TechnologySection() {
               >
                 <Image
                   src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=2000"
-                  alt="Vista aérea de expedição de acampamento na natureza"
+                  alt="Hagriia Labs — Investigação aplicada e exploração tecnológica"
                   fill
                   className="object-cover"
                 />
@@ -273,7 +273,7 @@ export function TechnologySection() {
                       transition: "opacity 0.1s linear, filter 0.1s linear",
                     }}
                   >
-                    Sensores inteligentes, materiais aeroespaciais e autonomia térmica integrados para enfrentar os ambientes mais extremos com total precisão.
+                    Investigação aplicada, engenharia de software e experimentação tecnológica orientadas para transformar ideias em soluções concretas.
                   </p>
                 </div>
               </div>
@@ -327,7 +327,7 @@ export function TechnologySection() {
           </p>
           <ScrollRevealText text={descriptionText} />
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-foreground/80 sm:text-lg md:mt-6 md:text-xl">
-            Na HAGRIA Labs, unimos design minimalista, engenharia de materiais aeroespaciais e testes rigorosos em campo para criar equipamentos duráveis que acompanham você em qualquer clima, altitude ou território.
+            Através de uma abordagem multidisciplinar, o laboratório procura aproximar o desenvolvimento tecnológico das necessidades concretas da sociedade, criando condições para explorar novas ideias, desenvolver projectos e estabelecer colaborações.
           </p>
         </div>
       </div>

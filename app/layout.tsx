@@ -7,11 +7,30 @@ const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const Analytics = () => null;
 
 export const metadata: Metadata = {
-  title: 'HAGRIA Labs | Vá Mais Longe',
-  description: 'Equipamentos outdoor de alta performance projetados para o explorador moderno. Leves, duráveis e prontos para a aventura.',
+  title: 'Hagriia Labs | Laboratório de Tecnologia e Inovação',
+  description:
+    'O Hagriia Labs é um laboratório de tecnologia e inovação dedicado à investigação aplicada, ao desenvolvimento de software e à criação de soluções tecnológicas para desafios reais.',
+  keywords: [
+    'Hagriia Labs',
+    'Laboratório de tecnologia e inovação',
+    'Desenvolvimento de software',
+    'Inteligência artificial',
+    'Investigação aplicada',
+    'Desenvolvimento tecnológico',
+    'Soluções digitais',
+  ],
   openGraph: {
-    title: 'HAGRIA Labs | Vá Mais Longe',
-    description: 'Equipamentos outdoor de alta performance projetados para o explorador moderno. Leves, duráveis e prontos para a aventura.',
+    type: 'website',
+    siteName: 'Hagriia Labs',
+    title: 'Hagriia Labs | Laboratório de Tecnologia e Inovação',
+    description:
+      'Laboratório de tecnologia e inovação dedicado à investigação aplicada, ao desenvolvimento de software e à exploração de soluções inteligentes para desafios reais.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hagriia Labs | Laboratório de Tecnologia e Inovação',
+    description:
+      'Laboratório de tecnologia e inovação dedicado à investigação aplicada, ao desenvolvimento de software e à exploração de soluções inteligentes para desafios reais.',
   },
   generator: 'v0.app',
   icons: {
@@ -33,17 +52,29 @@ export const metadata: Metadata = {
   },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ResearchOrganization',
+  name: 'Hagriia Labs',
+  description:
+    'Laboratório de tecnologia e inovação dedicado à investigação aplicada, ao desenvolvimento de software e à criação de soluções tecnológicas para desafios reais.',
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html lang="pt" suppressHydrationWarning>
       <body
         suppressHydrationWarning
         className={`${inter.variable} font-sans antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
         <Analytics />
       </body>

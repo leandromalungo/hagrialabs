@@ -5,22 +5,23 @@ import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 
 const footerLinks = {
-  product: [
-    { label: "Recursos", href: "#technology" },
-    { label: "Dados em Tempo Real", href: "#products" },
-    { label: "Preços", href: "#accessories" },
-    { label: "Comparação", href: "#gallery" },
+  laboratory: [
+    { label: "Início", href: "#" },
+    { label: "Sobre nós", href: "#sobre-nos" },
+    { label: "Missão e Visão", href: "#products" },
+    { label: "Como trabalhamos", href: "#como-trabalhamos" },
   ],
-  developer: [
-    { label: "Console do Desenvolvedor", href: "#" },
-    { label: "Documentação da API", href: "#" },
-    { label: "Fórum de Desenvolvedores", href: "#" },
-    { label: "Status da API", href: "#" },
+  areas: [
+    { label: "Áreas tecnológicas", href: "#technology" },
+    { label: "Projectos e Investigação", href: "#gallery" },
+    { label: "Colaboração", href: "#accessories" },
+    { label: "Oportunidades", href: "#accessories" },
   ],
-  resources: [
-    { label: "Política de Privacidade", href: "#" },
-    { label: "Termos de Serviço", href: "#" },
-    { label: "Suporte", href: "#" },
+  institutional: [
+    { label: "Contacto", href: "#about" },
+    { label: "Propor uma colaboração", href: "#about" },
+    { label: "Política de Privacidade", href: "#footer" },
+    { label: "Termos de Utilização", href: "#footer" },
   ],
 };
 
@@ -64,8 +65,8 @@ export function FooterSection() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 pt-20 pb-12 md:px-12 md:pt-28 md:pb-14">
-        {/* Top Center Geometric Monogram */}
-        <div className="mb-16 flex justify-center md:mb-24">
+        {/* Top Center Logo & Institutional Summary */}
+        <div className="mb-16 flex flex-col items-center text-center md:mb-20">
           <Link
             href="/"
             aria-label="HAGRIA Labs"
@@ -79,17 +80,20 @@ export function FooterSection() {
               className="h-28 w-28 object-contain opacity-90 transition-opacity duration-300 group-hover:opacity-100 md:h-36 md:w-36"
             />
           </Link>
+          <p className="mt-8 max-w-xl text-sm leading-relaxed text-[#a3a3a3] md:text-base">
+            Hagriia Labs é um laboratório de tecnologia e inovação dedicado à exploração de ideias, ao desenvolvimento de software e à criação de soluções tecnológicas para desafios reais.
+          </p>
         </div>
 
         {/* Three Columns */}
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-8 md:justify-items-start">
-          {/* Column 1: PRODUTO */}
+          {/* Column 1: LABORATÓRIO */}
           <div className="w-full sm:w-auto">
             <h4 className="mb-5 font-mono text-xs tracking-[0.16em] text-[#737373] uppercase">
-              Produto
+              Laboratório
             </h4>
             <ul className="space-y-3.5">
-              {footerLinks.product.map((link) => (
+              {footerLinks.laboratory.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
@@ -102,13 +106,13 @@ export function FooterSection() {
             </ul>
           </div>
 
-          {/* Column 2: DESENVOLVEDOR */}
+          {/* Column 2: ACTUAÇÃO */}
           <div className="w-full sm:mx-auto sm:w-auto">
             <h4 className="mb-5 font-mono text-xs tracking-[0.16em] text-[#737373] uppercase">
-              Desenvolvedor
+              Actuação
             </h4>
             <ul className="space-y-3.5">
-              {footerLinks.developer.map((link) => (
+              {footerLinks.areas.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
@@ -121,13 +125,13 @@ export function FooterSection() {
             </ul>
           </div>
 
-          {/* Column 3: RECURSOS */}
+          {/* Column 3: INSTITUCIONAL */}
           <div className="w-full sm:ml-auto sm:w-auto">
             <h4 className="mb-5 font-mono text-xs tracking-[0.16em] text-[#737373] uppercase">
-              Recursos
+              Institucional
             </h4>
             <ul className="space-y-3.5">
-              {footerLinks.resources.map((link) => (
+              {footerLinks.institutional.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
@@ -142,7 +146,7 @@ export function FooterSection() {
         </div>
 
         {/* Social Media Icons & Copyright */}
-        <div className="mt-20 flex flex-col items-center gap-6 text-center md:mt-28">
+        <div className="mt-20 flex flex-col items-center gap-6 text-center md:mt-24">
           <div className="flex items-center justify-center gap-4">
             {socialLinks.map((social) => {
               const Icon = social.icon;
@@ -160,7 +164,7 @@ export function FooterSection() {
           </div>
 
           <p className="text-xs text-[#8a8a8a]">
-            © 2026 HAGRIA Labs. Todos os direitos reservados.
+            © 2026 Hagriia Labs. Todos os direitos reservados.
           </p>
         </div>
       </div>

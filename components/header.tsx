@@ -54,7 +54,7 @@ export function Header() {
       }}
     >
       <div className="flex items-center justify-between transition-all duration-300 px-3 pl-4 py-2.5 md:px-2 md:pl-4 md:py-2">
-        {/* Logo (alterna entre logo-dark.svg no fundo branco e logo-white.svg no fundo transparente) */}
+        {/* Logo (alterna entre logo-dark.png no fundo branco e logo-white.png no fundo transparente) */}
         <Link
           href="#"
           className={`flex items-center gap-1 text-lg font-medium tracking-tight transition-colors duration-300 ${
@@ -117,7 +117,7 @@ export function Header() {
         {/* CTA */}
         <div className="hidden items-center gap-6 md:flex">
           <Link
-            href="#reserve"
+            href="#about"
             className={`group inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition-all rounded-full ${
               isScrolled
                 ? "bg-foreground text-background hover:opacity-80"
@@ -190,7 +190,7 @@ export function Header() {
               Sobre nós
             </Link>
             <Link
-              href="#reserve"
+              href="#about"
               className="group mt-4 inline-flex items-center justify-center gap-1.5 bg-foreground px-5 py-3 text-center text-sm font-medium text-background rounded-full"
               onClick={() => setIsMenuOpen(false)}
             >

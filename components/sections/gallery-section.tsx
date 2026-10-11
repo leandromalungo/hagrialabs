@@ -15,59 +15,59 @@ export function GallerySection() {
   const images = [
     {
       src: "/images/bottle-bike.png",
-      alt: "Garrafa térmica na bicicleta",
-      title: "Ciclismo de Performance",
+      alt: "Plataformas e aplicações digitais em desenvolvimento no Hagriia Labs",
+      title: "Plataformas e Aplicações Digitais",
       description:
-        "Fixação magnética ultraleve e acesso rápido para hidratação contínua em trilhas de alta velocidade.",
+        "Estado: Em desenvolvimento — Arquitectura e construção de software orientado para resolver desafios operacionais concretos.",
     },
     {
       src: "/images/bottle-lake.png",
-      alt: "Garrafa térmica à beira do lago",
-      title: "Expedição Alpina",
+      alt: "Sistemas inteligentes e automação em experimentação",
+      title: "Sistemas Inteligentes e Automação",
       description:
-        "Isolamento a vácuo de dupla parede que preserva a temperatura ideal mesmo à beira de lagos glaciais.",
+        "Estado: Em experimentação — Exploração de modelos de inteligência artificial e automação de fluxos de trabalho para apoio à decisão.",
     },
     {
       src: "/images/bottle-water.png",
-      alt: "Garrafa térmica na água",
-      title: "Vedação Impermeável",
+      alt: "Análise de dados e modelação computacional",
+      title: "Análise e Modelação de Dados",
       description:
-        "Construção selada com certificação IPX8, pronta para imersão completa e travessias aquáticas.",
+        "Estado: Em investigação — Estruturação de dados e ferramentas analíticas para compreender problemas complexos com base em evidências.",
     },
     {
       src: "/images/bottle-stream.png",
-      alt: "Garrafa térmica no riacho",
-      title: "Purificação em Movimento",
+      alt: "Prototipagem e validação técnica de soluções",
+      title: "Protótipos de Investigação Aplicada",
       description:
-        "Sistema de filtragem integrado para coletar água limpa diretamente de riachos e nascentes naturais.",
+        "Estado: Protótipo — Desenvolvimento e validação técnica de conceitos experimentais antes da sua implementação em cenários reais.",
     },
     {
       src: "/images/bottle-fire.png",
-      alt: "Garrafa térmica perto da fogueira",
-      title: "Acampamento Noturno",
+      alt: "Ferramentas internas e utilitários de engenharia",
+      title: "Ferramentas de Engenharia de Software",
       description:
-        "Autoaquecimento inteligente até 60°C e iluminação LED integrada para noites ao redor da fogueira.",
+        "Estado: Em desenvolvimento — Criação de componentes reutilizáveis, serviços modulares e ferramentas técnicas de apoio ao desenvolvimento.",
     },
     {
       src: "/images/bottle-snow.png",
-      alt: "Garrafa térmica na neve",
-      title: "Resistência Subzero",
+      alt: "Exploração de tecnologias emergentes",
+      title: "Laboratório de Tecnologias Emergentes",
       description:
-        "Engenharia térmica testada abaixo de -20°C que impede o congelamento em expedições na neve.",
+        "Estado: Em investigação — Estudo progressivo de novas abordagens computacionais e avaliação da sua aplicabilidade prática.",
     },
     {
       src: "/images/bottle-mountain.png",
-      alt: "Garrafa térmica na montanha",
-      title: "Rastreamento em Altitude",
+      alt: "Linha de exploração em observação da Terra e dados geoespaciais",
+      title: "Observação da Terra e Dados Espaciais",
       description:
-        "Módulo GPS de precisão integrado para localização em tempo real nos picos mais remotos.",
+        "Estado: Planeado — Linha de exploração tecnológica dedicada à análise de dados de satélite, inteligência artificial e aplicações terrestres.",
     },
     {
       src: "/images/bottle-canyon.png",
-      alt: "Garrafa térmica no cânion",
-      title: "Durabilidade Extrema",
+      alt: "Projectos colaborativos e investigação multidisciplinar",
+      title: "Projectos em Colaboração Aberta",
       description:
-        "Revestimento em titânio e fibra de carbono resistente a impactos em terrenos rochosos e cânions.",
+        "Estado: Em experimentação — Iniciativas conjuntas com profissionais, investigadores e organizações para testar soluções no terreno.",
     },
   ];
 

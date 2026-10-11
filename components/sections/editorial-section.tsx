@@ -1,33 +1,60 @@
 "use client";
 
 const specs = [
-  { label: "Peso", value: "400g" },
-  { label: "Capacidade", value: "0.5L - 2L" },
-  { label: "Montagem", value: "2 min" },
-  { label: "Tamanho compacto", value: "30 x 15 cm" },
+  {
+    label: "01 · Abordagem de Referência",
+    value: "Identificar",
+    description:
+      "Compreender o problema, o contexto e as necessidades que justificam o desenvolvimento de uma solução.",
+  },
+  {
+    label: "02 · Investigação",
+    value: "Explorar",
+    description:
+      "Investigar alternativas, estudar tecnologias e avaliar possíveis abordagens.",
+  },
+  {
+    label: "03 · Engenharia",
+    value: "Desenvolver",
+    description:
+      "Construir protótipos, aplicações ou sistemas que permitam testar as hipóteses identificadas.",
+  },
+  {
+    label: "04 · Evolução Contínua",
+    value: "Validar e aperfeiçoar",
+    description:
+      "Avaliar os resultados, identificar limitações e melhorar a solução com base em testes e evidências.",
+  },
 ];
 
 export function EditorialSection() {
   return (
-    <section className="bg-background">
-      {/* Newsletter Banner */}
-      
+    <section id="como-trabalhamos" className="bg-background">
+      {/* Section Header */}
+      <div className="px-6 pt-6 pb-8 text-center md:px-12 md:pt-10 md:pb-12">
+        <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          Como Trabalhamos
+        </p>
+        <h2 className="mt-2 text-2xl font-medium tracking-tight text-foreground sm:text-3xl">
+          Da Identificação do Problema à Validação Prática
+        </h2>
+      </div>
 
-      {/* Decorative Icons */}
-      <div className="hidden items-center justify-center gap-6 pb-20 md:flex" />
-
-      {/* Specs Grid */}
-      <div className="grid grid-cols-2 border-t border-border md:grid-cols-4">
+      {/* 4-Stage Methodology Grid */}
+      <div className="grid grid-cols-1 border-t border-border sm:grid-cols-2 md:grid-cols-4">
         {specs.map((spec) => (
           <div
             key={spec.label}
-            className="border-b border-border p-5 text-center odd:border-r sm:p-6 md:border-b-0 md:border-r md:p-8 md:last:border-r-0"
+            className="border-b border-border p-6 text-left sm:odd:border-r md:border-b-0 md:border-r md:p-8 md:last:border-r-0"
           >
-            <p className="mb-1.5 text-xs uppercase tracking-widest text-muted-foreground md:mb-2">
+            <p className="mb-2 text-xs uppercase tracking-widest text-muted-foreground">
               {spec.label}
             </p>
-            <p className="text-xl font-medium text-foreground sm:text-2xl md:text-4xl">
+            <p className="text-xl font-medium text-foreground sm:text-2xl md:text-2xl lg:text-3xl">
               {spec.value}
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              {spec.description}
             </p>
           </div>
         ))}

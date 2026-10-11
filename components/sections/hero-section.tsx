@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const word = "INTELIGÊNCIA";
@@ -8,25 +10,25 @@ const word = "INTELIGÊNCIA";
 const sideImages = [
   {
     src: "https://images.unsplash.com/photo-1517824806704-9040b037703b?q=80&w=1000",
-    alt: "Aventura de trilha nas montanhas",
+    alt: "Investigação tecnológica e exploração de novos horizontes",
     position: "left",
     span: 1,
   },
   {
     src: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?q=80&w=1000",
-    alt: "Acampamento sob as estrelas",
+    alt: "Observação e análise de dados em cenários reais",
     position: "left",
     span: 1,
   },
   {
     src: "https://images.unsplash.com/photo-1533873984035-25970ab07461?q=80&w=1000",
-    alt: "Exploração na floresta",
+    alt: "Experimentação aplicada e validação no terreno",
     position: "right",
     span: 1,
   },
   {
     src: "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?q=80&w=1000",
-    alt: "Vista de acampamento no lago",
+    alt: "Ecossistema de desenvolvimento tecnológico multidisciplinar",
     position: "right",
     span: 1,
   },
@@ -83,7 +85,7 @@ export function HeroSection() {
         <div className="relative h-[85vh] min-h-[500px] w-full overflow-hidden">
           <Image
             src="/images/hero-main.png"
-            alt="Paisagem de montanha com barraca de acampamento ao pôr do sol"
+            alt="Hagriia Labs — Laboratório de tecnologia e inovação"
             fill
             className="object-cover"
             priority
@@ -92,7 +94,7 @@ export function HeroSection() {
           <div className="pointer-events-none absolute inset-0 bg-black/20 bg-gradient-to-t from-black/65 via-black/20 to-black/10" />
           <div className="absolute inset-x-0 bottom-7 flex flex-col items-start justify-end overflow-hidden px-5">
             <p className="mb-3 max-w-md text-sm leading-relaxed text-white/85 sm:text-base">
-              Equipamentos outdoor de alta performance projetados para o explorador moderno, combinando engenharia ultraleve e tecnologia inteligente para qualquer território.
+              O Hagriia Labs é um laboratório de tecnologia e inovação dedicado à investigação aplicada, ao desenvolvimento de software e à exploração de soluções inteligentes para desafios reais.
             </p>
             <h1 className="w-full whitespace-nowrap text-[13.5vw] font-medium leading-[0.85] tracking-tighter text-white">
               {word}
@@ -168,7 +170,7 @@ export function HeroSection() {
             >
               <Image
                 src="/images/hero-main.png"
-                alt="Paisagem de montanha com barraca de acampamento ao pôr do sol"
+                alt="Hagriia Labs — Laboratório de tecnologia e inovação"
                 fill
                 className="object-cover"
                 priority
@@ -182,8 +184,8 @@ export function HeroSection() {
                 className="absolute inset-0 flex flex-col items-start justify-end overflow-hidden px-8 pb-8 lg:px-12 lg:pb-10"
                 style={{ opacity: textOpacity }}
               >
-                <p className="mb-4 max-w-xl text-base leading-relaxed text-white/85 md:mb-6 md:text-lg lg:max-w-2xl lg:text-xl">
-                  Equipamentos outdoor de alta performance projetados para o explorador moderno, combinando engenharia ultraleve e tecnologia inteligente para qualquer território.
+                <p className="mb-4 max-w-2xl text-base leading-relaxed text-white/85 md:mb-6 md:text-lg lg:max-w-3xl lg:text-xl">
+                  O Hagriia Labs é um laboratório de tecnologia e inovação dedicado à investigação aplicada, ao desenvolvimento de software e à exploração de soluções inteligentes para desafios reais.
                 </p>
                 <h1 className="w-full whitespace-nowrap text-[13.5vw] font-medium leading-[0.85] tracking-tighter text-white">
                   {word.split("").map((letter, index) => (
@@ -239,13 +241,33 @@ export function HeroSection() {
       {/* Scroll space to enable animation on desktop only */}
       <div className="hidden h-[200vh] md:block" />
 
-      {/* Tagline Section */}
+      {/* Institutional Value Proposition & CTAs Section */}
       <div className="px-6 py-16 md:pt-48 md:px-12 md:pb-36 lg:px-20 lg:pt-56 lg:pb-44">
-        <p className="mx-auto max-w-2xl text-center text-2xl leading-relaxed text-muted-foreground md:text-3xl lg:text-[2.5rem] lg:leading-snug">
-          Leve, durável
-          <br />
-          e pronto para a aventura.
-        </p>
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-2xl font-medium leading-relaxed text-foreground md:text-3xl lg:text-[2.5rem] lg:leading-snug">
+            Tecnologia para explorar
+            <br />
+            novas possibilidades.
+          </p>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+            Investigação e experimentação tecnológica, desenvolvimento de software e sistemas inteligentes, criação de soluções inovadoras e colaboração multidisciplinar.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="#gallery"
+              className="group inline-flex items-center gap-1.5 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-all hover:opacity-85"
+            >
+              <span>Explorar projectos</span>
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+            <Link
+              href="#sobre-nos"
+              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+            >
+              <span>Conhecer o laboratório</span>
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );

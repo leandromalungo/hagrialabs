@@ -58,22 +58,22 @@ export function PhilosophySection() {
 
   return (
     <section id="products" className="bg-background">
-      {/* Mobile Static Product Grid (No scroll-jacking slide animations) */}
+      {/* Mobile Static Grid (No scroll-jacking slide animations) */}
       <div className="px-4 py-8 md:hidden">
         <h2 className="mb-8 text-center text-3xl font-medium leading-tight tracking-tight text-foreground sm:text-4xl">
-          Conheça Alpine & Forest.
+          Missão e Visão Institucional.
         </h2>
         <div className="grid grid-cols-1 gap-4">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
             <Image
               src="/images/product-backpack.png"
-              alt="Mochila de expedição V1 em cenário alpino"
+              alt="Missão do Hagriia Labs — Investigação e desenvolvimento tecnológico"
               fill
               className="object-cover"
             />
             <div className="absolute bottom-4 left-4">
               <span className="rounded-full bg-[rgba(255,255,255,0.2)] px-4 py-2 text-sm font-medium text-white backdrop-blur-md">
-                Alpine $299
+                Missão · Investigação e Engenharia
               </span>
             </div>
           </div>
@@ -81,20 +81,20 @@ export function PhilosophySection() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
             <Image
               src="/images/02cdc426-dff4-4dff-b131-1b134c3699b5.png"
-              alt="Garrafa térmica V1 em cenário de floresta"
+              alt="Visão do Hagriia Labs — Ecossistema de desenvolvimento tecnológico"
               fill
               className="object-cover"
             />
             <div className="absolute bottom-4 left-4">
               <span className="rounded-full bg-[rgba(255,255,255,0.2)] px-4 py-2 text-sm font-medium text-white backdrop-blur-md">
-                Forest $199
+                Visão · Ecossistema Tecnológico
               </span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Desktop Scroll-Animated Product Grid (md and up only) */}
+      {/* Desktop Scroll-Animated Grid (md and up only) */}
       <div ref={sectionRef} className="relative hidden md:block" style={{ height: "200vh" }}>
         <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
           <div className="relative w-full">
@@ -104,13 +104,13 @@ export function PhilosophySection() {
               style={{ opacity: titleOpacity }}
             >
               <h2 className="text-[10vw] font-medium leading-[0.95] tracking-tighter text-foreground md:text-[8.5vw] lg:text-[7vw] text-center px-6">
-                Conheça Alpine & Forest.
+                Missão e Visão Institucional.
               </h2>
             </div>
 
-            {/* Product Grid */}
+            {/* Grid */}
             <div className="relative z-10 grid grid-cols-1 gap-4 px-6 md:grid-cols-2 md:px-12 lg:px-20">
-              {/* Alpine Image - comes from left */}
+              {/* Left Image - comes from left */}
               <div 
                 className="relative aspect-[4/3] overflow-hidden rounded-2xl"
                 style={{
@@ -122,18 +122,18 @@ export function PhilosophySection() {
               >
                 <Image
                   src="/images/product-backpack.png"
-                  alt="Mochila de expedição V1 em cenário alpino"
+                  alt="Missão do Hagriia Labs — Investigação e desenvolvimento tecnológico"
                   fill
                   className="object-cover"
                 />
                 <div className="absolute bottom-6 left-6">
                   <span className="backdrop-blur-md px-4 py-2 text-sm font-medium rounded-full bg-[rgba(255,255,255,0.2)] text-white">
-                    Alpine $299
+                    Missão · Investigação e Engenharia
                   </span>
                 </div>
               </div>
 
-              {/* Forest Image - comes from right */}
+              {/* Right Image - comes from right */}
               <div 
                 className="relative aspect-[4/3] overflow-hidden rounded-2xl"
                 style={{
@@ -145,13 +145,13 @@ export function PhilosophySection() {
               >
                 <Image
                   src="/images/02cdc426-dff4-4dff-b131-1b134c3699b5.png"
-                  alt="Garrafa térmica V1 em cenário de floresta"
+                  alt="Visão do Hagriia Labs — Ecossistema de desenvolvimento tecnológico"
                   fill
                   className="object-cover"
                 />
                 <div className="absolute bottom-6 left-6">
                   <span className="backdrop-blur-md px-4 py-2 text-sm font-medium rounded-full bg-[rgba(255,255,255,0.2)] text-white">
-                    Forest $199
+                    Visão · Ecossistema Tecnológico
                   </span>
                 </div>
               </div>
@@ -160,16 +160,25 @@ export function PhilosophySection() {
         </div>
       </div>
 
-      {/* Description */}
+      {/* Mission & Vision Statements */}
       <div className="px-6 py-12 md:px-12 md:py-28 lg:px-20 lg:py-36 lg:pb-14">
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="text-xs uppercase tracking-widest text-muted-foreground">
-            Primeira geração
-          </p>
-          <p className="mt-4 text-center text-lg leading-relaxed text-muted-foreground sm:text-xl md:mt-8 md:text-3xl">
-            Alpine & Forest são acessórios outdoor de alta tecnologia projetados para aventureiros modernos. 
-            Leves, duráveis e desenvolvidos para condições extremas.
-          </p>
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-foreground">
+              Missão
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground sm:text-xl md:mt-6 md:text-2xl">
+              Explorar, desenvolver e aplicar tecnologias que permitam resolver problemas concretos, transformar ideias em soluções funcionais e ampliar as possibilidades de utilização da ciência e da engenharia.
+            </p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-foreground">
+              Visão
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground sm:text-xl md:mt-6 md:text-2xl">
+              Construir um ecossistema de desenvolvimento tecnológico capaz de aproximar talento, conhecimento e experimentação, contribuindo para a criação de soluções relevantes em Angola e noutros mercados.
+            </p>
+          </div>
         </div>
       </div>
     </section>
