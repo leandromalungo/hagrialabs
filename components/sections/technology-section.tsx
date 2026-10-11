@@ -15,9 +15,9 @@ function ScrollRevealText({ text }: { text: string }) {
       const rect = containerRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       
-      // Slower animation - more viewport range
-      const startOffset = windowHeight * 0.9;
-      const endOffset = windowHeight * 0.1;
+      // Wide scroll range for a slower, gradual word-by-word reveal
+      const startOffset = windowHeight * 0.98;
+      const endOffset = -windowHeight * 0.1;
       
       const totalDistance = startOffset - endOffset;
       const currentPosition = startOffset - rect.top;
@@ -41,21 +41,22 @@ function ScrollRevealText({ text }: { text: string }) {
         {text}
       </p>
 
-      {/* Desktop scroll-reveal text (md and up) */}
+      {/* Desktop scroll-reveal text (md and up) — slower transition & higher visibility */}
       <p
         ref={containerRef}
-        className="hidden font-semibold leading-snug md:block md:text-4xl lg:text-5xl"
+        className="hidden font-semibold leading-snug text-foreground md:block md:text-3xl lg:text-[2.5rem] lg:leading-snug"
       >
         {words.map((word, index) => {
           const wordProgress = index / words.length;
-          const isRevealed = progress > wordProgress;
+          const isRevealed = progress >= wordProgress;
           
           return (
             <span
               key={index}
-              className="transition-colors duration-150"
+              className="transition-opacity duration-[1200ms] ease-out"
               style={{
-                color: isRevealed ? "var(--foreground)" : "#e4e4e7",
+                color: "var(--foreground)",
+                opacity: isRevealed ? 1 : 0.48,
               }}
             >
               {word}{index < words.length - 1 ? " " : ""}
@@ -95,10 +96,9 @@ const sideImages = [
 ];
 
 export function TechnologySection() {
-  const sectionRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const textSectionRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [textProgress, setTextProgress] = useState(0);
   
   const descriptionText = "Experimente equipamentos outdoor reinventados com tecnologia de ponta. Os acessórios Alpine & Forest combinam materiais ultraleves, controle inteligente de temperatura e engenharia resistente ao clima para elevar cada aventura. Dos picos das montanhas às trilhas na floresta, seu equipamento se adapta às condições.";
 
@@ -108,26 +108,11 @@ export function TechnologySection() {
       if (!sectionRef.current) return;
       
       const rect = sectionRef.current.getBoundingClientRect();
-      const scrollableHeight = window.innerHeight * 2;
+      const scrollableHeight = window.innerHeight * 1.2;
       const scrolled = -rect.top;
       const progress = Math.max(0, Math.min(1, scrolled / scrollableHeight));
       
       setScrollProgress(progress);
-
-      // Text scroll progress
-      if (textSectionRef.current) {
-        const textRect = textSectionRef.current.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        
-        const startOffset = windowHeight * 0.9;
-        const endOffset = windowHeight * 0.1;
-        
-        const totalDistance = startOffset - endOffset;
-        const currentPosition = startOffset - textRect.top;
-        
-        const newTextProgress = Math.max(0, Math.min(1, currentPosition / totalDistance));
-        setTextProgress(newTextProgress);
-      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -151,9 +136,9 @@ export function TechnologySection() {
   const gap = imageProgress * 16; // 0px to 16px
 
   return (
-    <section ref={sectionRef} className="relative bg-foreground">
+    <section className="relative bg-background">
       {/* Mobile Static Layout (No scroll-jacking animations) */}
-      <div className="px-4 py-12 md:hidden">
+      <div className="px-4 pt-8 pb-2 md:hidden">
         <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl sm:aspect-[16/10]">
           <Image
             src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=2000"
@@ -191,156 +176,159 @@ export function TechnologySection() {
         </div>
       </div>
 
-      {/* Desktop Sticky container for scroll animation (md and up only) */}
-      <div className="sticky top-0 hidden h-screen overflow-hidden md:block">
-        <div className="flex h-full w-full items-center justify-center">
-          {/* Bento Grid Container */}
-          <div 
-            className="relative flex h-full w-full items-stretch justify-center"
-            style={{ gap: `${gap}px`, padding: `${imageProgress * 16}px` }}
-          >
-            
-            {/* Left Column */}
+      {/* Desktop Sticky Bento Wrapper — ends before the text so the text stays right below the cards without sliding over them */}
+      <div ref={sectionRef} className="relative hidden md:block">
+        <div className="sticky top-0 h-screen overflow-hidden bg-background">
+          <div className="flex h-full w-full items-center justify-center">
+            {/* Bento Grid Container */}
             <div 
-              className="flex flex-col will-change-transform"
-              style={{
-                width: `${sideWidth}%`,
-                gap: `${gap}px`,
-                transform: `translateX(${sideTranslateLeft}%)`,
-                opacity: sideOpacity,
-              }}
+              className="relative flex h-full w-full items-stretch justify-center"
+              style={{ gap: `${gap}px`, padding: `${imageProgress * 16}px` }}
             >
-              {sideImages.filter(img => img.position === "left").map((img, idx) => (
-                <div 
-                  key={idx} 
-                  className="relative overflow-hidden will-change-transform"
-                  style={{
-                    flex: img.span,
-                    borderRadius: `${borderRadius}px`,
-                  }}
-                >
-                  <Image
-                    src={img.src || "/placeholder.svg"}
-                    alt={img.alt}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-
-            {/* Main Center Image */}
-            <div 
-              className="relative overflow-hidden will-change-transform"
-              style={{
-                width: `${centerWidth}%`,
-                height: "100%",
-                flex: "0 0 auto",
-                borderRadius: `${borderRadius}px`,
-              }}
-            >
-              <Image
-                src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=2000"
-                alt="Vista aérea de expedição de acampamento na natureza"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-foreground/40" />
               
-              {/* Title Text & Description - Fades out word by word with blur */}
+              {/* Left Column */}
               <div 
-                className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
+                className="flex flex-col will-change-transform"
+                style={{
+                  width: `${sideWidth}%`,
+                  gap: `${gap}px`,
+                  transform: `translateX(${sideTranslateLeft}%)`,
+                  opacity: sideOpacity,
+                }}
               >
-                <h2 className="max-w-3xl text-5xl font-medium leading-tight tracking-tight text-white md:text-5xl lg:text-7xl">
-                  {["Tecnologia", "Encontra", "a Natureza."].map((word, index) => {
-                    // Each word fades out sequentially based on scrollProgress
-                    const wordFadeStart = index * 0.06;
-                    const wordFadeEnd = wordFadeStart + 0.07;
-                    const wordProgress = Math.max(0, Math.min(1, (scrollProgress - wordFadeStart) / (wordFadeEnd - wordFadeStart)));
-                    const wordOpacity = 1 - wordProgress;
-                    const wordBlur = wordProgress * 10; // 0px to 10px blur
-                    
-                    return (
-                      <span key={index}>
-                        <span
-                          className="inline-block"
-                          style={{
-                            opacity: wordOpacity,
-                            filter: `blur(${wordBlur}px)`,
-                            transition: 'opacity 0.1s linear, filter 0.1s linear',
-                            marginRight: index === 0 ? '0.28em' : '0',
-                          }}
-                        >
-                          {word}
-                        </span>
-                        {index === 0 ? " " : null}
-                        {index === 1 ? <br /> : null}
-                      </span>
-                    );
-                  })}
-                </h2>
-
-                <p
-                  className="mt-6 max-w-xl text-base leading-relaxed text-white/85 md:text-lg lg:text-xl"
-                  style={{
-                    opacity: Math.max(0, 1 - Math.max(0, Math.min(1, (scrollProgress - 0.1) / 0.12))),
-                    filter: `blur(${Math.max(0, Math.min(1, (scrollProgress - 0.1) / 0.12)) * 10}px)`,
-                    transition: "opacity 0.1s linear, filter 0.1s linear",
-                  }}
-                >
-                  Sensores inteligentes, materiais aeroespaciais e autonomia térmica integrados para enfrentar os ambientes mais extremos com total precisão.
-                </p>
+                {sideImages.filter(img => img.position === "left").map((img, idx) => (
+                  <div 
+                    key={idx} 
+                    className="relative overflow-hidden will-change-transform"
+                    style={{
+                      flex: img.span,
+                      borderRadius: `${borderRadius}px`,
+                    }}
+                  >
+                    <Image
+                      src={img.src || "/placeholder.svg"}
+                      alt={img.alt}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
               </div>
-            </div>
 
-            {/* Right Column */}
-            <div 
-              className="flex flex-col will-change-transform"
-              style={{
-                width: `${sideWidth}%`,
-                gap: `${gap}px`,
-                transform: `translateX(${sideTranslateRight}%)`,
-                opacity: sideOpacity,
-              }}
-            >
-              {sideImages.filter(img => img.position === "right").map((img, idx) => (
+              {/* Main Center Image */}
+              <div 
+                className="relative overflow-hidden will-change-transform"
+                style={{
+                  width: `${centerWidth}%`,
+                  height: "100%",
+                  flex: "0 0 auto",
+                  borderRadius: `${borderRadius}px`,
+                }}
+              >
+                <Image
+                  src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=2000"
+                  alt="Vista aérea de expedição de acampamento na natureza"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-foreground/40" />
+                
+                {/* Title Text & Description - Fades out word by word with blur */}
                 <div 
-                  key={idx} 
-                  className="relative overflow-hidden will-change-transform"
-                  style={{
-                    flex: img.span,
-                    borderRadius: `${borderRadius}px`,
-                  }}
+                  className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
                 >
-                  <Image
-                    src={img.src || "/placeholder.svg"}
-                    alt={img.alt}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+                  <h2 className="max-w-3xl text-5xl font-medium leading-tight tracking-tight text-white md:text-5xl lg:text-7xl">
+                    {["Tecnologia", "Encontra", "a Natureza."].map((word, index) => {
+                      const wordFadeStart = index * 0.06;
+                      const wordFadeEnd = wordFadeStart + 0.07;
+                      const wordProgress = Math.max(0, Math.min(1, (scrollProgress - wordFadeStart) / (wordFadeEnd - wordFadeStart)));
+                      const wordOpacity = 1 - wordProgress;
+                      const wordBlur = wordProgress * 10;
+                      
+                      return (
+                        <span key={index}>
+                          <span
+                            className="inline-block"
+                            style={{
+                              opacity: wordOpacity,
+                              filter: `blur(${wordBlur}px)`,
+                              transition: 'opacity 0.1s linear, filter 0.1s linear',
+                              marginRight: index === 0 ? '0.28em' : '0',
+                            }}
+                          >
+                            {word}
+                          </span>
+                          {index === 0 ? " " : null}
+                          {index === 1 ? <br /> : null}
+                        </span>
+                      );
+                    })}
+                  </h2>
 
+                  <p
+                    className="mt-6 max-w-xl text-base leading-relaxed text-white/85 md:text-lg lg:text-xl"
+                    style={{
+                      opacity: Math.max(0, 1 - Math.max(0, Math.min(1, (scrollProgress - 0.1) / 0.12))),
+                      filter: `blur(${Math.max(0, Math.min(1, (scrollProgress - 0.1) / 0.12)) * 10}px)`,
+                      transition: "opacity 0.1s linear, filter 0.1s linear",
+                    }}
+                  >
+                    Sensores inteligentes, materiais aeroespaciais e autonomia térmica integrados para enfrentar os ambientes mais extremos com total precisão.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right Column */}
+              <div 
+                className="flex flex-col will-change-transform"
+                style={{
+                  width: `${sideWidth}%`,
+                  gap: `${gap}px`,
+                  transform: `translateX(${sideTranslateRight}%)`,
+                  opacity: sideOpacity,
+                }}
+              >
+                {sideImages.filter(img => img.position === "right").map((img, idx) => (
+                  <div 
+                    key={idx} 
+                    className="relative overflow-hidden will-change-transform"
+                    style={{
+                      flex: img.span,
+                      borderRadius: `${borderRadius}px`,
+                    }}
+                  >
+                    <Image
+                      src={img.src || "/placeholder.svg"}
+                      alt={img.alt}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+
+            </div>
           </div>
         </div>
+
+        {/* Scroll space to complete the Bento card animation */}
+        <div className="h-[120vh]" />
       </div>
 
-      {/* Scroll space to enable animation on desktop only */}
-      <div className="hidden h-[200vh] md:block" />
-
-      {/* Description Section (Sobre nós) with Scroll Reveal on desktop and static on mobile */}
+      {/* Description Section (Sobre nós) — directly below the cards without climbing over them */}
       <div 
         id="sobre-nos"
         ref={textSectionRef}
-        className="relative overflow-hidden bg-background px-6 py-14 md:px-12 md:py-32 lg:px-20 lg:py-40"
+        className="relative z-10 bg-background px-6 pt-5 pb-12 md:px-12 md:pt-6 md:pb-16 lg:px-20 lg:pt-8 lg:pb-20"
       >
-        {/* Text Content */}
-        <div className="relative z-10 mx-auto max-w-4xl">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground md:mb-6 md:text-sm">
+        <div className="mx-auto max-w-4xl">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-foreground md:mb-4 md:text-base">
             Sobre nós
           </p>
           <ScrollRevealText text={descriptionText} />
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-foreground/80 sm:text-lg md:mt-6 md:text-xl">
+            Na HAGRIA Labs, unimos design minimalista, engenharia de materiais aeroespaciais e testes rigorosos em campo para criar equipamentos duráveis que acompanham você em qualquer clima, altitude ou território.
+          </p>
         </div>
       </div>
     </section>

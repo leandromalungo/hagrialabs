@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -92,25 +92,25 @@ export function Header() {
             href="#products"
             className={`text-sm transition-colors ${isScrolled ? "text-muted-foreground hover:text-foreground" : "text-white/70 hover:text-white"}`}
           >
-            Produtos
+            Serviço
           </Link>
           <Link
             href="#technology"
             className={`text-sm transition-colors ${isScrolled ? "text-muted-foreground hover:text-foreground" : "text-white/70 hover:text-white"}`}
           >
-            Tecnologia
+            Produto
           </Link>
           <Link
-            href="#gallery"
+            href="#footer"
             className={`text-sm transition-colors ${isScrolled ? "text-muted-foreground hover:text-foreground" : "text-white/70 hover:text-white"}`}
           >
-            Galeria
+            Contactos
           </Link>
           <Link
-            href="#accessories"
+            href="#sobre-nos"
             className={`text-sm transition-colors ${isScrolled ? "text-muted-foreground hover:text-foreground" : "text-white/70 hover:text-white"}`}
           >
-            Acessórios
+            Sobre nós
           </Link>
         </nav>
 
@@ -124,19 +124,36 @@ export function Header() {
                 : "bg-white text-foreground hover:bg-white/90"
             }`}
           >
-            <span>Comprar produto</span>
+            <span>Agendar Consultoria</span>
             <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - Formato Escada (estilo ChatGPT) */}
         <button
           type="button"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className={`p-1.5 transition-colors md:hidden ${isScrolled || isMenuOpen ? "text-foreground" : "text-white"}`}
+          className={`flex h-9 w-9 flex-col items-end justify-center gap-[5px] p-1.5 transition-colors md:hidden ${
+            isScrolled || isMenuOpen ? "text-foreground" : "text-white"
+          }`}
           aria-label="Alternar menu"
+          aria-expanded={isMenuOpen}
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          <span
+            className={`block h-[2px] rounded-full bg-current transition-all duration-300 ease-out ${
+              isMenuOpen ? "w-5 translate-y-[7px] rotate-45" : "w-5"
+            }`}
+          />
+          <span
+            className={`block h-[2px] rounded-full bg-current transition-all duration-300 ease-out ${
+              isMenuOpen ? "w-0 opacity-0" : "w-3.5"
+            }`}
+          />
+          <span
+            className={`block h-[2px] rounded-full bg-current transition-all duration-300 ease-out ${
+              isMenuOpen ? "w-5 -translate-y-[7px] -rotate-45" : "w-2"
+            }`}
+          />
         </button>
       </div>
 
@@ -149,35 +166,35 @@ export function Header() {
               className="text-lg text-foreground"
               onClick={() => setIsMenuOpen(false)}
             >
-              Produtos
+              Serviço
             </Link>
             <Link
               href="#technology"
               className="text-lg text-foreground"
               onClick={() => setIsMenuOpen(false)}
             >
-              Tecnologia
+              Produto
             </Link>
             <Link
-              href="#gallery"
+              href="#footer"
               className="text-lg text-foreground"
               onClick={() => setIsMenuOpen(false)}
             >
-              Galeria
+              Contactos
             </Link>
             <Link
-              href="#accessories"
+              href="#sobre-nos"
               className="text-lg text-foreground"
               onClick={() => setIsMenuOpen(false)}
             >
-              Acessórios
+              Sobre nós
             </Link>
             <Link
               href="#reserve"
               className="group mt-4 inline-flex items-center justify-center gap-1.5 bg-foreground px-5 py-3 text-center text-sm font-medium text-background rounded-full"
               onClick={() => setIsMenuOpen(false)}
             >
-              <span>Comprar produto</span>
+              <span>Agendar Consultoria</span>
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
           </nav>
