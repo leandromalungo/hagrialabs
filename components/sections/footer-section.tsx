@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 
@@ -68,17 +69,14 @@ export function FooterSection() {
           <Link
             href="/"
             aria-label="HAGRIA Labs"
-            className="group relative block h-28 w-28 select-none md:h-36 md:w-36"
+            className="group relative block select-none"
           >
-            {/* Single diagonal stroke (top-right to bottom-left) */}
-            <span
-              className="absolute top-0 left-1/2 h-full w-[11px] -translate-x-1/2 bg-[#1f1f1f] transition-colors duration-300 group-hover:bg-[#2a2a2a] md:w-[13px]"
-              style={{ transform: "skewX(-35deg)" }}
-            />
-            {/* Hollow double-line diagonal stroke (top-left to bottom-right) */}
-            <span
-              className="absolute top-0 left-1/2 h-full w-[34px] -translate-x-1/2 border-[9px] border-[#1f1f1f] bg-[#070707] transition-colors duration-300 group-hover:border-[#2a2a2a] md:w-[44px] md:border-[11px]"
-              style={{ transform: "skewX(35deg)" }}
+            <Image
+              src="/logo-gray.png"
+              alt="HAGRIA Labs"
+              width={200}
+              height={200}
+              className="h-28 w-28 object-contain opacity-90 transition-opacity duration-300 group-hover:opacity-100 md:h-36 md:w-36"
             />
           </Link>
         </div>
