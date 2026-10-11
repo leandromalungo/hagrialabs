@@ -6,33 +6,52 @@ import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 
 const footerLinks = {
   laboratory: [
-    { label: "Início", href: "#" },
-    { label: "Sobre nós", href: "#sobre-nos" },
-    { label: "Missão e Visão", href: "#products" },
-    { label: "Como trabalhamos", href: "#como-trabalhamos" },
+    { label: "Início", href: "/", targetId: "top" },
+    { label: "Sobre nós", href: "/#sobre-nos", targetId: "sobre-nos" },
+    { label: "Missão e Visão", href: "/#products", targetId: "products" },
+    { label: "Como trabalhamos", href: "/#como-trabalhamos", targetId: "como-trabalhamos" },
   ],
   areas: [
-    { label: "Áreas tecnológicas", href: "#technology" },
-    { label: "Projectos e Investigação", href: "#gallery" },
-    { label: "Colaboração", href: "#accessories" },
-    { label: "Oportunidades", href: "#accessories" },
+    { label: "Serviços e Áreas", href: "/#servicos", targetId: "servicos" },
+    { label: "Projectos e Produtos", href: "/projectos" },
+    { label: "Colaboração", href: "/agendar-consultoria" },
+    { label: "Oportunidades", href: "/contactos" },
   ],
   institutional: [
-    { label: "Contacto", href: "#about" },
-    { label: "Propor uma colaboração", href: "#about" },
-    { label: "Política de Privacidade", href: "#footer" },
-    { label: "Termos de Utilização", href: "#footer" },
+    { label: "Contactos", href: "/contactos" },
+    { label: "Agendar Consultoria", href: "/agendar-consultoria" },
+    { label: "Política de Privacidade", href: "/legal#privacidade" },
+    { label: "Termos de Utilização", href: "/legal#termos" },
   ],
 };
 
 const socialLinks = [
-  { label: "Facebook", href: "#", icon: Facebook },
-  { label: "Instagram", href: "#", icon: Instagram },
-  { label: "LinkedIn", href: "#", icon: Linkedin },
-  { label: "YouTube", href: "#", icon: Youtube },
+  { label: "Facebook", href: "https://www.facebook.com", icon: Facebook },
+  { label: "Instagram", href: "https://www.instagram.com", icon: Instagram },
+  { label: "LinkedIn", href: "https://www.linkedin.com", icon: Linkedin },
+  { label: "YouTube", href: "https://www.youtube.com", icon: Youtube },
 ];
 
 export function FooterSection() {
+  const handleAnchorClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId?: string
+  ) => {
+    if (!targetId || typeof window === "undefined") return;
+    if (window.location.pathname === "/") {
+      if (targetId === "top") {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+      const el = document.getElementById(targetId);
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  };
+
   return (
     <footer id="footer" className="relative overflow-hidden bg-[#070707] text-white">
       {/* Bottom Center Atmospheric Bloom Effect */}
@@ -69,6 +88,7 @@ export function FooterSection() {
         <div className="mb-16 flex flex-col items-center text-center md:mb-20">
           <Link
             href="/"
+            onClick={(e) => handleAnchorClick(e, "top")}
             aria-label="HAGRIA Labs"
             className="group relative block select-none"
           >
@@ -97,6 +117,7 @@ export function FooterSection() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
+                    onClick={(e) => handleAnchorClick(e, link.targetId)}
                     className="text-sm font-normal text-[#e5e5e5] transition-colors hover:text-white"
                   >
                     {link.label}
@@ -116,6 +137,7 @@ export function FooterSection() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
+                    onClick={(e) => handleAnchorClick(e, link.targetId)}
                     className="text-sm font-normal text-[#e5e5e5] transition-colors hover:text-white"
                   >
                     {link.label}
@@ -151,14 +173,16 @@ export function FooterSection() {
             {socialLinks.map((social) => {
               const Icon = social.icon;
               return (
-                <Link
+                <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-[#a3a3a3] transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:text-white"
                 >
                   <Icon className="h-4 w-4" />
-                </Link>
+                </a>
               );
             })}
           </div>

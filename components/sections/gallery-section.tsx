@@ -15,24 +15,24 @@ export function GallerySection() {
   const images = [
     {
       src: "/images/bottle-bike.png",
-      alt: "Plataformas e aplicações digitais em desenvolvimento no Hagriia Labs",
-      title: "Plataformas e Aplicações Digitais",
+      alt: "AGRI-IA — Aplicação de auxílio ao agricultor para agricultura de precisão",
+      title: "AGRI-IA",
       description:
-        "Estado: Em desenvolvimento — Arquitectura e construção de software orientado para resolver desafios operacionais concretos.",
+        "Aplicação inteligente para auxílio de agricultores na agricultura de precisão, monitorização de culturas e apoio técnico no campo.",
     },
     {
       src: "/images/bottle-lake.png",
-      alt: "Sistemas inteligentes e automação em experimentação",
-      title: "Sistemas Inteligentes e Automação",
+      alt: "RespondeEmail — Automação de recrutamento para Recursos Humanos",
+      title: "RespondeEmail",
       description:
-        "Estado: Em experimentação — Exploração de modelos de inteligência artificial e automação de fluxos de trabalho para apoio à decisão.",
+        "Serviço de automação de recrutamento para equipas de Recursos Humanos com triagem inteligente e resposta automática a candidaturas.",
     },
     {
       src: "/images/bottle-water.png",
-      alt: "Análise de dados e modelação computacional",
-      title: "Análise e Modelação de Dados",
+      alt: "Serviço de atendimento com SMS, texto e voz para empresas",
+      title: "Atendimento com SMS, Texto e Voz",
       description:
-        "Estado: Em investigação — Estruturação de dados e ferramentas analíticas para compreender problemas complexos com base em evidências.",
+        "Plataforma multicanal de atendimento automatizado por SMS, mensagens de texto e voz para comunicação contínua entre empresas e clientes.",
     },
     {
       src: "/images/bottle-stream.png",
@@ -171,7 +171,7 @@ export function GallerySection() {
                 </div>
 
                 <Link
-                  href="#accessories"
+                  href="/projectos"
                   aria-label={`Ver detalhes de ${image.title}`}
                   className="group/btn flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/40 bg-black text-white transition-all duration-300 hover:border-white hover:bg-white hover:text-black active:bg-white active:text-black"
                 >
@@ -236,7 +236,7 @@ export function GallerySection() {
                     </div>
 
                     <Link
-                      href="#accessories"
+                      href="/projectos"
                       aria-label={`Ver detalhes de ${image.title}`}
                       className="group/btn flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/40 bg-black text-white transition-all duration-300 hover:border-white hover:bg-white hover:text-black"
                     >

@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { FadeImage } from "@/components/fade-image";
 
 const features = [
@@ -49,11 +51,11 @@ const features = [
 
 export function FeaturedProductsSection() {
   return (
-    <section id="technology" className="bg-background">
+    <section id="servicos" className="scroll-mt-20 bg-background">
       {/* Section Title */}
       <div className="px-6 py-12 text-center md:px-12 md:py-28 lg:px-20 lg:py-32 lg:pb-20">
         <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground md:mb-4">
-          Áreas de Actuação
+          Serviços e Áreas de Actuação
         </p>
         <h2 className="text-2xl font-medium tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl">
           Engenharia de Software,
@@ -61,7 +63,7 @@ export function FeaturedProductsSection() {
           Investigação e Exploração.
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:mt-6 md:text-base">
-          Desenvolvimento interno, investigação aplicada e linhas de exploração progressiva orientadas para desafios reais.
+          Desenvolvimento de soluções tecnológicas, sistemas inteligentes e linhas de investigação aplicada orientadas para desafios reais.
         </p>
       </div>
 

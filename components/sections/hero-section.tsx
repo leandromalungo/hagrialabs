@@ -254,7 +254,7 @@ export function HeroSection() {
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
-              href="#gallery"
+              href="/projectos"
               className="group inline-flex items-center gap-1.5 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-all hover:opacity-85"
             >
               <span>Explorar projectos</span>
@@ -262,6 +262,31 @@ export function HeroSection() {
             </Link>
             <Link
               href="#sobre-nos"
+              onClick={(e) => {
+                const targetEl = document.getElementById("sobre-nos");
+                if (targetEl) {
+                  e.preventDefault();
+                  const startY = window.scrollY;
+                  const targetY =
+                    targetEl.getBoundingClientRect().top + window.scrollY - 72;
+                  const distance = targetY - startY;
+                  const duration = 950;
+                  let startTime: number | null = null;
+                  const easeInOutCubic = (t: number) =>
+                    t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+                  const step = (currentTime: number) => {
+                    if (startTime === null) startTime = currentTime;
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    window.scrollTo(
+                      0,
+                      startY + distance * easeInOutCubic(progress)
+                    );
+                    if (progress < 1) requestAnimationFrame(step);
+                  };
+                  requestAnimationFrame(step);
+                }
+              }}
               className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
             >
               <span>Conhecer o laboratório</span>

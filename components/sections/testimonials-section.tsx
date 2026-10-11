@@ -21,7 +21,7 @@ export function TestimonialsSection() {
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4 md:mt-10">
             <Link
-              href="/agendar-consultoria"
+              href="/contactos"
               className="group inline-flex items-center gap-1.5 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all hover:opacity-85"
             >
               <span>Entrar em contacto</span>

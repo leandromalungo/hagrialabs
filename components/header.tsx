@@ -36,6 +36,48 @@ export function Header({ forceSolid = false }: { forceSolid?: boolean }) {
 
   const hasWhiteBg = forceSolid || isScrolled || isMenuOpen;
 
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string
+  ) => {
+    setIsMenuOpen(false);
+    if (typeof window === "undefined") return;
+
+    if (window.location.pathname === "/") {
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        const headerOffset = 72;
+        const startY = window.scrollY;
+        const targetY =
+          targetEl.getBoundingClientRect().top + window.scrollY - headerOffset;
+        const distance = targetY - startY;
+        const duration = 950;
+        let startTime: number | null = null;
+
+        const easeInOutCubic = (t: number) =>
+          t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+        const step = (currentTime: number) => {
+          if (startTime === null) startTime = currentTime;
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = easeInOutCubic(progress);
+
+          window.scrollTo(0, startY + distance * eased);
+
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            window.history.pushState(null, "", `/#${targetId}`);
+          }
+        };
+
+        requestAnimationFrame(step);
+      }
+    }
+  };
+
   return (
     <header 
       className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-3xl transition-all duration-300 ${
@@ -89,25 +131,27 @@ export function Header({ forceSolid = false }: { forceSolid?: boolean }) {
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-10 md:flex">
           <Link
-            href="/#products"
+            href="/#servicos"
+            onClick={(e) => handleSmoothScroll(e, "servicos")}
             className={`text-sm transition-colors ${hasWhiteBg ? "text-muted-foreground hover:text-foreground" : "text-white/70 hover:text-white"}`}
           >
             Serviço
           </Link>
           <Link
-            href="/#technology"
+            href="/projectos"
             className={`text-sm transition-colors ${hasWhiteBg ? "text-muted-foreground hover:text-foreground" : "text-white/70 hover:text-white"}`}
           >
             Produto
           </Link>
           <Link
-            href="/#footer"
+            href="/contactos"
             className={`text-sm transition-colors ${hasWhiteBg ? "text-muted-foreground hover:text-foreground" : "text-white/70 hover:text-white"}`}
           >
             Contactos
           </Link>
           <Link
             href="/#sobre-nos"
+            onClick={(e) => handleSmoothScroll(e, "sobre-nos")}
             className={`text-sm transition-colors ${hasWhiteBg ? "text-muted-foreground hover:text-foreground" : "text-white/70 hover:text-white"}`}
           >
             Sobre nós
@@ -162,21 +206,21 @@ export function Header({ forceSolid = false }: { forceSolid?: boolean }) {
         <div className="border-t border-border bg-background/95 px-6 py-6 md:hidden rounded-b-2xl">
           <nav className="flex flex-col gap-6">
             <Link
-              href="/#products"
+              href="/#servicos"
               className="text-lg text-foreground"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={(e) => handleSmoothScroll(e, "servicos")}
             >
               Serviço
             </Link>
             <Link
-              href="/#technology"
+              href="/projectos"
               className="text-lg text-foreground"
               onClick={() => setIsMenuOpen(false)}
             >
               Produto
             </Link>
             <Link
-              href="/#footer"
+              href="/contactos"
               className="text-lg text-foreground"
               onClick={() => setIsMenuOpen(false)}
             >
@@ -185,7 +229,7 @@ export function Header({ forceSolid = false }: { forceSolid?: boolean }) {
             <Link
               href="/#sobre-nos"
               className="text-lg text-foreground"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={(e) => handleSmoothScroll(e, "sobre-nos")}
             >
               Sobre nós
             </Link>
