@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { Plus } from "lucide-react";
 
 function ScrollRevealText({ text }: { text: string }) {
   const containerRef = useRef<HTMLParagraphElement>(null);
@@ -95,10 +96,44 @@ const sideImages = [
   },
 ];
 
+const faqItems = [
+  {
+    question: "O que é o Hagriia Labs e qual é o seu foco principal?",
+    answer:
+      "O Hagriia Labs é um laboratório de tecnologia e inovação dedicado à investigação aplicada, à experimentação tecnológica e ao desenvolvimento de software. O nosso foco consiste em identificar desafios concretos, explorar abordagens técnicas adequadas e construir soluções digitais e sistemas inteligentes com utilidade prática.",
+  },
+  {
+    question: "Que tipo de soluções e projectos o laboratório desenvolve?",
+    answer:
+      "Desenvolvemos plataformas digitais, aplicações web e móveis, ferramentas de automação e sistemas baseados em inteligência artificial. Entre os projectos actuais destacam-se a AGRI-IA (aplicação de auxílio à agricultura de precisão), o RespondeEmail (automação de triagem e recrutamento para equipas de Recursos Humanos) e o serviço omnicanal de atendimento empresarial via SMS, texto e voz.",
+  },
+  {
+    question: "O Hagriia Labs desenvolve software à medida para empresas e instituições?",
+    answer:
+      "Sim. Além dos projectos próprios de investigação e produto, colaboramos com empresas, instituições e organizações na arquitectura, desenvolvimento e validação técnica de soluções tecnológicas ajustadas às suas necessidades operacionais.",
+  },
+  {
+    question: "Como funciona a metodologia de trabalho do laboratório?",
+    answer:
+      "Actuamos em quatro fases estruturadas: identificação rigorosa do problema e do seu contexto; exploração e investigação de alternativas tecnológicas; desenvolvimento de protótipos ou sistemas funcionais; e validação contínua com base em testes no terreno e métricas reais.",
+  },
+  {
+    question: "Quem pode colaborar ou estabelecer parcerias com o Hagriia Labs?",
+    answer:
+      "Estamos abertos à colaboração com programadores, engenheiros, investigadores, estudantes, universidades, centros de investigação, empreendedores e empresas que procurem desenvolver projectos conjuntos, validar tecnologias ou resolver desafios complexos.",
+  },
+  {
+    question: "Como posso apresentar uma proposta ou agendar uma consultoria?",
+    answer:
+      "Pode utilizar o botão «Agendar Consultoria» no topo da página para preencher o formulário detalhado da sua proposta ou aceder à página de Contactos para falar connosco directamente por correio electrónico, telefone ou WhatsApp.",
+  },
+];
+
 export function TechnologySection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const textSectionRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   
   const descriptionText = "O Hagriia Labs explora a intersecção entre tecnologia, investigação e resolução de problemas. O seu trabalho parte da identificação de desafios, da experimentação de ideias e do desenvolvimento de soluções que possam ser testadas e aperfeiçoadas no mundo real.";
 
@@ -319,7 +354,7 @@ export function TechnologySection() {
       <div 
         id="sobre-nos"
         ref={textSectionRef}
-        className="relative z-10 bg-background px-6 pt-5 pb-12 md:px-12 md:pt-6 md:pb-16 lg:px-20 lg:pt-8 lg:pb-20"
+        className="relative z-10 bg-background px-6 pt-5 pb-14 md:px-12 md:pt-6 md:pb-20 lg:px-20 lg:pt-8 lg:pb-24"
       >
         <div className="mx-auto max-w-4xl">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-foreground md:mb-4 md:text-base">
@@ -329,6 +364,57 @@ export function TechnologySection() {
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-foreground/80 sm:text-lg md:mt-6 md:text-xl">
             Através de uma abordagem multidisciplinar, o laboratório procura aproximar o desenvolvimento tecnológico das necessidades concretas da sociedade, criando condições para explorar novas ideias, desenvolver projectos e estabelecer colaborações.
           </p>
+
+          {/* FAQ — Perguntas Frequentes */}
+          <div id="faq" className="mt-14 border-t border-border pt-12 md:mt-20 md:pt-16">
+            <div className="mb-8 md:mb-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                FAQ · Perguntas Frequentes
+              </p>
+              <h3 className="mt-2 text-2xl font-medium tracking-tight text-foreground sm:text-3xl">
+                Questões essenciais sobre o Hagriia Labs
+              </h3>
+            </div>
+
+            <div className="divide-y divide-border border-y border-border">
+              {faqItems.map((item, idx) => {
+                const isOpen = openFaqIndex === idx;
+                return (
+                  <div key={idx} className="py-5 md:py-6">
+                    <button
+                      type="button"
+                      onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
+                      aria-expanded={isOpen}
+                      className="flex w-full items-start justify-between gap-6 text-left transition-colors hover:text-foreground/80"
+                    >
+                      <span className="text-base font-medium leading-snug text-foreground sm:text-lg md:text-xl">
+                        {item.question}
+                      </span>
+                      <span
+                        className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-border text-foreground transition-transform duration-300 ${
+                          isOpen ? "rotate-45 bg-foreground text-background" : "bg-transparent"
+                        }`}
+                      >
+                        <Plus className="h-4 w-4" />
+                      </span>
+                    </button>
+
+                    <div
+                      className={`grid transition-all duration-300 ease-out ${
+                        isOpen ? "mt-4 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <p className="max-w-3xl pb-1 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                          {item.answer}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </section>
