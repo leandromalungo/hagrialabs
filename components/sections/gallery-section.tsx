@@ -22,10 +22,17 @@ export function GallerySection() {
     },
     {
       src: "/images/bottle-lake.png",
-      alt: "RespondeEmail — Automação de recrutamento para Recursos Humanos",
-      title: "RespondeEmail",
+      alt: "Testes de segurança, análise de vulnerabilidades e protecção de sistemas",
+      title: "Testes de Segurança e Auditoria",
       description:
-        "Serviço de automação de recrutamento para equipas de Recursos Humanos com triagem inteligente e resposta automática a candidaturas.",
+        "Avaliação rigorosa de vulnerabilidades, testes de intrusão e auditoria de segurança para proteger aplicações, dados e infra-estruturas digitais.",
+    },
+    {
+      src: "/images/bottle-stream.png",
+      alt: "Testes de UI, usabilidade e lançamento de aplicações com a comunidade real",
+      title: "Testes e Lançamento de Aplicações",
+      description:
+        "Testes práticos de interface (UI/UX), desempenho e validação funcional com a comunidade real para garantir lançamentos sólidos no mercado.",
     },
     {
       src: "/images/bottle-water.png",
@@ -33,27 +40,6 @@ export function GallerySection() {
       title: "Atendimento com SMS, Texto e Voz",
       description:
         "Plataforma multicanal de atendimento automatizado por SMS, mensagens de texto e voz para comunicação contínua entre empresas e clientes.",
-    },
-    {
-      src: "/images/bottle-stream.png",
-      alt: "Prototipagem e validação técnica de soluções",
-      title: "Protótipos de Investigação Aplicada",
-      description:
-        "Estado: Protótipo — Desenvolvimento e validação técnica de conceitos experimentais antes da sua implementação em cenários reais.",
-    },
-    {
-      src: "/images/bottle-fire.png",
-      alt: "Ferramentas internas e utilitários de engenharia",
-      title: "Ferramentas de Engenharia de Software",
-      description:
-        "Estado: Em desenvolvimento — Criação de componentes reutilizáveis, serviços modulares e ferramentas técnicas de apoio ao desenvolvimento.",
-    },
-    {
-      src: "/images/bottle-snow.png",
-      alt: "Exploração de tecnologias emergentes",
-      title: "Laboratório de Tecnologias Emergentes",
-      description:
-        "Estado: Em investigação — Estudo progressivo de novas abordagens computacionais e avaliação da sua aplicabilidade prática.",
     },
     {
       src: "/images/bottle-mountain.png",
