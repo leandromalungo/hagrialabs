@@ -22,10 +22,10 @@ export function GallerySection() {
     },
      {
       src: "/images/bottle-water.png",
-      alt: "Serviço de atendimento com SMS, texto e voz para empresas",
-      title: "Atendimento com SMS, Texto e Voz",
+      alt: "Automação de processos empresariais e optimização de fluxos de trabalho",
+      title: "Automação de Processos",
       description:
-        "Plataforma multicanal de atendimento automatizado por SMS, mensagens de texto e voz para comunicação contínua entre empresas e clientes.",
+        "Soluções automatizadas para otimizar e melhorar a eficiência dos processos empresariais.",
     },
     {
       src: "/images/bottle-canyon.png",
