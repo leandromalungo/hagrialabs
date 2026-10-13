@@ -22,13 +22,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'Hagriia Labs',
-    title: 'Hagriia Labs | Laboratório de Tecnologia e Inovação',
+    title: 'Hagriia Labs',
     description:
       'Laboratório de tecnologia e inovação dedicado à investigação aplicada, ao desenvolvimento de software e à exploração de soluções inteligentes para desafios reais.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hagriia Labs | Laboratório de Tecnologia e Inovação',
+    title: 'Hagriia Labs',
     description:
       'Laboratório de tecnologia e inovação dedicado à investigação aplicada, ao desenvolvimento de software e à exploração de soluções inteligentes para desafios reais.',
   },
