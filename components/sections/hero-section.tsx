@@ -9,25 +9,25 @@ const word = "INTELIGÊNCIA";
 
 const sideImages = [
   {
-    src: "https://images.unsplash.com/photo-1517824806704-9040b037703b?q=80&w=1000",
+    src: "hero1.jpg",
     alt: "Investigação tecnológica e exploração de novos horizontes",
     position: "left",
     span: 1,
   },
   {
-    src: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?q=80&w=1000",
+    src: "hero2.jpg",
     alt: "Observação e análise de dados em cenários reais",
     position: "left",
     span: 1,
   },
   {
-    src: "https://images.unsplash.com/photo-1533873984035-25970ab07461?q=80&w=1000",
+    src: "hero3.jpg",
     alt: "Experimentação aplicada e validação no terreno",
     position: "right",
     span: 1,
   },
   {
-    src: "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?q=80&w=1000",
+    src: "hero4.jpg",
     alt: "Ecossistema de desenvolvimento tecnológico multidisciplinar",
     position: "right",
     span: 1,

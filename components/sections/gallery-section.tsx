@@ -14,28 +14,28 @@ export function GallerySection() {
 
   const images = [
      {
-      src: "/images/bottle-mountain.png",
+      src: "/side1.jpg",
       alt: "Linha de exploração em observação da Terra e dados geoespaciais",
       title: "Observação da Terra e Dados Espaciais",
       description:
         "Linha de exploração tecnológica dedicada à análise de dados de satélite, inteligência artificial e aplicações terrestres.",
     },
      {
-      src: "/images/bottle-water.png",
+      src: "/side1.jpg",
       alt: "Automação de processos empresariais e optimização de fluxos de trabalho",
       title: "Automação de Processos",
       description:
         "Soluções automatizadas para otimizar e melhorar a eficiência dos processos empresariais.",
     },
     {
-      src: "/images/bottle-canyon.png",
+      src: "/side1.jpg",
       alt: "Projectos colaborativos e investigação multidisciplinar",
       title: "Projectos em Colaboração",
       description:
         "Iniciativas conjuntas com profissionais, investigadores e organizações para testar soluções no terreno.",
     },
     {
-      src: "/images/bottle-lake.png",
+      src: "/side1.jpg",
       alt: "Testes de segurança, análise de vulnerabilidades e protecção de sistemas",
       title: "Testes de Segurança e Auditoria",
       description:
@@ -190,7 +190,7 @@ export function GallerySection() {
                     src={image.src || "/placeholder.svg"}
                     alt={image.alt}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover"
                     priority={index < 3}
                   />
                   {/* Card Overlay */}

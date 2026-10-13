@@ -10,42 +10,42 @@ const features = [
     category: "Actividade Principal",
     description:
       "Criação de aplicações, plataformas digitais, serviços de software e ferramentas tecnológicas orientadas para necessidades concretas.",
-    image: "/images/d18fe616-5596-4559-90f5-a90f5397d0d8.png",
+    image: "/dev1.jpg",
   },
   {
     title: "Inteligência Artificial",
     category: "Sistemas Inteligentes",
     description:
       "Exploração e desenvolvimento de sistemas inteligentes, automação, análise de dados e aplicações de aprendizagem automática.",
-    image: "/images/e26fa9c3-966d-4966-94a4-954a1e511c1c.png",
+    image: "/dev1.jpg",
   },
   {
     title: "Investigação Aplicada",
     category: "Experimentação e Prototipagem",
     description:
       "Experimentação de ideias, avaliação de abordagens técnicas e desenvolvimento de protótipos para estudar a viabilidade de novas soluções.",
-    image: "/images/car.jpg",
+    image: "/dev1.jpg",
   },
   {
     title: "Dados e Sistemas Inteligentes",
     category: "Análise e Modelação",
     description:
       "Utilização de dados, modelos computacionais e ferramentas analíticas para compreender problemas e apoiar decisões.",
-    image: "/images/204cee22-9e85-49e8-9303-1d309af626b0.png",
+    image: "/dev1.jpg",
   },
   {
     title: "Tecnologias Emergentes",
     category: "Exploração Progressiva",
     description:
       "Exploração progressiva de novas áreas tecnológicas, através de investigação, aprendizagem, experimentação e colaboração com especialistas.",
-    image: "/images/led-flashlight-bottle.png",
+    image: "/dev1.jpg",
   },
   {
     title: "Observação da Terra e Dados Espaciais",
     category: "Linha de Exploração Futura",
     description:
       "Linha de exploração tecnológica relacionada com observação da Terra, dados de satélite, inteligência artificial e aplicações terrestres.",
-    image: "/images/heating-campfire.png",
+    image: "/dev1.jpg",
   },
 ];
 
@@ -77,7 +77,7 @@ export function FeaturedProductsSection() {
                 src={feature.image || "/placeholder.svg"}
                 alt={feature.title}
                 fill
-                className="object-cover md:transition-transform md:duration-500 md:group-hover:scale-105"
+                className="object-cover"
               />
             </div>
 

@@ -71,25 +71,25 @@ function ScrollRevealText({ text }: { text: string }) {
 
 const sideImages = [
   {
-    src: "https://images.unsplash.com/photo-1476610182048-b716b8518aae?q=80&w=1000",
+    src: "hero1.jpg",
     alt: "Trilha na floresta",
     position: "left",
     span: 1,
   },
   {
-    src: "https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?q=80&w=1000",
+    src: "side2.jpg",
     alt: "Pico da montanha",
     position: "left",
     span: 1,
   },
   {
-    src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1000",
+    src: "side3.jpg",
     alt: "Paisagem alpina",
     position: "right",
     span: 1,
   },
   {
-    src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1000",
+    src: "side4.jpg",
     alt: "Montanha nevada",
     position: "right",
     span: 1,
@@ -176,7 +176,7 @@ export function TechnologySection() {
       <div className="px-4 pt-8 pb-2 md:hidden">
         <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl sm:aspect-[16/10]">
           <Image
-            src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=2000"
+            src="/home2.jpg"
             alt="Hagriia Labs — Investigação aplicada e exploração tecnológica"
             fill
             className="object-cover"
@@ -261,7 +261,7 @@ export function TechnologySection() {
                 }}
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=2000"
+                  src="/home2.jpg"
                   alt="Hagriia Labs — Investigação aplicada e exploração tecnológica"
                   fill
                   className="object-cover"

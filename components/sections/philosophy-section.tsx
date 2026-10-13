@@ -138,7 +138,7 @@ export function PhilosophySection() {
         <div className="grid grid-cols-1 gap-4">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
             <Image
-              src="/images/product-backpack.png"
+              src="/ms1.jpg"
               alt="Missão do Hagriia Labs — Investigação e desenvolvimento tecnológico"
               fill
               className="object-cover"
@@ -152,7 +152,7 @@ export function PhilosophySection() {
 
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
             <Image
-              src="/images/02cdc426-dff4-4dff-b131-1b134c3699b5.png"
+              src="/ms2.jpg"
               alt="Visão do Hagriia Labs — Ecossistema de desenvolvimento tecnológico"
               fill
               className="object-cover"
@@ -193,7 +193,7 @@ export function PhilosophySection() {
                 }}
               >
                 <Image
-                  src="/images/product-backpack.png"
+                  src="/ms1.jpg"
                   alt="Missão do Hagriia Labs — Investigação e desenvolvimento tecnológico"
                   fill
                   className="object-cover"
@@ -216,7 +216,7 @@ export function PhilosophySection() {
                 }}
               >
                 <Image
-                  src="/images/02cdc426-dff4-4dff-b131-1b134c3699b5.png"
+                  src="/ms2.jpg"
                   alt="Visão do Hagriia Labs — Ecossistema de desenvolvimento tecnológico"
                   fill
                   className="object-cover"
