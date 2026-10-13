@@ -3,6 +3,77 @@
 import Image from "next/image";
 import { useEffect, useRef, useState, useCallback } from "react";
 
+function TypingText({
+  children,
+  className,
+}: {
+  children: string;
+  className: string;
+}) {
+  const textRef = useRef<HTMLParagraphElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [visibleLength, setVisibleLength] = useState(0);
+
+  useEffect(() => {
+    const element = textRef.current;
+    if (!element) return;
+
+    if (!("IntersectionObserver" in window)) {
+      setIsVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 },
+    );
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setVisibleLength(children.length);
+      return;
+    }
+
+    const interval = window.setInterval(() => {
+      setVisibleLength((length) => {
+        if (length >= children.length) {
+          window.clearInterval(interval);
+          return length;
+        }
+        return length + 1;
+      });
+    }, 14);
+
+    return () => window.clearInterval(interval);
+  }, [children, isVisible]);
+
+  return (
+    <p
+      ref={textRef}
+      className={`relative ${className}`}
+      aria-label={children}
+    >
+      <span className="invisible" aria-hidden="true">
+        {children}
+      </span>
+      <span className="absolute inset-0" aria-hidden="true">
+        {children.slice(0, visibleLength)}
+      </span>
+    </p>
+  );
+}
+
 export function PhilosophySection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [alpineTranslateX, setAlpineTranslateX] = useState(-100);
@@ -59,10 +130,11 @@ export function PhilosophySection() {
   return (
     <section id="products" className="bg-background">
       {/* Mobile Static Grid (No scroll-jacking slide animations) */}
-      <div className="px-4 py-8 md:hidden">
+      <div className="px-4 py-2 md:hidden">
         <h2 className="mb-8 text-center text-3xl font-medium leading-tight tracking-tight text-foreground sm:text-4xl">
-          Missão e Visão Institucional.
+          COMO VEMOS AS COISAS?
         </h2>
+        <p></p>
         <div className="grid grid-cols-1 gap-4">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
             <Image
@@ -95,7 +167,7 @@ export function PhilosophySection() {
       </div>
 
       {/* Desktop Scroll-Animated Grid (md and up only) */}
-      <div ref={sectionRef} className="relative hidden md:block" style={{ height: "200vh" }}>
+      <div ref={sectionRef} className="relative hidden md:block" style={{ height: "125vh" }}>
         <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
           <div className="relative w-full">
             {/* Title - positioned behind the blocks */}
@@ -104,7 +176,7 @@ export function PhilosophySection() {
               style={{ opacity: titleOpacity }}
             >
               <h2 className="text-[10vw] font-medium leading-[0.95] tracking-tighter text-foreground md:text-[8.5vw] lg:text-[7vw] text-center px-6">
-                Missão e Visão Institucional.
+                 COMO VEMOS AS COISAS?
               </h2>
             </div>
 
@@ -161,23 +233,23 @@ export function PhilosophySection() {
       </div>
 
       {/* Mission & Vision Statements */}
-      <div className="px-6 py-12 md:px-12 md:py-28 lg:px-20 lg:py-36 lg:pb-14">
+      <div className="px-6 pt-0 pb-12 md:px-12 md:pt-2 md:pb-28 lg:px-20 lg:pt-4 lg:pb-14">
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-foreground">
               Missão
             </p>
-            <p className="mt-4 text-lg leading-relaxed text-muted-foreground sm:text-xl md:mt-6 md:text-2xl">
+            <TypingText className="mt-4 text-lg leading-relaxed text-muted-foreground sm:text-xl md:mt-6 md:text-2xl">
               Explorar, desenvolver e aplicar tecnologias que permitam resolver problemas concretos, transformar ideias em soluções funcionais e ampliar as possibilidades de utilização da ciência e da engenharia.
-            </p>
+            </TypingText>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-foreground">
               Visão
             </p>
-            <p className="mt-4 text-lg leading-relaxed text-muted-foreground sm:text-xl md:mt-6 md:text-2xl">
+            <TypingText className="mt-4 text-lg leading-relaxed text-muted-foreground sm:text-xl md:mt-6 md:text-2xl">
               Construir um ecossistema de desenvolvimento tecnológico capaz de aproximar talento, conhecimento e experimentação, contribuindo para a criação de soluções relevantes em Angola e noutros mercados.
-            </p>
+            </TypingText>
           </div>
         </div>
       </div>

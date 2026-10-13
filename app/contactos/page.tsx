@@ -120,7 +120,7 @@ export default function ContactosPage() {
                 Envie-nos um e-mail directo para questões gerais, propostas de parceria ou informações sobre os nossos projectos.
               </p>
               <p className="mt-4 font-mono text-sm font-medium text-foreground">
-                lmalungo@outlook.com
+                geral@hagrilabs.com
               </p>
             </div>
 
@@ -162,7 +162,8 @@ export default function ContactosPage() {
                 Agendar Consultoria
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Tem um projecto específico ou representa uma empresa ou instituição? Utilize o formulário completo de diagnóstico técnico.
+                Tem um projecto específico ou representa uma empresa ou instituição? Utilize o formulário completo de diagnóstico 
+                técnico.
               </p>
             </div>
 
@@ -171,7 +172,7 @@ export default function ContactosPage() {
                 href="/agendar-consultoria"
                 className="group inline-flex w-full items-center justify-between rounded-full bg-foreground px-5 py-2.5 text-xs font-medium text-background transition-all hover:opacity-85 sm:text-sm"
               >
-                <span>Ir para formulário de consultoria</span>
+                <span>Agendar consultoria</span>
                 <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
             </div>
@@ -229,7 +230,7 @@ export default function ContactosPage() {
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
                 Se preferir deixar apenas o seu nome, contacto e uma breve mensagem, preencha os três campos ao lado e enviaremos a sua nota directamente para{" "}
                 <span className="font-medium text-foreground">
-                  lmalungo@outlook.com
+                  geral@hagrialabs.com
                 </span>
                 .
               </p>

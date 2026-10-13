@@ -94,7 +94,8 @@ export function HeroSection() {
           <div className="pointer-events-none absolute inset-0 bg-black/20 bg-gradient-to-t from-black/65 via-black/20 to-black/10" />
           <div className="absolute inset-x-0 bottom-7 flex flex-col items-start justify-end overflow-hidden px-5">
             <p className="mb-3 max-w-md text-sm leading-relaxed text-white/85 sm:text-base">
-              O Hagriia Labs é um laboratório de tecnologia e inovação dedicado à investigação aplicada, ao desenvolvimento de software e à exploração de soluções inteligentes para desafios reais.
+              Somos um laboratório de tecnologia e inovação dedicado à investigação aplicada, 
+              ao desenvolvimento de software e à exploração de soluções  diversas para desafios reais que exigem:
             </p>
             <h1 className="w-full whitespace-nowrap text-[13.5vw] font-medium leading-[0.85] tracking-tighter text-white">
               {word}
@@ -185,7 +186,8 @@ export function HeroSection() {
                 style={{ opacity: textOpacity }}
               >
                 <p className="mb-4 max-w-2xl text-base leading-relaxed text-white/85 md:mb-6 md:text-lg lg:max-w-3xl lg:text-xl">
-                  O Hagriia Labs é um laboratório de tecnologia e inovação dedicado à investigação aplicada, ao desenvolvimento de software e à exploração de soluções inteligentes para desafios reais.
+                  Somos um laboratório de tecnologia e inovação dedicado à investigação aplicada, ao desenvolvimento de software e à 
+                  exploração de soluções diversas para desafios reais que exigem:
                 </p>
                 <h1 className="w-full whitespace-nowrap text-[13.5vw] font-medium leading-[0.85] tracking-tighter text-white">
                   {word.split("").map((letter, index) => (
@@ -242,7 +244,7 @@ export function HeroSection() {
       <div className="hidden h-[140vh] md:block" />
 
       {/* Institutional Value Proposition & CTAs Section — slides over the sticky Bento images with a solid white background */}
-      <div className="relative z-20 bg-white px-6 py-16 md:px-12 md:py-32 lg:px-20 lg:py-40">
+      <div className="relative z-20 bg-white px-6 py-16 md:px-12 md:py-2 lg:px-20 lg:py-32">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-2xl font-medium leading-relaxed text-foreground md:text-3xl lg:text-[2.5rem] lg:leading-snug">
             Tecnologia para explorar
@@ -255,41 +257,10 @@ export function HeroSection() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/projectos"
-              className="group inline-flex items-center gap-1.5 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-all hover:opacity-85"
+              className="group inline-flex items-center gap-1.5 rounded-full hover:border border-foreground bg-foreground hover:bg-white px-6 py-3 text-sm font-medium text-background hover:text-gray-950 transition-all hover:opacity-85"
             >
               <span>Explorar projectos</span>
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
-            <Link
-              href="#sobre-nos"
-              onClick={(e) => {
-                const targetEl = document.getElementById("sobre-nos");
-                if (targetEl) {
-                  e.preventDefault();
-                  const startY = window.scrollY;
-                  const targetY =
-                    targetEl.getBoundingClientRect().top + window.scrollY - 72;
-                  const distance = targetY - startY;
-                  const duration = 950;
-                  let startTime: number | null = null;
-                  const easeInOutCubic = (t: number) =>
-                    t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-                  const step = (currentTime: number) => {
-                    if (startTime === null) startTime = currentTime;
-                    const elapsed = currentTime - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
-                    window.scrollTo(
-                      0,
-                      startY + distance * easeInOutCubic(progress)
-                    );
-                    if (progress < 1) requestAnimationFrame(step);
-                  };
-                  requestAnimationFrame(step);
-                }
-              }}
-              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
-            >
-              <span>Conhecer o laboratório</span>
             </Link>
           </div>
         </div>

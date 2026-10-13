@@ -8,7 +8,7 @@ export function TestimonialsSection() {
   return (
     <section id="about" className="bg-background">
       {/* Contact & Collaboration Statement */}
-      <div className="px-6 py-14 md:px-12 md:py-28 lg:px-20 lg:py-36">
+      <div className="px-6 py-14 md:px-12 md:py-28 lg:px-20 lg:py-20">
         <div className="mx-auto max-w-5xl">
           <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground md:mb-6">
             Contacto e Colaboração

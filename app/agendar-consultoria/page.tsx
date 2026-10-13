@@ -236,9 +236,7 @@ export default function AgendarConsultoriaPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
               Consultoria Técnica e Investigação
             </p>
-            <h1 className="mt-3 text-3xl font-medium leading-tight tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-              Agendar Consultoria com o Hagriia Labs.
-            </h1>
+         
             <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
               Apresente o seu desafio tecnológico, proposta de investigação ou necessidade de desenvolvimento de software. A nossa equipa analisa cada pedido para estruturar uma abordagem técnica adequada ao seu contexto.
             </p>
@@ -293,7 +291,7 @@ export default function AgendarConsultoriaPage() {
                     href="mailto:lmalungo@outlook.com"
                     className="mt-0.5 block text-base font-medium text-foreground underline-offset-4 hover:underline"
                   >
-                    lmalungo@outlook.com
+                    geral@hagrilabs.com
                   </a>
                   <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
                     Todas as informações submetidas neste formulário são encaminhadas directamente para este endereço.
@@ -312,7 +310,7 @@ export default function AgendarConsultoriaPage() {
                     <CheckCircle2 className="h-6 w-6" />
                   </div>
 
-                  <h2 className="mt-5 text-2xl font-medium tracking-tight text-foreground sm:text-3xl">
+                  <h2 className="mt-5 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
                     Pedido preparado e encaminhado com sucesso.
                   </h2>
                   <p className="mt-3 text-base leading-relaxed text-muted-foreground">
@@ -740,13 +738,7 @@ export default function AgendarConsultoriaPage() {
 
                   {/* Submit Action */}
                   <div className="flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
-                    <p className="text-xs text-muted-foreground">
-                      Os dados serão enviados para{" "}
-                      <span className="font-medium text-foreground">
-                        lmalungo@outlook.com
-                      </span>
-                    </p>
-
+                   
                     <button
                       type="submit"
                       disabled={isSubmitting}
@@ -754,8 +746,8 @@ export default function AgendarConsultoriaPage() {
                     >
                       <span>
                         {isSubmitting
-                          ? "A enviar informações..."
-                          : "Enviar pedido de consultoria"}
+                          ? "Enviando..."
+                          : "Enviar"}
                       </span>
                       <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </button>

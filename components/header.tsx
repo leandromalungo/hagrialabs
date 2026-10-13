@@ -135,13 +135,13 @@ export function Header({ forceSolid = false }: { forceSolid?: boolean }) {
             onClick={(e) => handleSmoothScroll(e, "servicos")}
             className={`text-sm transition-colors ${hasWhiteBg ? "text-muted-foreground hover:text-foreground" : "text-white/70 hover:text-white"}`}
           >
-            Serviço
+            Serviços
           </Link>
           <Link
             href="/projectos"
             className={`text-sm transition-colors ${hasWhiteBg ? "text-muted-foreground hover:text-foreground" : "text-white/70 hover:text-white"}`}
           >
-            Produto
+            Produtos
           </Link>
           <Link
             href="/contactos"
@@ -210,14 +210,14 @@ export function Header({ forceSolid = false }: { forceSolid?: boolean }) {
               className="text-lg text-foreground"
               onClick={(e) => handleSmoothScroll(e, "servicos")}
             >
-              Serviço
+              Serviços
             </Link>
             <Link
               href="/projectos"
               className="text-lg text-foreground"
               onClick={() => setIsMenuOpen(false)}
             >
-              Produto
+              Produtos
             </Link>
             <Link
               href="/contactos"

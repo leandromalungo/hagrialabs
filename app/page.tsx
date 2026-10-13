@@ -18,8 +18,8 @@ export default function Home() {
       <FeaturedProductsSection />
       <TechnologySection />
       <GallerySection />
-      <CollectionSection />
       <EditorialSection />
+      <CollectionSection />
       <TestimonialsSection />
       <FooterSection />
     </main>

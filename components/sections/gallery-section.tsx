@@ -13,28 +13,14 @@ export function GallerySection() {
   const rafRef = useRef<number | null>(null);
 
   const images = [
-    {
-      src: "/images/bottle-bike.png",
-      alt: "AGRI-IA — Aplicação de auxílio ao agricultor para agricultura de precisão",
-      title: "AGRI-IA",
+     {
+      src: "/images/bottle-mountain.png",
+      alt: "Linha de exploração em observação da Terra e dados geoespaciais",
+      title: "Observação da Terra e Dados Espaciais",
       description:
-        "Aplicação inteligente para auxílio de agricultores na agricultura de precisão, monitorização de culturas e apoio técnico no campo.",
+        "Linha de exploração tecnológica dedicada à análise de dados de satélite, inteligência artificial e aplicações terrestres.",
     },
-    {
-      src: "/images/bottle-lake.png",
-      alt: "Testes de segurança, análise de vulnerabilidades e protecção de sistemas",
-      title: "Testes de Segurança e Auditoria",
-      description:
-        "Avaliação rigorosa de vulnerabilidades, testes de intrusão e auditoria de segurança para proteger aplicações, dados e infra-estruturas digitais.",
-    },
-    {
-      src: "/images/bottle-stream.png",
-      alt: "Testes de UI, usabilidade e lançamento de aplicações com a comunidade real",
-      title: "Testes e Lançamento de Aplicações",
-      description:
-        "Testes práticos de interface (UI/UX), desempenho e validação funcional com a comunidade real para garantir lançamentos sólidos no mercado.",
-    },
-    {
+     {
       src: "/images/bottle-water.png",
       alt: "Serviço de atendimento com SMS, texto e voz para empresas",
       title: "Atendimento com SMS, Texto e Voz",
@@ -42,19 +28,19 @@ export function GallerySection() {
         "Plataforma multicanal de atendimento automatizado por SMS, mensagens de texto e voz para comunicação contínua entre empresas e clientes.",
     },
     {
-      src: "/images/bottle-mountain.png",
-      alt: "Linha de exploração em observação da Terra e dados geoespaciais",
-      title: "Observação da Terra e Dados Espaciais",
-      description:
-        "Estado: Planeado — Linha de exploração tecnológica dedicada à análise de dados de satélite, inteligência artificial e aplicações terrestres.",
-    },
-    {
       src: "/images/bottle-canyon.png",
       alt: "Projectos colaborativos e investigação multidisciplinar",
-      title: "Projectos em Colaboração Aberta",
+      title: "Projectos em Colaboração",
       description:
-        "Estado: Em experimentação — Iniciativas conjuntas com profissionais, investigadores e organizações para testar soluções no terreno.",
+        "Iniciativas conjuntas com profissionais, investigadores e organizações para testar soluções no terreno.",
     },
+    {
+      src: "/images/bottle-lake.png",
+      alt: "Testes de segurança, análise de vulnerabilidades e protecção de sistemas",
+      title: "Testes de Segurança e Auditoria",
+      description:
+        "Avaliação rigorosa de vulnerabilidades, testes de intrusão e auditoria de segurança para proteger aplicações, dados e infra-estruturas digitais.",
+    }
   ];
 
   // Calculate section height based on content width (desktop only)
