@@ -34,10 +34,10 @@ export function CollectionSection() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-              Colaboração e Oportunidades
+              Actuação
             </p>
             <h2 className="mt-2 text-2xl font-medium tracking-tight text-foreground sm:text-3xl md:text-4xl">
-              Aberto à Colaboração Técnica e Científica
+              Nossos Clientes
             </h2>
           </div>
           <p className="max-w-md text-sm leading-relaxed text-muted-foreground">

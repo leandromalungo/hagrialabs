@@ -71,25 +71,25 @@ function ScrollRevealText({ text }: { text: string }) {
 
 const sideImages = [
   {
-    src: "side1.png",
+    src: "side6.jpg",
     alt: "Trilha na floresta",
     position: "left",
     span: 1,
   },
   {
-    src: "side2.jpg",
+    src: "side8.jpg",
     alt: "Pico da montanha",
     position: "left",
     span: 1,
   },
   {
-    src: "side3.jpg",
+    src: "side4.jpg",
     alt: "Paisagem alpina",
     position: "right",
     span: 1,
   },
   {
-    src: "side4.jpg",
+    src: "side7.jpg",
     alt: "Montanha nevada",
     position: "right",
     span: 1,
@@ -184,12 +184,13 @@ export function TechnologySection() {
           <div className="absolute inset-0 bg-foreground/40" />
           <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
             <h2 className="text-3xl font-medium leading-tight tracking-tight text-white sm:text-4xl">
-              Tecnologia Encontra
+              Desenvolvimento de Soluções 
               <br />
-              a Natureza.
+              que usam Dados Espaciais e Climaticos.
             </h2>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-white/85 sm:text-base">
-              Investigação aplicada, engenharia de software e experimentação tecnológica orientadas para transformar ideias em soluções concretas.
+              Investigação aplicada, engenharia de software e experimentação tecnológica orientadas para transformar 
+              ideias em soluções concretas.
             </p>
           </div>
         </div>
@@ -272,8 +273,8 @@ export function TechnologySection() {
                 <div 
                   className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
                 >
-                  <h2 className="max-w-3xl text-5xl font-medium leading-tight tracking-tight text-white md:text-5xl lg:text-7xl">
-                    {["Tecnologia", "Encontra", "a Natureza."].map((word, index) => {
+                  <h2 className="max-w-3xl text-5xl font-medium leading-tight tracking-tight text-white md:text-5xl lg:text-5xl">
+                    {["Desenvolvimento de Soluções ", "que usam Dados Espaciais e Climaticos."].map((word, index) => {
                       const wordFadeStart = index * 0.06;
                       const wordFadeEnd = wordFadeStart + 0.07;
                       const wordProgress = Math.max(0, Math.min(1, (scrollProgress - wordFadeStart) / (wordFadeEnd - wordFadeStart)));

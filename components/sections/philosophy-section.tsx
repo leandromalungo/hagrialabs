@@ -176,7 +176,7 @@ export function PhilosophySection() {
               style={{ opacity: titleOpacity }}
             >
               <h2 className="text-[10vw] font-medium leading-[0.95] tracking-tighter text-foreground md:text-[8.5vw] lg:text-[7vw] text-center px-6">
-                 COMO VEMOS AS COISAS?
+                 Nossa Visão & Missão 
               </h2>
             </div>
 
@@ -198,11 +198,6 @@ export function PhilosophySection() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute bottom-6 left-6">
-                  <span className="backdrop-blur-md px-4 py-2 text-sm font-medium rounded-full bg-[rgba(255,255,255,0.2)] text-white">
-                    Missão · Investigação e Engenharia
-                  </span>
-                </div>
               </div>
 
               {/* Right Image - comes from right */}
@@ -221,11 +216,6 @@ export function PhilosophySection() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute bottom-6 left-6">
-                  <span className="backdrop-blur-md px-4 py-2 text-sm font-medium rounded-full bg-[rgba(255,255,255,0.2)] text-white">
-                    Visão · Ecossistema Tecnológico
-                  </span>
-                </div>
               </div>
             </div>
           </div>

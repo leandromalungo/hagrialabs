@@ -6,8 +6,8 @@ import { FadeImage } from "@/components/fade-image";
 
 const features = [
   {
-    title: "Desenvolvimento de Software",
-    category: "Actividade Principal",
+    title: "Desenvolvimento de Softwares",
+    category: "Actividades",
     description:
       "Criação de aplicações, plataformas digitais, serviços de software e ferramentas tecnológicas orientadas para necessidades concretas.",
     image: "/dev1.jpg",
@@ -20,7 +20,7 @@ const features = [
     image: "/dev3.jpg",
   },
   {
-    title: "Consultoria",
+    title: "Consultoria & Testes",
     category: "Experimentação e Prototipagem",
     description:
       "Experimentação de ideias, avaliação de abordagens técnicas e desenvolvimento de protótipos para estudar a viabilidade de novas soluções.",
@@ -34,7 +34,7 @@ export function FeaturedProductsSection() {
       {/* Section Title */}
       <div className="px-6 py-12 text-center md:px-12 md:py-28 lg:px-20 lg:py-32 lg:pb-20">
         <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground md:mb-4">
-          Serviços e Áreas de Actuação
+          Nossos Serviços
         </p>
         <h2 className="text-2xl font-medium tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl">
           Engenharia de Software,

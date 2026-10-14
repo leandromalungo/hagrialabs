@@ -84,7 +84,7 @@ export function HeroSection() {
       <div className="md:hidden">
         <div className="relative h-[85vh] min-h-[500px] w-full overflow-hidden">
           <Image
-            src="/images/hero-main.png"
+            src="/hero-main.png"
             alt="Hagriia Labs — Laboratório de tecnologia e inovação"
             fill
             className="object-cover"
@@ -170,7 +170,7 @@ export function HeroSection() {
               }}
             >
               <Image
-                src="/images/hero-main.png"
+                src="/hero-main.png"
                 alt="Hagriia Labs — Laboratório de tecnologia e inovação"
                 fill
                 className="object-cover"

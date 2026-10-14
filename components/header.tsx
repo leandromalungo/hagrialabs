@@ -168,7 +168,7 @@ export function Header({ forceSolid = false }: { forceSolid?: boolean }) {
                 : "bg-white text-foreground hover:bg-white/90"
             }`}
           >
-            <span>Agendar Consultoria</span>
+            <span>Contactar</span>
             <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
@@ -238,7 +238,7 @@ export function Header({ forceSolid = false }: { forceSolid?: boolean }) {
               className="group mt-4 inline-flex items-center justify-center gap-1.5 bg-foreground px-5 py-3 text-center text-sm font-medium text-background rounded-full"
               onClick={() => setIsMenuOpen(false)}
             >
-              <span>Agendar Consultoria</span>
+              <span>Contactar</span>
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
           </nav>

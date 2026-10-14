@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const Analytics = () => null;
 
 export const metadata: Metadata = {
-  title: 'Hagriia Labs | Laboratório de Tecnologia e Inovação',
+  title: 'HAGRIA Labs',
   description:
     'O Hagriia Labs é um laboratório de tecnologia e inovação dedicado à investigação aplicada, ao desenvolvimento de software e à criação de soluções tecnológicas para desafios reais.',
   keywords: [

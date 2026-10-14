@@ -132,7 +132,7 @@ export default function ProjectosPage() {
     <main className="min-h-screen bg-background text-foreground">
       <Header forceSolid />
 
-      <section className="mx-auto max-w-6xl px-4 pt-28 pb-20 sm:px-6 md:px-12 md:pt-36 md:pb-28 lg:px-16">
+      <section className="mx-auto max-w-6xl px-4 pt-20 pb-20 sm:px-6 md:px-12 md:pt-36 md:pb-28 lg:px-16">
         {/* Back Link */}
         <div className="mb-8">
           <Link
@@ -146,14 +146,13 @@ export default function ProjectosPage() {
 
         {/* Page Header */}
         <div className="max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-            Produtos e Projectos · Hagriia Labs
-          </p>
-          <h1 className="mt-3 text-3xl font-medium leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl">
+          <h1 className="text-2xl font-medium leading-tight tracking-tight text-foreground sm:text-4xl md:text-3xl">
             Soluções desenvolvidas para desafios reais.
           </h1>
-          <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-            Conheça os produtos e projectos criados pelo Hagriia Labs, organizados por área de aplicação. Cada solução parte de necessidades concretas identificadas no terreno e combina engenharia de software com inteligência artificial.
+          <p className="mt-3 text-base leading-relaxed text-muted-foreground md:text-lg">
+            Conheça os produtos e projectos criados pelo Hagriia Labs, organizados por área de aplicação. 
+            Cada solução parte de necessidades concretas identificadas no terreno e combina engenharia de 
+            software com inteligência artificial.
           </p>
         </div>
 
@@ -183,7 +182,7 @@ export default function ProjectosPage() {
           {filteredProjects.map((project) => (
             <article
               key={project.id}
-              className="group flex flex-col overflow-hidden rounded-3xl border border-border bg-white shadow-sm transition-all duration-300 hover:shadow-md"
+              className="group flex flex-col overflow-hidden rounded border border-border bg-white shadow-sm transition-all duration-300 hover:shadow-md"
             >
               {/* Card Image */}
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
@@ -191,7 +190,7 @@ export default function ProjectosPage() {
                   src={project.image}
                   alt={project.name}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                 <div className="absolute top-4 left-4">
@@ -229,30 +228,6 @@ export default function ProjectosPage() {
               </div>
             </article>
           ))}
-        </div>
-
-        {/* Bottom Custom Project CTA */}
-        <div className="mt-16 rounded-3xl border border-border bg-secondary/40 p-8 md:flex md:items-center md:justify-between md:p-10">
-          <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-              Desenvolvimento à Medida e Parcerias
-            </p>
-            <h3 className="mt-2 text-2xl font-medium tracking-tight text-foreground">
-              Deseja implementar uma destas soluções ou desenvolver um novo projecto?
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground md:text-base">
-              Agende uma sessão técnica com o Hagriia Labs para demonstrarmos os nossos produtos em funcionamento ou analisarmos a necessidade da sua organização.
-            </p>
-          </div>
-          <div className="mt-6 shrink-0 md:mt-0">
-            <Link
-              href="/agendar-consultoria"
-              className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all hover:opacity-85"
-            >
-              <span>Agendar Consultoria</span>
-              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
-          </div>
         </div>
       </section>
 
