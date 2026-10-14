@@ -27,7 +27,7 @@ const sideImages = [
     span: 1,
   },
   {
-    src: "hero4.jpg",
+    src: "hero4.png",
     alt: "Ecossistema de desenvolvimento tecnológico multidisciplinar",
     position: "right",
     span: 1,
@@ -246,7 +246,7 @@ export function HeroSection() {
       {/* Institutional Value Proposition & CTAs Section — slides over the sticky Bento images with a solid white background */}
       <div className="relative z-20 bg-white px-6 py-16 md:px-12 md:py-2 lg:px-20 lg:py-32">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-2xl font-medium leading-relaxed text-foreground md:text-3xl lg:text-[2.5rem] lg:leading-snug">
+          <p className="text-4xl font-semibold leading-relaxed text-foreground md:text-3xl lg:text-[2.5rem] lg:leading-snug uppercase">
             Tecnologia para explorar
             <br />
             novas possibilidades.

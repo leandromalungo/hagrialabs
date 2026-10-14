@@ -14,30 +14,30 @@ export function GallerySection() {
 
   const images = [
      {
-      src: "/side1.jpg",
+      src: "/side1.png",
       alt: "Linha de exploração em observação da Terra e dados geoespaciais",
       title: "Observação da Terra e Dados Espaciais",
       description:
         "Linha de exploração tecnológica dedicada à análise de dados de satélite, inteligência artificial e aplicações terrestres.",
     },
      {
-      src: "/side1.jpg",
-      alt: "Automação de processos empresariais e optimização de fluxos de trabalho",
-      title: "Automação de Processos",
-      description:
-        "Soluções automatizadas para otimizar e melhorar a eficiência dos processos empresariais.",
-    },
-    {
-      src: "/side1.jpg",
-      alt: "Projectos colaborativos e investigação multidisciplinar",
-      title: "Projectos em Colaboração",
-      description:
-        "Iniciativas conjuntas com profissionais, investigadores e organizações para testar soluções no terreno.",
-    },
-    {
-      src: "/side1.jpg",
+      src: "/dev2.jpg",
       alt: "Testes de segurança, análise de vulnerabilidades e protecção de sistemas",
-      title: "Testes de Segurança e Auditoria",
+      title: "Analise e Testes de Segurança em Aplicações",
+      description:
+        "Linha de exploração tecnológica dedicada à análise de dados de satélite, inteligência artificial e aplicações terrestres.",
+    },
+    {
+      src: "/card8.jpg",
+      alt: "Automação de processos empresariais e optimização de fluxos de trabalho",
+      title: "Automação de Processos Empresarias",
+      description:
+        "Linha de exploração tecnológica dedicada à análise de dados de satélite, inteligência artificial e aplicações terrestres.",
+    },
+    {
+      src: "/dev8.jpg",
+      alt: "",
+      title: "Open Source Developement - Publisher",
       description:
         "Avaliação rigorosa de vulnerabilidades, testes de intrusão e auditoria de segurança para proteger aplicações, dados e infra-estruturas digitais.",
     }

@@ -236,17 +236,17 @@ export function PhilosophySection() {
       <div className="px-6 pt-0 pb-12 md:px-12 md:pt-2 md:pb-28 lg:px-20 lg:pt-4 lg:pb-14">
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-foreground">
+            <h1 className="text-2xl font-semibold uppercase tracking-widest text-foreground">
               Missão
-            </p>
+            </h1>
             <TypingText className="mt-4 text-lg leading-relaxed text-muted-foreground sm:text-xl md:mt-6 md:text-2xl">
               Explorar, desenvolver e aplicar tecnologias que permitam resolver problemas concretos, transformar ideias em soluções funcionais e ampliar as possibilidades de utilização da ciência e da engenharia.
             </TypingText>
           </div>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-foreground">
+            <h1 className="text-2xl font-semibold uppercase tracking-widest text-foreground">
               Visão
-            </p>
+            </h1>
             <TypingText className="mt-4 text-lg leading-relaxed text-muted-foreground sm:text-xl md:mt-6 md:text-2xl">
               Construir um ecossistema de desenvolvimento tecnológico capaz de aproximar talento, conhecimento e experimentação, contribuindo para a criação de soluções relevantes em Angola e noutros mercados.
             </TypingText>

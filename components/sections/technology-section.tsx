@@ -71,7 +71,7 @@ function ScrollRevealText({ text }: { text: string }) {
 
 const sideImages = [
   {
-    src: "hero1.jpg",
+    src: "side1.png",
     alt: "Trilha na floresta",
     position: "left",
     span: 1,
@@ -176,7 +176,7 @@ export function TechnologySection() {
       <div className="px-4 pt-8 pb-2 md:hidden">
         <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl sm:aspect-[16/10]">
           <Image
-            src="/home2.jpg"
+            src="/side5.png"
             alt="Hagriia Labs — Investigação aplicada e exploração tecnológica"
             fill
             className="object-cover"
@@ -261,7 +261,7 @@ export function TechnologySection() {
                 }}
               >
                 <Image
-                  src="/home2.jpg"
+                  src="/side5.png"
                   alt="Hagriia Labs — Investigação aplicada e exploração tecnológica"
                   fill
                   className="object-cover"

@@ -17,35 +17,14 @@ const features = [
     category: "Sistemas Inteligentes",
     description:
       "Exploração e desenvolvimento de sistemas inteligentes, automação, análise de dados e aplicações de aprendizagem automática.",
-    image: "/dev1.jpg",
+    image: "/dev3.jpg",
   },
   {
-    title: "Investigação Aplicada",
+    title: "Consultoria",
     category: "Experimentação e Prototipagem",
     description:
       "Experimentação de ideias, avaliação de abordagens técnicas e desenvolvimento de protótipos para estudar a viabilidade de novas soluções.",
-    image: "/dev1.jpg",
-  },
-  {
-    title: "Dados e Sistemas Inteligentes",
-    category: "Análise e Modelação",
-    description:
-      "Utilização de dados, modelos computacionais e ferramentas analíticas para compreender problemas e apoiar decisões.",
-    image: "/dev1.jpg",
-  },
-  {
-    title: "Tecnologias Emergentes",
-    category: "Exploração Progressiva",
-    description:
-      "Exploração progressiva de novas áreas tecnológicas, através de investigação, aprendizagem, experimentação e colaboração com especialistas.",
-    image: "/dev1.jpg",
-  },
-  {
-    title: "Observação da Terra e Dados Espaciais",
-    category: "Linha de Exploração Futura",
-    description:
-      "Linha de exploração tecnológica relacionada com observação da Terra, dados de satélite, inteligência artificial e aplicações terrestres.",
-    image: "/dev1.jpg",
+    image: "/dev4.jpg",
   },
 ];
 
