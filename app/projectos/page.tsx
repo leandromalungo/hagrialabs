@@ -61,7 +61,7 @@ const projects: ProjectItem[] = [
       "Análise Agronómica",
       "Aplicação Móvel e Web",
     ],
-    image: "/images/02cdc426-dff4-4dff-b131-1b134c3699b5.png",
+    image: "/images/agriia-hero.jpg",
   },
   {
     id: "responde-email",
@@ -216,14 +216,33 @@ export default function ProjectosPage() {
                 </div>
 
                 <div className="mt-6 border-t border-border pt-4">
-                  <button
-                    type="button"
-                    onClick={() => setActiveProject(project)}
-                    className="group/btn inline-flex w-full items-center justify-between rounded-full border border-foreground bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-all duration-300 hover:bg-background hover:text-foreground"
-                  >
-                    <span>Ver mais</span>
-                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-                  </button>
+                  {project.id === "agri-ia" ? (
+                    <div className="flex flex-col gap-2">
+                      <Link
+                        href="/projectos/agri-ia"
+                        className="group/btn inline-flex w-full items-center justify-between rounded-full border border-foreground bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-all duration-300 hover:bg-background hover:text-foreground"
+                      >
+                        <span>Ver Apresentação AGRI-IA</span>
+                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                      </Link>
+                      <button
+                        type="button"
+                        onClick={() => setActiveProject(project)}
+                        className="inline-flex w-full items-center justify-center rounded-full border border-border bg-secondary/50 px-4 py-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                      >
+                        <span>Ver Ficha Técnica</span>
+                      </button>
+                    </div>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => setActiveProject(project)}
+                      className="group/btn inline-flex w-full items-center justify-between rounded-full border border-foreground bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-all duration-300 hover:bg-background hover:text-foreground"
+                    >
+                      <span>Ver mais</span>
+                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                    </button>
+                  )}
                 </div>
               </div>
             </article>
@@ -343,13 +362,24 @@ export default function ProjectosPage() {
                   Fechar janela
                 </button>
 
-                <Link
-                  href="/agendar-consultoria"
-                  className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-all hover:opacity-85"
-                >
-                  <span>Solicitar demonstração deste projecto</span>
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </Link>
+                <div className="flex flex-wrap items-center gap-3">
+                  {activeProject.id === "agri-ia" && (
+                    <Link
+                      href="/projectos/agri-ia"
+                      className="group inline-flex items-center gap-2 rounded-full border border-foreground bg-background px-5 py-3 text-sm font-medium text-foreground transition-all hover:bg-foreground hover:text-background"
+                    >
+                      <span>Ver Apresentação AGRI-IA</span>
+                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </Link>
+                  )}
+                  <Link
+                    href="/agendar-consultoria"
+                    className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-all hover:opacity-85"
+                  >
+                    <span>Solicitar demonstração deste projecto</span>
+                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
