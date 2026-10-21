@@ -97,7 +97,7 @@ export default function ContactosPage() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
             Contactos · Hagriia Labs
           </p>
-          <h1 className="mt-3 text-3xl font-medium leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl">
+          <h1 className="mt-3 text-2xl font-medium leading-tight tracking-tight text-foreground sm:text-2xl md:text-3xl">
             Formas simples e directas de falar connosco.
           </h1>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
@@ -108,7 +108,7 @@ export default function ContactosPage() {
         {/* Direct Contact Cards Grid */}
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
           {/* Card 1: Direct Email */}
-          <div className="flex flex-col justify-between rounded-3xl border border-border bg-white p-6 shadow-sm sm:p-8">
+          <div className="flex flex-col justify-between rounded border border-border bg-white p-6 shadow-sm sm:p-8">
             <div>
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-foreground text-background">
                 <Mail className="h-5 w-5" />
@@ -153,7 +153,7 @@ export default function ContactosPage() {
           </div>
 
           {/* Card 2: Schedule Consultation */}
-          <div className="flex flex-col justify-between rounded-3xl border border-border bg-white p-6 shadow-sm sm:p-8">
+          <div className="flex flex-col justify-between rounded border border-border bg-white p-6 shadow-sm sm:p-8">
             <div>
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-foreground text-background">
                 <Calendar className="h-5 w-5" />
@@ -179,7 +179,7 @@ export default function ContactosPage() {
           </div>
 
           {/* Card 3: Social Networks */}
-          <div className="flex flex-col justify-between rounded-3xl border border-border bg-white p-6 shadow-sm sm:p-8">
+          <div className="flex flex-col justify-between rounded border border-border bg-white p-6 shadow-sm sm:p-8">
             <div>
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-foreground text-background">
                 <MessageSquare className="h-5 w-5" />
@@ -218,7 +218,7 @@ export default function ContactosPage() {
         </div>
 
         {/* Simple Quick Message Box */}
-        <div className="mt-12 rounded-3xl border border-border bg-secondary/30 p-6 sm:p-8 md:p-10">
+        <div className="mt-12 rounded border border-border bg-secondary/30 p-6 sm:p-8 md:p-10">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-5">
               <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
@@ -238,7 +238,7 @@ export default function ContactosPage() {
 
             <div className="lg:col-span-7">
               {sent ? (
-                <div className="rounded-2xl border border-border bg-white p-6">
+                <div className="rounded border border-border bg-white p-6">
                   <div className="flex items-center gap-3">
                     <CheckCircle2 className="h-6 w-6 text-foreground" />
                     <h3 className="text-lg font-medium text-foreground">
@@ -264,7 +264,7 @@ export default function ContactosPage() {
               ) : (
                 <form
                   onSubmit={handleQuickSend}
-                  className="grid grid-cols-1 gap-4 rounded-2xl border border-border bg-white p-6 sm:grid-cols-2"
+                  className="grid grid-cols-1 gap-4 rounded border border-border bg-white p-6 sm:grid-cols-2"
                 >
                   <div>
                     <label

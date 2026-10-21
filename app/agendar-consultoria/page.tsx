@@ -248,7 +248,7 @@ export default function AgendarConsultoriaPage() {
               </p>
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
-                <div className="rounded-2xl border border-border bg-secondary/40 p-4">
+                <div className="rounded border border-border bg-secondary/40 p-4">
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                     01 · Análise Preliminar
                   </p>
@@ -257,7 +257,7 @@ export default function AgendarConsultoriaPage() {
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-border bg-secondary/40 p-4">
+                <div className="rounded border border-border bg-secondary/40 p-4">
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                     02 · Sessão de Diagnóstico
                   </p>
@@ -266,7 +266,7 @@ export default function AgendarConsultoriaPage() {
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-border bg-secondary/40 p-4">
+                <div className="rounded border border-border bg-secondary/40 p-4">
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                     03 · Proposta Técnica
                   </p>
@@ -278,7 +278,7 @@ export default function AgendarConsultoriaPage() {
             </div>
 
             {/* Direct Contact Box */}
-            <div className="mt-8 rounded-2xl border border-border bg-background p-5">
+            <div className="mt-8 rounded border border-border bg-background p-5">
               <div className="flex items-start gap-3.5">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-foreground text-background">
                   <Mail className="h-4 w-4" />
@@ -303,14 +303,14 @@ export default function AgendarConsultoriaPage() {
 
           {/* Right Column — Comprehensive Form or Confirmation State */}
           <div className="lg:col-span-7">
-            <div className="rounded-3xl border border-border bg-white p-6 shadow-sm sm:p-8 md:p-10">
+            <div className="rounded border border-border bg-white p-6 shadow sm:p-8 md:p-10">
               {isSubmitted ? (
                 <div className="py-6">
                   <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background">
                     <CheckCircle2 className="h-6 w-6" />
                   </div>
 
-                  <h2 className="mt-5 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+                  <h2 className="mt-5 text font-semibold tracking-tight text-foreground sm:text-3xl">
                     Pedido preparado e encaminhado com sucesso.
                   </h2>
                   <p className="mt-3 text-base leading-relaxed text-muted-foreground">
@@ -322,7 +322,7 @@ export default function AgendarConsultoriaPage() {
                   </p>
 
                   {/* Summary Preview */}
-                  <div className="mt-6 rounded-2xl border border-border bg-secondary/40 p-5 text-sm">
+                  <div className="mt-6 rounded border border-border bg-secondary/40 p-5 text-sm">
                     <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                       <div>
                         <span className="text-xs uppercase tracking-wider text-muted-foreground">

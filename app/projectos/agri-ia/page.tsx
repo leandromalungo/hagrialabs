@@ -122,7 +122,7 @@ export default function AgriIAPage() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/agriia-hero.jpg"
+            src="/heroagriia.jpg"
             alt="AGRI-IA — Agricultura de Precisão assistida por Inteligência Artificial no campo"
             fill
             priority
@@ -135,30 +135,11 @@ export default function AgriIAPage() {
 
         {/* Content */}
         <div className="relative z-10 mx-auto max-w-5xl px-6 pt-32 pb-20 text-center sm:px-8 md:pt-40 md:pb-28">
-          {/* Breadcrumb / Back link */}
-          <div className="mb-6 flex items-center justify-center">
-            <Link
-              href="/projectos"
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-4 py-1.5 text-xs font-medium text-white/90 backdrop-blur-md transition-colors hover:bg-white/20 hover:text-white"
-            >
-              <ArrowLeft className="h-3.5 w-3.5" />
-              <span>Ver todos os projectos</span>
-            </Link>
-          </div>
-
-          {/* Project Category Tag */}
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-950/60 px-4 py-1.5 text-xs font-medium text-emerald-300 backdrop-blur-md">
-            <Leaf className="h-3.5 w-3.5 text-emerald-400" />
-            <span className="tracking-wide uppercase">Agricultura de Precisão · IA Aplicada</span>
-          </div>
 
           {/* H1 Headline */}
-          <h1 className="text-3xl font-medium tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[4rem] lg:leading-[1.1]">
-            AGRI-IA
-          </h1>
-          <p className="mx-auto mt-2 text-xl font-normal text-white/90 sm:text-2xl md:text-3xl">
+          <h1 className="mx-auto mt-2 text-2xl font-semibold text-white/90 sm:text-2xl md:text-3xl uppercase mb-3">
             Inteligência Artificial para o Futuro da Agricultura de Precisão.
-          </p>
+          </h1>
 
           {/* <p> de descrição */}
           <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-white/80 sm:text-lg md:text-xl md:leading-relaxed">
@@ -167,7 +148,7 @@ export default function AgriIAPage() {
 
           {/* Available Platforms: Texto bem pequeno escrito disponível depois com os logos das plataformas */}
           <div className="mt-8 flex flex-col items-center justify-center gap-3">
-            <p className="text-[11px] font-medium tracking-[0.2em] text-white/60 uppercase">
+            <p className="text-[8px] font-medium tracking-[0.2em] text-white/60 uppercase">
               Disponível para as plataformas
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
@@ -199,16 +180,6 @@ export default function AgriIAPage() {
 
           {/* Primary Action Buttons */}
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <button
-              type="button"
-              onClick={() => setIsTestModalOpen(true)}
-              className="group inline-flex items-center gap-2.5 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-black transition-all hover:bg-white/90 hover:scale-[1.02] shadow-lg shadow-black/40"
-            >
-              <Calendar className="h-4 w-4 text-emerald-700" />
-              <span>Agendar Teste de Campo</span>
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </button>
-
             <a
               href="#section-detalhes"
               className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 py-3.5 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/15"
@@ -223,95 +194,46 @@ export default function AgriIAPage() {
           SECTION 1
           (H1, com texto de descrição a esquerda com imagem a direita)
           ========================================================================= */}
-      <section id="section-detalhes" className="border-b border-border bg-background py-20 md:py-28 lg:py-32">
+      <section id="section-detalhes" className="border-b border-border bg-background py-20 md:py-28 lg:py-28">
         <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Left Column: Description & H1 */}
             <div className="order-1 flex flex-col justify-center">
               <div className="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600">
-                <Cpu className="h-4 w-4" />
+                <Layers className="h-4 w-4" />
                 <span>Visão Computacional no Terreno</span>
               </div>
 
               {/* H1 Heading */}
-              <h1 className="text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl lg:leading-[1.15]">
+              <h1 className="text-2xl font-semibold uppercase tracking-tight text-foreground sm:text-2xl lg:text-3xl lg:leading-[1.15]">
                 Diagnóstico Fitossanitário Inteligente em Segundos
               </h1>
 
               {/* Text Description */}
               <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg">
                 <p>
-                  Com o <strong className="text-foreground font-semibold">AGRI-IA</strong>, o agricultor ou extensionista aponta a câmara do seu telemóvel para a planta e obtém uma análise imediata do índice de saúde vegetal, detecção de pragas e sintomas de carência nutricional de nitrogénio, fósforo e potássio.
+                  Com o <strong className="text-foreground font-semibold">AGRI-IA</strong>,
+                  o agricultor ou extensionista aponta a câmara do seu telemóvel para a planta
+                  e obtém uma análise imediata do índice de saúde vegetal, detecção de pragas e
+                  sintomas de carência nutricional de nitrogénio, fósforo e potássio. Concebida
+                  especificamente para operar em realidades desafiantes, a inteligência da
+                  aplicação conta com uma arquitectura <em className="text-foreground">offline-first</em>.
+                  As inferências podem ser realizadas directamente no dispositivo móvel, mesmo em zonas
+                  rurais sem cobertura de dados móveis ou acesso estável à internet.
                 </p>
-                <p>
-                  Concebida especificamente para operar em realidades desafiantes, a inteligência da aplicação conta com uma arquitectura <em className="text-foreground">offline-first</em>. As inferências podem ser realizadas directamente no dispositivo móvel, mesmo em zonas rurais sem cobertura de dados móveis ou acesso estável à internet.
-                </p>
               </div>
 
-              {/* Feature Highlights */}
-              <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <div className="flex items-start gap-3 rounded-2xl border border-border bg-secondary/50 p-4">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
-                  <div>
-                    <h2 className="text-sm font-semibold text-foreground">Detecção Precoce</h2>
-                    <p className="mt-1 text-xs text-muted-foreground">
-                      Identificação de fungos, vírus e pragas antes da propagação pela lavra.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 rounded-2xl border border-border bg-secondary/50 p-4">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
-                  <div>
-                    <h2 className="text-sm font-semibold text-foreground">Modo Offline no Campo</h2>
-                    <p className="mt-1 text-xs text-muted-foreground">
-                      Modelos ligeiros que correm localmente no telemóvel em lavras isoladas.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 rounded-2xl border border-border bg-secondary/50 p-4">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
-                  <div>
-                    <h2 className="text-sm font-semibold text-foreground">Recomendações Práticas</h2>
-                    <p className="mt-1 text-xs text-muted-foreground">
-                      Indicação de medidas correctivas imediatas e manejo integrado.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 rounded-2xl border border-border bg-secondary/50 p-4">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
-                  <div>
-                    <h2 className="text-sm font-semibold text-foreground">Múltiplas Culturas</h2>
-                    <p className="mt-1 text-xs text-muted-foreground">
-                      Suporte a milho, hortícolas, mandioca, feijão, soja e café.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* In-section Test Button */}
-              <div className="mt-8">
-                <button
-                  type="button"
-                  onClick={() => setIsTestModalOpen(true)}
-                  className="group inline-flex items-center gap-2 rounded-full border border-foreground bg-foreground px-6 py-3 text-sm font-medium text-background transition-all hover:bg-background hover:text-foreground"
-                >
-                  <span>Agendar teste deste módulo</span>
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </button>
-              </div>
             </div>
 
             {/* Right Column: Image */}
-            <div className="order-2 flex items-center justify-center">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-border bg-secondary shadow-xl transition-all duration-500 hover:shadow-2xl">
+            <div className="flex items-center justify-center">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded border border-border 
+                   bg-secondary shadow-xl transition-all duration-500 hover:shadow">
                 <Image
                   src="/images/agriia-diagnosis.jpg"
                   alt="Interface móvel do AGRI-IA a analisar saúde de folha e detecção de pragas"
                   fill
-                  className="object-cover transition-transform duration-700 hover:scale-105"
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-4 left-4 right-4 rounded-xl bg-black/60 px-4 py-2.5 backdrop-blur-md text-white text-xs">
@@ -332,12 +254,12 @@ export default function AgriIAPage() {
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Left Column: Image */}
             <div className="order-2 flex items-center justify-center lg:order-1">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-border bg-secondary shadow-xl transition-all duration-500 hover:shadow-2xl">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded border border-border bg-secondary shadow-xl transition-all duration-500 hover:shadow-2xl">
                 <Image
                   src="/images/agriia-analytics.jpg"
                   alt="Painel de monitorização por satélite NDVI, humidade do solo e estimativa de safra do AGRI-IA"
                   fill
-                  className="object-cover transition-transform duration-700 hover:scale-105"
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-4 left-4 right-4 rounded-xl bg-black/60 px-4 py-2.5 backdrop-blur-md text-white text-xs">
@@ -354,62 +276,90 @@ export default function AgriIAPage() {
               </div>
 
               {/* H1 Heading */}
-              <h1 className="text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl lg:leading-[1.15]">
+              <h1 className="text-3xl font-semibold uppercase tracking-tight text-foreground sm:text-2xl lg:text-3xl lg:leading-[1.15]">
                 Monitorização Geoespacial e Gestão Preditiva de Safra
               </h1>
 
               {/* Text Description */}
               <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg">
                 <p>
-                  Além da análise visual individual, a plataforma <strong className="text-foreground font-semibold">AGRI-IA</strong> correlaciona índices de vegetação por satélite (NDVI), previsões agrometeorológicas hiper-locais e métricas de humidade do solo para apresentar uma visão panorâmica de cada parcela da quinta.
+                  Além da análise visual individual, a plataforma <strong className="text-foreground font-semibold">AGRI-IA</strong> correlaciona
+                  índices de vegetação por satélite (NDVI), previsões agrometeorológicas hiper-locais e métricas de humidade do solo para
+                  apresentar uma visão panorâmica de cada parcela da quinta. Os gestores agrícolas e cooperativas acedem a projecções preditivas
+                  de produtividade por talhão, alertas automáticos de stress hídrico e janelas óptimas para sementeira, adubação e colheita
+                  — reduzindo o desperdício de água e adubos em até 30%.
                 </p>
-                <p>
-                  Os gestores agrícolas e cooperativas acedem a projecções preditivas de produtividade por talhão, alertas automáticos de stress hídrico e janelas óptimas para sementeira, adubação e colheita — reduzindo o desperdício de água e adubos em até 30%.
-                </p>
               </div>
 
-              {/* Bullet Features */}
-              <div className="mt-8 space-y-3">
-                <div className="flex items-start gap-3 rounded-2xl border border-border bg-background p-4">
-                  <div className="rounded-lg bg-emerald-100 p-2 text-emerald-800">
-                    <ShieldCheck className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <h2 className="text-sm font-semibold text-foreground">Economia de Insumos</h2>
-                    <p className="mt-0.5 text-xs text-muted-foreground">
-                      Aplicação de fertilizantes e pesticidas apenas nas zonas onde o mapa de calor acusa necessidade real.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 rounded-2xl border border-border bg-background p-4">
-                  <div className="rounded-lg bg-emerald-100 p-2 text-emerald-800">
-                    <Clock className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <h2 className="text-sm font-semibold text-foreground">Previsão e Janela de Colheita</h2>
-                    <p className="mt-0.5 text-xs text-muted-foreground">
-                      Estimativas antecipadas do rendimento da safra para melhorar a comercialização e logística.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* In-section Test Button */}
-              <div className="mt-8">
-                <button
-                  type="button"
-                  onClick={() => setIsTestModalOpen(true)}
-                  className="group inline-flex items-center gap-2 rounded-full border border-foreground bg-foreground px-6 py-3 text-sm font-medium text-background transition-all hover:bg-background hover:text-foreground"
-                >
-                  <span>Agendar teste de monitorização</span>
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </button>
-              </div>
             </div>
           </div>
         </div>
       </section>
+
+
+      {/* Feature Highlights */}
+      <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <div className="flex items-start gap-3 rounded border border-border bg-secondary/50 p-4">
+          <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
+          <div>
+            <h2 className="text-sm font-semibold text-foreground">Detecção Precoce</h2>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Identificação de fungos, vírus e pragas antes da propagação pela lavra.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start gap-3 rounded border border-border bg-secondary/50 p-4">
+          <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
+          <div>
+            <h2 className="text-sm font-semibold text-foreground">Modo Offline no Campo</h2>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Modelos ligeiros que correm localmente no telemóvel em lavras isoladas.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start gap-3 rounded border border-border bg-secondary/50 p-4">
+          <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
+          <div>
+            <h2 className="text-sm font-semibold text-foreground">Recomendações Práticas</h2>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Indicação de medidas correctivas imediatas e manejo integrado.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start gap-3 rounded border border-border bg-secondary/50 p-4">
+          <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
+          <div>
+            <h2 className="text-sm font-semibold text-foreground">Múltiplas Culturas</h2>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Suporte a milho, hortícolas, mandioca, feijão, soja e café.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start gap-3 rounded border border-border bg-secondary/50 p-4">
+          <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
+          <div>
+            <h2 className="text-sm font-semibold text-foreground">Economia de Insumos</h2>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Aplicação de fertilizantes e pesticidas apenas nas zonas onde o mapa de calor acusa necessidade real.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start gap-3 rounded border border-border bg-secondary/50 p-4">
+          <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
+          <div>
+            <h2 className="text-sm font-semibold text-foreground">Previsão e Janela de Colheita</h2>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Estimativas antecipadas do rendimento da safra para melhorar a comercialização e logística.
+            </p>
+          </div>
+        </div>
+
+      </div>
 
       {/* =========================================================================
           SECTION 3: PATROCINADORES (Logos dos patrocinadores)
@@ -417,14 +367,12 @@ export default function AgriIAPage() {
       <section className="border-b border-border bg-background py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
           <div className="text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-600">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gray-950">
               Cooperação & Apoio Institucional
             </p>
-            <h2 className="mt-3 text-3xl font-medium tracking-tight text-foreground sm:text-4xl md:text-5xl">
-              Patrocinadores e Parceiros
-            </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
-              Organizações, fundos de apoio, entidades académicas e parceiros tecnológicos que colaboram na validação e expansão da AGRI-IA.
+              Organizações, entidades académicas e parceiros tecnológicos que colaboram na
+              validação e expansão.
             </p>
           </div>
 
@@ -435,42 +383,7 @@ export default function AgriIAPage() {
                 key={index}
                 className="group relative flex flex-col justify-between rounded-3xl border border-border bg-secondary/30 p-7 transition-all duration-300 hover:border-emerald-500/40 hover:bg-secondary/60 hover:shadow-md"
               >
-                <div>
-                  {/* Top Badge & Logo mark */}
-                  <div className="flex items-center justify-between">
-                    <span className="rounded-full bg-emerald-100 px-3 py-1 text-[11px] font-semibold text-emerald-800">
-                      {sponsor.badge}
-                    </span>
-                    <span className="text-xs font-mono text-muted-foreground">
-                      0{index + 1}
-                    </span>
-                  </div>
 
-                  {/* Logo Emblem Icon / Initial graphic */}
-                  <div className="mt-5 flex items-center gap-3.5">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-border bg-background font-mono text-base font-bold text-foreground shadow-sm group-hover:border-emerald-500/50 group-hover:text-emerald-700 transition-colors">
-                      {sponsor.initials.slice(0, 3)}
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold tracking-tight text-foreground">
-                        {sponsor.initials}
-                      </h3>
-                      <p className="text-xs font-medium text-emerald-700">
-                        {sponsor.role}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Full Org Name */}
-                  <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-                    {sponsor.name}
-                  </p>
-                </div>
-
-                <div className="mt-6 flex items-center gap-1.5 border-t border-border pt-4 text-xs font-medium text-muted-foreground group-hover:text-foreground">
-                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
-                  <span>Parceria activa com Hagriia Labs</span>
-                </div>
               </div>
             ))}
           </div>
@@ -482,13 +395,9 @@ export default function AgriIAPage() {
           ========================================================================= */}
       <section className="bg-secondary/40 py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-6 text-center sm:px-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-900">
-            <Sparkles className="h-3.5 w-3.5 text-emerald-700" />
-            <span>Fase Piloto no Terreno</span>
-          </div>
 
           <h2 className="mt-4 text-3xl font-medium tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            Pronto para testar a AGRI-IA na sua lavra ou exploração?
+            Pronto para testar?
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
@@ -503,21 +412,11 @@ export default function AgriIAPage() {
               className="group inline-flex items-center gap-3 rounded-full bg-foreground px-8 py-4 text-base font-semibold text-background shadow-lg transition-all hover:scale-[1.02] hover:opacity-95"
             >
               <Calendar className="h-5 w-5 text-emerald-400" />
-              <span>Agendar teste</span>
+              <span>Agendar Teste</span>
               <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
 
-            <Link
-              href="/agendar-consultoria"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-4 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
-            >
-              <span>Consultoria Técnica Completa</span>
-            </Link>
           </div>
-
-          <p className="mt-5 text-xs text-muted-foreground">
-            Contacto directo: <span className="font-mono font-medium text-foreground">geral@hagrilabs.com</span> · Resposta em menos de 24 horas
-          </p>
         </div>
       </section>
 
@@ -530,7 +429,7 @@ export default function AgriIAPage() {
           onClick={() => setIsTestModalOpen(false)}
         >
           <div
-            className="relative max-h-[92vh] w-full max-w-2xl overflow-y-auto rounded-3xl border border-border bg-background p-6 shadow-2xl sm:p-8 md:p-10"
+            className="relative max-h-[92vh] w-full max-w-2xl overflow-y-auto rounded border border-border bg-background p-6 shadow-2xl sm:p-8 md:p-10"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
@@ -547,16 +446,13 @@ export default function AgriIAPage() {
               <div>
                 <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-emerald-600">
                   <Leaf className="h-4 w-4" />
-                  <span>Inscrição para Teste Piloto</span>
+                  <span>Agendar</span>
                 </div>
-                <h3 className="mt-2 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-                  Agendar Teste da AGRI-IA
-                </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   Preencha os dados da sua exploração ou iniciativa agrícola. A nossa equipa entrará em contacto para coordenar a instalação da aplicação e o plano de ensaio no terreno.
                 </p>
 
-                <form onSubmit={handleSubmitTest} className="mt-6 space-y-4">
+                <form onSubmit={handleSubmitTest} className="mt-3 space-y-4">
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <div>
                       <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -736,7 +632,7 @@ export default function AgriIAPage() {
                       className="group inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background transition-all hover:opacity-90"
                     >
                       <Send className="h-4 w-4" />
-                      <span>Confirmar Agendamento</span>
+                      <span>Enviar</span>
                     </button>
                   </div>
                 </form>
