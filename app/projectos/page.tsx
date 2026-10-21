@@ -88,7 +88,7 @@ const projects: ProjectItem[] = [
       "Triagem Inteligente de RH",
       "Integração Empresarial",
     ],
-    image: "/images/d18fe616-5596-4559-90f5-a90f5397d0d8.png",
+    image: "/dev5.jpg",
   },
   {
     id: "atendimento-multicanal",
@@ -115,7 +115,7 @@ const projects: ProjectItem[] = [
       "Mensagens de Texto",
       "APIs de Integração Empresarial",
     ],
-    image: "/images/e26fa9c3-966d-4966-94a4-954a1e511c1c.png",
+    image: "/side3.jpg",
   },
 ];
 

@@ -13,7 +13,7 @@ const footerLinks = {
   ],
   areas: [
     { label: "Serviços e Áreas", href: "/#servicos", targetId: "servicos" },
-    { label: "Projectos e Produtos", href: "/projectos" },
+    { label: "Projectos e Produtos", href: "/#produtos", targetId: "produtos" },
     { label: "Colaboração", href: "/agendar-consultoria" },
     { label: "Oportunidades", href: "/contactos" },
   ],

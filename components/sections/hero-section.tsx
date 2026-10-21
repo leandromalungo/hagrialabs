@@ -256,7 +256,16 @@ export function HeroSection() {
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
-              href="/projectos"
+              href="/#produtos"
+              onClick={(e) => {
+                const el = document.getElementById("produtos");
+                if (el) {
+                  e.preventDefault();
+                  const headerOffset = 72;
+                  const targetY = el.getBoundingClientRect().top + window.scrollY - headerOffset;
+                  window.scrollTo({ top: targetY, behavior: "smooth" });
+                }
+              }}
               className="group inline-flex items-center gap-1.5 rounded-full hover:border border-foreground bg-foreground hover:bg-white px-6 py-3 text-sm font-medium text-background hover:text-gray-950 transition-all hover:opacity-85"
             >
               <span>Explorar projectos</span>
