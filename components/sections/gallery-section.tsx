@@ -125,6 +125,7 @@ export function GallerySection() {
                 src={image.src || "/placeholder.svg"}
                 alt={image.alt}
                 fill
+                sizes="(max-width: 768px) 85vw, 60vw"
                 className="object-cover"
                 priority={index < 2}
               />
@@ -190,8 +191,9 @@ export function GallerySection() {
                     src={image.src || "/placeholder.svg"}
                     alt={image.alt}
                     fill
+                    sizes="(max-width: 1200px) 60vw, 45vw"
                     className="object-cover"
-                    priority={index < 3}
+                    priority={index < 2}
                   />
                   {/* Card Overlay */}
                   <div className="pointer-events-none absolute inset-0 bg-black/25 bg-gradient-to-t from-black/85 via-black/35 to-black/10 transition-opacity duration-300" />

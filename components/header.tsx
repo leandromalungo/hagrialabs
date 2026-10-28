@@ -109,6 +109,7 @@ export function Header({ forceSolid = false }: { forceSolid?: boolean }) {
               src="/logo-white.png"
               alt="HAGRIA Labs Logo Claro"
               fill
+              sizes="28px"
               className={`object-contain transition-opacity duration-300 ${
                 hasWhiteBg ? "opacity-0" : "opacity-100"
               }`}
@@ -119,6 +120,7 @@ export function Header({ forceSolid = false }: { forceSolid?: boolean }) {
               src="/logo-dark.png"
               alt="HAGRIA Labs Logo Escuro"
               fill
+              sizes="28px"
               className={`object-contain transition-opacity duration-300 ${
                 hasWhiteBg ? "opacity-100" : "opacity-0"
               }`}

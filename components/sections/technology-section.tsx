@@ -71,25 +71,25 @@ function ScrollRevealText({ text }: { text: string }) {
 
 const sideImages = [
   {
-    src: "side6.jpg",
+    src: "/side6.jpg",
     alt: "Trilha na floresta",
     position: "left",
     span: 1,
   },
   {
-    src: "side8.jpg",
+    src: "/side8.jpg",
     alt: "Pico da montanha",
     position: "left",
     span: 1,
   },
   {
-    src: "side4.jpg",
+    src: "/side4.jpg",
     alt: "Paisagem alpina",
     position: "right",
     span: 1,
   },
   {
-    src: "side7.jpg",
+    src: "/side7.jpg",
     alt: "Montanha nevada",
     position: "right",
     span: 1,

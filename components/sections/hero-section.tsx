@@ -9,25 +9,25 @@ const word = "INTELIGÊNCIA";
 
 const sideImages = [
   {
-    src: "hero1.jpg",
+    src: "/hero1.jpg",
     alt: "Investigação tecnológica e exploração de novos horizontes",
     position: "left",
     span: 1,
   },
   {
-    src: "hero2.jpg",
+    src: "/hero2.jpg",
     alt: "Observação e análise de dados em cenários reais",
     position: "left",
     span: 1,
   },
   {
-    src: "hero3.jpg",
+    src: "/hero3.jpg",
     alt: "Experimentação aplicada e validação no terreno",
     position: "right",
     span: 1,
   },
   {
-    src: "hero4.png",
+    src: "/hero4.png",
     alt: "Ecossistema de desenvolvimento tecnológico multidisciplinar",
     position: "right",
     span: 1,
