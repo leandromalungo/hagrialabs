@@ -132,7 +132,7 @@ export function PhilosophySection() {
       {/* Mobile Static Grid (No scroll-jacking slide animations) */}
       <div className="px-4 py-2 md:hidden">
         <h2 className="mb-8 text-center text-3xl font-medium leading-tight tracking-tight text-foreground sm:text-4xl">
-          COMO VEMOS AS COISAS?
+          NOSSA VISÃO & MISSÃO
         </h2>
         <p></p>
         <div className="grid grid-cols-1 gap-4">
@@ -230,7 +230,7 @@ export function PhilosophySection() {
               Missão
             </h1>
             <TypingText className="mt-4 text-lg leading-relaxed text-muted-foreground sm:text-xl md:mt-6 md:text-2xl">
-              Explorar, desenvolver e aplicar tecnologias que permitam resolver problemas concretos, transformar ideias em soluções funcionais e ampliar as possibilidades de utilização da ciência e da engenharia.
+              Desenvolver sistemas de software, automação e inteligência artificial que resolvem estrangulamentos operacionais reais, com rigor técnico de engenharia e impacto mensurável no terreno.
             </TypingText>
           </div>
           <div>
@@ -238,7 +238,7 @@ export function PhilosophySection() {
               Visão
             </h1>
             <TypingText className="mt-4 text-lg leading-relaxed text-muted-foreground sm:text-xl md:mt-6 md:text-2xl">
-              Construir um ecossistema de desenvolvimento tecnológico capaz de aproximar talento, conhecimento e experimentação, contribuindo para a criação de soluções relevantes em Angola e noutros mercados.
+              Ser o laboratório de referência em engenharia de software e inteligência artificial aplicada em Angola e África Austral, transformando investigação técnica em soluções comerciais sustentáveis.
             </TypingText>
           </div>
         </div>

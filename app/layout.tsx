@@ -7,30 +7,31 @@ const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const Analytics = () => null;
 
 export const metadata: Metadata = {
-  title: 'HAGRIA Labs',
+  title: 'Hagriia Labs | Engenharia de Software e Inteligência Artificial',
   description:
-    'O Hagriia Labs é um laboratório de tecnologia e inovação dedicado à investigação aplicada, ao desenvolvimento de software e à criação de soluções tecnológicas para desafios reais.',
+    'Laboratório de engenharia de software e inteligência artificial aplicada. Desenvolvemos produtos digitais e sistemas à medida para empresas, instituições e startups.',
   keywords: [
     'Hagriia Labs',
-    'Laboratório de tecnologia e inovação',
-    'Desenvolvimento de software',
+    'Engenharia de software',
     'Inteligência artificial',
-    'Investigação aplicada',
-    'Desenvolvimento tecnológico',
-    'Soluções digitais',
+    'Agricultura de precisão',
+    'AGRI-IA',
+    'Automação de processos',
+    'Atendimento multicanal',
+    'Angola tecnologia',
   ],
   openGraph: {
     type: 'website',
     siteName: 'Hagriia Labs',
-    title: 'Hagriia Labs',
+    title: 'Hagriia Labs | Engenharia de Software e Inteligência Artificial',
     description:
-      'Laboratório de tecnologia e inovação dedicado à investigação aplicada, ao desenvolvimento de software e à exploração de soluções inteligentes para desafios reais.',
+      'Laboratório de engenharia de software e inteligência artificial aplicada para empresas, instituições e startups.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hagriia Labs',
+    title: 'Hagriia Labs | Engenharia de Software e Inteligência Artificial',
     description:
-      'Laboratório de tecnologia e inovação dedicado à investigação aplicada, ao desenvolvimento de software e à exploração de soluções inteligentes para desafios reais.',
+      'Laboratório de engenharia de software e inteligência artificial aplicada para empresas, instituições e startups.',
   },
   generator: 'v0.app',
   icons: {
@@ -57,7 +58,7 @@ const jsonLd = {
   '@type': 'ResearchOrganization',
   name: 'Hagriia Labs',
   description:
-    'Laboratório de tecnologia e inovação dedicado à investigação aplicada, ao desenvolvimento de software e à criação de soluções tecnológicas para desafios reais.',
+    'Laboratório de engenharia de software e inteligência artificial aplicada. Desenvolvemos produtos digitais e sistemas à medida para empresas, instituições e startups.',
 }
 
 export default function RootLayout({

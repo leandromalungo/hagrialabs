@@ -5,23 +5,23 @@ import { FadeImage } from "@/components/fade-image";
 const accessories = [
   {
     id: 1,
-    name: "Empresas e Organizações",
+    name: "Empresas e Startups",
     description:
-      "Identificação de desafios reais, criação de soluções tecnológicas à medida e validação de sistemas em contexto operacional.",
+      "Automatize processos operacionais, reduza despesas com tarefas manuais e lance plataformas digitais robustas no mercado com validação técnica garantida.",
     image: "",
   },
   {
     id: 2,
-    name: "Empreendedores e Parceiros",
+    name: "Setor Público e Cooperativas",
     description:
-      "Transformação de ideias inovadoras em protótipos funcionais, produtos digitais e novas iniciativas tecnológicas.",
+      "Modernize a comunicação com o cidadão através de canais acessíveis (SMS e chamadas de voz) e implemente agricultura de precisão com dados territoriais e de satélite.",
     image: "",
   },
   {
     id: 3,
-    name: "Comunidade e Especialistas",
+    name: "Investidores e Parceiros Estratégicos",
     description:
-      "Participação em iniciativas abertas, partilha de competências técnicas e exploração multidisciplinar de tecnologias emergentes.",
+      "Apoie e acelere soluções tecnológicas com aplicação prática comprovada em setores de grande impacto económico, com equipa técnica dedicada e tração real.",
     image: "",
   },
 ];
@@ -34,15 +34,14 @@ export function CollectionSection() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-              Actuação
+              Segmentos e Parcerias
             </p>
             <h2 className="mt-2 text-2xl font-medium tracking-tight text-foreground sm:text-3xl md:text-4xl">
-              Nossos Clientes
+              A Quem se Destinam as Nossas Soluções
             </h2>
           </div>
           <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-            Estamos aberto à colaboração com profissionais, investigadores, empresas e organizações 
-            interessadas em explorar ideias, desenvolver projectos ou testar soluções tecnológicas.
+            Construímos pontes entre engenharia de software avançada e as necessidades operacionais de quem decide e atua no terreno.
           </p>
         </div>
       </div>

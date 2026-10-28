@@ -94,11 +94,10 @@ export function HeroSection() {
           <div className="pointer-events-none absolute inset-0 bg-black/20 bg-gradient-to-t from-black/65 via-black/20 to-black/10" />
           <div className="absolute inset-x-0 bottom-7 flex flex-col items-start justify-end overflow-hidden px-5">
             <p className="mb-3 max-w-md text-sm leading-relaxed text-white/85 sm:text-base">
-              Somos um laboratório de tecnologia e inovação dedicado à investigação aplicada, 
-              ao desenvolvimento de software e à exploração de soluções  diversas para desafios reais que exigem:
+              Laboratório de engenharia de software e inteligência artificial aplicada. Desenvolvemos soluções orientadas para o terreno que geram resultados reais:
             </p>
             <h1 className="w-full whitespace-nowrap text-[13.5vw] font-medium leading-[0.85] tracking-tighter text-white">
-              {word}
+              PRECISÃO
             </h1>
           </div>
         </div>
@@ -186,8 +185,7 @@ export function HeroSection() {
                 style={{ opacity: textOpacity }}
               >
                 <p className="mb-4 max-w-2xl text-base leading-relaxed text-white/85 md:mb-6 md:text-lg lg:max-w-3xl lg:text-xl">
-                  Somos um laboratório de tecnologia e inovação dedicado à investigação aplicada, ao desenvolvimento de software e à 
-                  exploração de soluções diversas para desafios reais que exigem:
+                  Laboratório de engenharia de software e inteligência artificial aplicada. Desenvolvemos soluções orientadas para o terreno que geram resultados reais:
                 </p>
                 <h1 className="w-full whitespace-nowrap text-[13.5vw] font-medium leading-[0.85] tracking-tighter text-white">
                   {word.split("").map((letter, index) => (
@@ -244,17 +242,43 @@ export function HeroSection() {
       <div className="hidden h-[140vh] md:block" />
 
       {/* Institutional Value Proposition & CTAs Section — slides over the sticky Bento images with a solid white background */}
-      <div className="relative z-20 bg-white px-6 py-16 md:px-12 md:py-2 lg:px-20 lg:py-32">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-4xl font-semibold leading-relaxed text-foreground md:text-3xl lg:text-[2.5rem] lg:leading-snug uppercase">
-            Tecnologia para explorar
-            <br />
-            novas possibilidades.
+      <div className="relative z-20 bg-white px-6 py-16 md:px-12 md:py-20 lg:px-20 lg:py-24">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            Hagriia Labs · Engenharia & Inteligência Artificial
           </p>
+          <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl">
+            Engenharia de software e inteligência artificial aplicadas ao seu setor.
+          </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            Investigação e experimentação tecnológica, desenvolvimento de software e sistemas inteligentes, criação de soluções inovadoras e colaboração multidisciplinar.
+            Apoiamos empresas, instituições públicas e startups a automatizar operações, valorizar dados no terreno e construir sistemas digitais à medida — da prova de conceito ao lançamento em escala.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+
+          {/* Social Proof & Metrics Indicators */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-4 py-1.5 text-xs font-medium text-foreground">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              +80% de redução no tempo de triagem de RH
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-4 py-1.5 text-xs font-medium text-foreground">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              100% acessível via SMS e chamadas de voz
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-4 py-1.5 text-xs font-medium text-foreground">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              Agricultura de precisão com dados de satélite
+            </span>
+          </div>
+
+          {/* CTAs */}
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/agendar-consultoria"
+              className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all hover:opacity-85 shadow-sm"
+            >
+              <span>Agendar Sessão Técnica</span>
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
             <Link
               href="/#produtos"
               onClick={(e) => {
@@ -266,10 +290,9 @@ export function HeroSection() {
                   window.scrollTo({ top: targetY, behavior: "smooth" });
                 }
               }}
-              className="group inline-flex items-center gap-1.5 rounded-full hover:border border-foreground bg-foreground hover:bg-white px-6 py-3 text-sm font-medium text-background hover:text-gray-950 transition-all hover:opacity-85"
+              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-6 py-3.5 text-sm font-medium text-foreground transition-all hover:bg-secondary"
             >
-              <span>Explorar projectos</span>
-              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <span>Ver Soluções no Terreno</span>
             </Link>
           </div>
         </div>

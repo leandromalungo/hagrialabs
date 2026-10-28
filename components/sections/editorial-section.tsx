@@ -2,28 +2,28 @@
 
 const specs = [
   {
-    label: "01 · Abordagem de Referência",
-    value: "Identificar",
+    label: "01 · Diagnóstico",
+    value: "Diagnosticar",
     description:
-      "Compreender o problema, o contexto e as necessidades que justificam o desenvolvimento de uma solução.",
+      "Analisamos o estrangulamento operacional, as limitações do terreno e o retorno esperado sobre o investimento.",
   },
   {
-    label: "02 · Investigação",
-    value: "Explorar",
+    label: "02 · Arquitetura",
+    value: "Projetar",
     description:
-      "Investigar alternativas, estudar tecnologias e avaliar possíveis abordagens.",
+      "Desenhamos a solução técnica com foco em segurança, escalabilidade e custo de infraestrutura eficiente.",
   },
   {
-    label: "03 · Engenharia",
+    label: "03 · Construção",
     value: "Desenvolver",
     description:
-      "Construir protótipos, aplicações ou sistemas que permitam testar as hipóteses identificadas.",
+      "Implementamos protótipos funcionais e sistemas completos com ciclos curtos de iteração e código auditado.",
   },
   {
-    label: "04 · Evolução Contínua",
-    value: "Validar e aperfeiçoar",
+    label: "04 · Validação Real",
+    value: "Lançar e Medir",
     description:
-      "Avaliar os resultados, identificar limitações e melhorar a solução com base em testes e evidências.",
+      "Testamos com utilizadores reais em condições exigentes, medindo métricas de desempenho e otimizando continuamente.",
   },
 ];
 
@@ -33,10 +33,10 @@ export function EditorialSection() {
       {/* Section Header */}
       <div className="px-6 pt-6 pb-8 text-center md:px-12 md:pt-10 md:pb-12">
         <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-          Como Trabalhamos
+          Metodologia de Engenharia
         </p>
         <h2 className="mt-2 text-2xl font-medium tracking-tight text-foreground sm:text-3xl">
-          Da Identificação do Problema à Validação Prática
+          Como Transformamos Problemas em Sistemas Operacionais
         </h2>
       </div>
 

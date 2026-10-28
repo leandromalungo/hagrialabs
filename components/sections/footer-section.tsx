@@ -101,7 +101,7 @@ export function FooterSection() {
             />
           </Link>
           <p className="mt-8 max-w-xl text-sm leading-relaxed text-[#a3a3a3] md:text-base">
-            Hagriia Labs é um laboratório de tecnologia e inovação dedicado à exploração de ideias, ao desenvolvimento de software e à criação de soluções tecnológicas para desafios reais.
+            Hagriia Labs é um laboratório de engenharia de software e inteligência artificial aplicada. Desenvolvemos produtos digitais e sistemas à medida para empresas, instituições e startups.
           </p>
         </div>
 

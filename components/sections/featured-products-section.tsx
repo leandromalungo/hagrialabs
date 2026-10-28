@@ -6,24 +6,24 @@ import { FadeImage } from "@/components/fade-image";
 
 const features = [
   {
-    title: "Desenvolvimento de Softwares",
-    category: "Actividades",
+    title: "Aplicações Web, Móveis e Sistemas Críticos",
+    category: "Engenharia de Software",
     description:
-      "Criação de aplicações, plataformas digitais, serviços de software e ferramentas tecnológicas orientadas para necessidades concretas.",
+      "Desenvolvemos plataformas escaláveis, APIs robustas e arquiteturas desenhadas para aguentar operações diárias exigentes sem quebras de serviço.",
     image: "/dev1.jpg",
   },
   {
-    title: "Inteligência Artificial",
+    title: "Modelos Preditivos, Visão Computacional e Automação",
     category: "Sistemas Inteligentes",
     description:
-      "Exploração e desenvolvimento de sistemas inteligentes, automação, análise de dados e aplicações de aprendizagem automática.",
+      "Substitua processos manuais lentos por automação algorítmica. Do diagnóstico por imagem ao processamento estruturado de documentos e linguagem natural.",
     image: "/dev3.jpg",
   },
   {
-    title: "Consultoria & Testes",
-    category: "Experimentação e Prototipagem",
+    title: "Auditorias de Segurança e Testes com Comunidade Real",
+    category: "Validação Técnica & Segurança",
     description:
-      "Experimentação de ideias, avaliação de abordagens técnicas e desenvolvimento de protótipos para estudar a viabilidade de novas soluções.",
+      "Testes rigorosos de interface, usabilidade e auditorias de vulnerabilidades com utilizadores reais antes de qualquer lançamento público.",
     image: "/dev4.jpg",
   },
 ];
@@ -32,17 +32,17 @@ export function FeaturedProductsSection() {
   return (
     <section id="servicos" className="scroll-mt-20 bg-background">
       {/* Section Title */}
-      <div className="px-6 py-12 text-center md:px-12 md:py-28 lg:px-20 lg:py-32 lg:pb-20">
+      <div className="px-6 py-12 text-center md:px-12 md:py-24 lg:px-20 lg:py-28 lg:pb-16">
         <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground md:mb-4">
-          Nossos Serviços
+          Capacidades Técnicas · Hagriia Labs
         </p>
         <h2 className="text-2xl font-medium tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl">
-          Engenharia de Software,
+          Serviços Especializados de Engenharia
           <br />
-          Investigação e Exploração.
+          e Sistemas Inteligentes.
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:mt-6 md:text-base">
-          Desenvolvimento de soluções tecnológicas, sistemas inteligentes e linhas de investigação aplicada orientadas para desafios reais.
+          Não aplicamos fórmulas pré-fabricadas. Diagnosticamos o estrangulamento operacional e construímos a arquitetura adequada para resolver o problema com rigor.
         </p>
       </div>
 

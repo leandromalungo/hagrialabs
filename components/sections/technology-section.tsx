@@ -98,34 +98,29 @@ const sideImages = [
 
 const faqItems = [
   {
-    question: "O que é o Hagriia Labs e qual é o seu foco principal?",
+    question: "Que tipo de projetos a Hagriia Labs desenvolve?",
     answer:
-      "O Hagriia Labs é um laboratório de tecnologia e inovação dedicado à investigação aplicada, à experimentação tecnológica e ao desenvolvimento de software. O nosso foco consiste em identificar desafios concretos, explorar abordagens técnicas adequadas e construir soluções digitais e sistemas inteligentes com utilidade prática.",
+      "Desenvolvemos produtos tecnológicos próprios (como a AGRI-IA para agricultura de precisão, o RespondeEmail para automação de RH e o Atendimento Multicanal SMS/Voz) e criamos sistemas de software e inteligência artificial à medida para empresas, instituições públicas e startups.",
   },
   {
-    question: "Que tipo de soluções e projectos o laboratório desenvolve?",
+    question: "Como a Hagriia Labs garante que as soluções funcionam no terreno?",
     answer:
-      "Desenvolvemos plataformas digitais, aplicações web e móveis, ferramentas de automação e sistemas baseados em inteligência artificial. Entre os projectos actuais destacam-se a AGRI-IA (aplicação de auxílio à agricultura de precisão), o RespondeEmail (automação de triagem e recrutamento para equipas de Recursos Humanos) e o serviço omnicanal de atendimento empresarial via SMS, texto e voz.",
+      "Todas as nossas soluções são testadas em condições reais de operação, com utilizadores reais e limitações de infraestrutura (incluindo funcionamento sem cobertura de internet ou através de telemóveis simples).",
   },
   {
-    question: "O Hagriia Labs desenvolve software à medida para empresas e instituições?",
+    question: "A Hagriia Labs está aberta a parcerias e investidores?",
     answer:
-      "Sim. Além dos projectos próprios de investigação e produto, colaboramos com empresas, instituições e organizações na arquitectura, desenvolvimento e validação técnica de soluções tecnológicas ajustadas às suas necessidades operacionais.",
+      "Sim. Colaboramos ativamente com investidores que pretendam apoiar soluções tecnológicas com forte tração de mercado, bem como com instituições agrícolas, empresas e centros de investigação para projetos-piloto conjuntos.",
   },
   {
-    question: "Como funciona a metodologia de trabalho do laboratório?",
+    question: "Quanto tempo demora o desenvolvimento de um projeto ou prova de conceito?",
     answer:
-      "Actuamos em quatro fases estruturadas: identificação rigorosa do problema e do seu contexto; exploração e investigação de alternativas tecnológicas; desenvolvimento de protótipos ou sistemas funcionais; e validação contínua com base em testes no terreno e métricas reais.",
+      "O prazo varia de acordo com o âmbito técnico. Tipicamente, entregamos uma prova de conceito (PoC) funcional entre 4 a 8 semanas, permitindo validar hipóteses e medir o retorno antes de investimentos em escala.",
   },
   {
-    question: "Quem pode colaborar ou estabelecer parcerias com o Hagriia Labs?",
+    question: "Como posso agendar uma conversa técnica ou solicitar uma proposta?",
     answer:
-      "Estamos abertos à colaboração com programadores, engenheiros, investigadores, estudantes, universidades, centros de investigação, empreendedores e empresas que procurem desenvolver projectos conjuntos, validar tecnologias ou resolver desafios complexos.",
-  },
-  {
-    question: "Como posso apresentar uma proposta ou agendar uma consultoria?",
-    answer:
-      "Pode utilizar o botão «Agendar Consultoria» no topo da página para preencher o formulário detalhado da sua proposta ou aceder à página de Contactos para falar connosco directamente por correio electrónico, telefone ou WhatsApp.",
+      "Basta clicar em «Agendar Sessão Técnica» ou aceder à página de Contactos. A nossa equipa de engenharia analisa o seu desafio e responde no prazo de 24 horas para marcar uma reunião inicial sem compromisso.",
   },
 ];
 
@@ -135,7 +130,7 @@ export function TechnologySection() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   
-  const descriptionText = "O Hagriia Labs explora a intersecção entre tecnologia, investigação e resolução de problemas. O seu trabalho parte da identificação de desafios, da experimentação de ideias e do desenvolvimento de soluções que possam ser testadas e aperfeiçoadas no mundo real.";
+  const descriptionText = "A Hagriia Labs é um laboratório de engenharia de software e inteligência artificial focado em resolver problemas estruturais nos setores agrícola, empresarial e institucional.";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -184,13 +179,12 @@ export function TechnologySection() {
           <div className="absolute inset-0 bg-foreground/40" />
           <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
             <h2 className="text-3xl font-medium leading-tight tracking-tight text-white sm:text-4xl">
-              Desenvolvimento de Soluções 
+              Engenharia de Terreno 
               <br />
-              que usam Dados Espaciais e Climaticos.
+              e Inteligência Artificial Aplicada.
             </h2>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-white/85 sm:text-base">
-              Investigação aplicada, engenharia de software e experimentação tecnológica orientadas para transformar 
-              ideias em soluções concretas.
+              Desenvolvemos sistemas digitais robustos e modelos de inteligência artificial desenhados para operar com fiabilidade em condições reais.
             </p>
           </div>
         </div>
@@ -274,7 +268,7 @@ export function TechnologySection() {
                   className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
                 >
                   <h2 className="max-w-3xl text-5xl font-medium leading-tight tracking-tight text-white md:text-5xl lg:text-5xl">
-                    {["Desenvolvimento de Soluções ", "que usam Dados Espaciais e Climaticos."].map((word, index) => {
+                    {["Engenharia de Terreno ", "e Inteligência Artificial Aplicada."].map((word, index) => {
                       const wordFadeStart = index * 0.06;
                       const wordFadeEnd = wordFadeStart + 0.07;
                       const wordProgress = Math.max(0, Math.min(1, (scrollProgress - wordFadeStart) / (wordFadeEnd - wordFadeStart)));
@@ -309,7 +303,7 @@ export function TechnologySection() {
                       transition: "opacity 0.1s linear, filter 0.1s linear",
                     }}
                   >
-                    Investigação aplicada, engenharia de software e experimentação tecnológica orientadas para transformar ideias em soluções concretas.
+                    Desenvolvemos sistemas digitais robustos e modelos de inteligência artificial desenhados para operar com fiabilidade em condições reais.
                   </p>
                 </div>
               </div>
@@ -359,21 +353,21 @@ export function TechnologySection() {
       >
         <div className="mx-auto max-w-4xl">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-foreground md:mb-4 md:text-base">
-            Sobre nós
+            Sobre a Hagriia Labs
           </p>
           <ScrollRevealText text={descriptionText} />
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-foreground/80 sm:text-lg md:mt-6 md:text-xl">
-            Através de uma abordagem multidisciplinar, o laboratório procura aproximar o desenvolvimento tecnológico das necessidades concretas da sociedade, criando condições para explorar novas ideias, desenvolver projectos e estabelecer colaborações.
+            Trabalhamos em estreita colaboração com equipas de terreno, gestores e decisores públicos. Desenvolvemos desde provas de conceito a produtos completos em produção, com foco permanente na eficiência económica, na segurança dos dados e na utilidade prática.
           </p>
 
           {/* FAQ — Perguntas Frequentes */}
           <div id="faq" className="mt-14 border-t border-border pt-12 md:mt-20 md:pt-16">
             <div className="mb-8 md:mb-10">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                FAQ · Perguntas Frequentes
+                FAQ · Esclarecimentos Técnicos e Comerciais
               </p>
               <h3 className="mt-2 text-2xl font-medium tracking-tight text-foreground sm:text-3xl">
-                Questões essenciais sobre o Hagriia Labs
+                Perguntas Frequentes sobre a Hagriia Labs
               </h3>
             </div>
 
