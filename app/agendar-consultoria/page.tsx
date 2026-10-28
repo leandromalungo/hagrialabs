@@ -291,7 +291,7 @@ export default function AgendarConsultoriaPage() {
                     href="mailto:lmalungo@outlook.com"
                     className="mt-0.5 block text-base font-medium text-foreground underline-offset-4 hover:underline"
                   >
-                    geral@hagrilabs.com
+                    geral@hagrialabs.com
                   </a>
                   <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
                     Todas as informações submetidas neste formulário são encaminhadas directamente para este endereço.

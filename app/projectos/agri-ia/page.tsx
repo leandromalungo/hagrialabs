@@ -625,7 +625,7 @@ export default function AgriIAPage() {
 
                   <div className="flex flex-col gap-3 border-t border-border pt-5 sm:flex-row sm:items-center sm:justify-between">
                     <p className="text-xs text-muted-foreground">
-                      Dados encaminhados directamente para <span className="font-semibold text-foreground">geral@hagrilabs.com</span>
+                      Dados encaminhados directamente para <span className="font-semibold text-foreground">geral@hagrialabs.com</span>
                     </p>
                     <button
                       type="submit"
@@ -659,7 +659,7 @@ export default function AgriIAPage() {
                     Concluir
                   </button>
                   <a
-                    href={`mailto:geral@hagrilabs.com?subject=Agendamento%20Teste%20AGRI-IA%20-%20${encodeURIComponent(formData.nome)}&body=Nome:%20${encodeURIComponent(formData.nome)}%0AOrganizacao:%20${encodeURIComponent(formData.organizacao)}%0AContacto:%20${encodeURIComponent(formData.contacto)}%0AEmail:%20${encodeURIComponent(formData.email)}%0AProvincia:%20${encodeURIComponent(formData.provincia)}%0ACultura:%20${encodeURIComponent(formData.cultura)}%0AArea:%20${encodeURIComponent(formData.area)}%0AMensagem:%20${encodeURIComponent(formData.mensagem)}`}
+                    href={`mailto:geral@hagrialabs.com?subject=Agendamento%20Teste%20AGRI-IA%20-%20${encodeURIComponent(formData.nome)}&body=Nome:%20${encodeURIComponent(formData.nome)}%0AOrganizacao:%20${encodeURIComponent(formData.organizacao)}%0AContacto:%20${encodeURIComponent(formData.contacto)}%0AEmail:%20${encodeURIComponent(formData.email)}%0AProvincia:%20${encodeURIComponent(formData.provincia)}%0ACultura:%20${encodeURIComponent(formData.cultura)}%0AArea:%20${encodeURIComponent(formData.area)}%0AMensagem:%20${encodeURIComponent(formData.mensagem)}`}
                     className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:bg-secondary"
                   >
                     <Mail className="h-4 w-4" />

@@ -120,7 +120,7 @@ export default function ContactosPage() {
                 Envie-nos um e-mail directo para questões gerais, propostas de parceria ou informações sobre os nossos projectos.
               </p>
               <p className="mt-4 font-mono text-sm font-medium text-foreground">
-                geral@hagrilabs.com
+                geral@hagrialabs.com
               </p>
             </div>
 

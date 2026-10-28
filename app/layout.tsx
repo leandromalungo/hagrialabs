@@ -6,7 +6,15 @@ import './globals.css'
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const Analytics = () => null;
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  'https://www.hagrialabs.com';
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: '/',
+  },
   title: 'Hagriia Labs | Engenharia de Software e Inteligência Artificial',
   description:
     'Laboratório de engenharia de software e inteligência artificial aplicada. Desenvolvemos produtos digitais e sistemas à medida para empresas, instituições e startups.',
@@ -55,10 +63,73 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'ResearchOrganization',
-  name: 'Hagriia Labs',
-  description:
-    'Laboratório de engenharia de software e inteligência artificial aplicada. Desenvolvemos produtos digitais e sistemas à medida para empresas, instituições e startups.',
+  '@graph': [
+    {
+      '@type': 'ResearchOrganization',
+      '@id': `${siteUrl}/#organization`,
+      name: 'Hagriia Labs',
+      url: siteUrl,
+      logo: `${siteUrl}/logo-gray.png`,
+      description:
+        'Laboratório de engenharia de software e inteligência artificial aplicada. Desenvolvemos produtos digitais e sistemas à medida para empresas, instituições e startups.',
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'technical support',
+        url: `${siteUrl}/contactos`,
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: siteUrl,
+      name: 'Hagriia Labs',
+      publisher: {
+        '@id': `${siteUrl}/#organization`,
+      },
+      hasPart: [
+        {
+          '@type': 'WebPage',
+          name: 'Serviços de Engenharia e Sistemas Inteligentes',
+          url: `${siteUrl}/#servicos`,
+        },
+        {
+          '@type': 'WebPage',
+          name: 'Produtos e Tecnologias no Terreno',
+          url: `${siteUrl}/#produtos`,
+        },
+        {
+          '@type': 'WebPage',
+          name: 'AGRI-IA — Agricultura de Precisão',
+          url: `${siteUrl}/projectos/agri-ia`,
+        },
+        {
+          '@type': 'WebPage',
+          name: 'Sobre a Hagriia Labs',
+          url: `${siteUrl}/#sobre-nos`,
+        },
+        {
+          '@type': 'WebPage',
+          name: 'Como Trabalhamos — Metodologia',
+          url: `${siteUrl}/#como-trabalhamos`,
+        },
+        {
+          '@type': 'WebPage',
+          name: 'Perguntas Frequentes (FAQ)',
+          url: `${siteUrl}/#faq`,
+        },
+        {
+          '@type': 'WebPage',
+          name: 'Contactos',
+          url: `${siteUrl}/contactos`,
+        },
+        {
+          '@type': 'WebPage',
+          name: 'Agendar Consultoria e Diagnóstico Técnico',
+          url: `${siteUrl}/agendar-consultoria`,
+        },
+      ],
+    },
+  ],
 }
 
 export default function RootLayout({
