@@ -125,6 +125,8 @@ export default function AgriIAPage() {
             src="/heroagriia.jpg"
             alt="AGRI-IA — Agricultura de Precisão assistida por Inteligência Artificial no campo"
             fill
+            sizes="100vw"
+            quality={85}
             priority
             className="object-cover object-center scale-105 transition-transform duration-1000"
           />
@@ -233,6 +235,8 @@ export default function AgriIAPage() {
                   src="/images/agriia-diagnosis.jpg"
                   alt="Interface móvel do AGRI-IA a analisar saúde de folha e detecção de pragas"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
@@ -259,6 +263,8 @@ export default function AgriIAPage() {
                   src="/images/agriia-analytics.jpg"
                   alt="Painel de monitorização por satélite NDVI, humidade do solo e estimativa de safra do AGRI-IA"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />

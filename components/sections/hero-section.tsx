@@ -87,6 +87,8 @@ export function HeroSection() {
             src="/hero-main.png"
             alt="Hagriia Labs — Laboratório de tecnologia e inovação"
             fill
+            sizes="100vw"
+            quality={85}
             className="object-cover"
             priority
           />
@@ -107,13 +109,15 @@ export function HeroSection() {
           {sideImages.map((img, idx) => (
             <div
               key={idx}
-              className="relative aspect-[4/3] overflow-hidden rounded-xl"
+              className="relative aspect-[4/3] overflow-hidden rounded-xl bg-muted/20"
             >
               <Image
                 src={img.src || "/placeholder.svg"}
                 alt={img.alt}
                 fill
+                sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover"
+                loading="lazy"
               />
             </div>
           ))}
@@ -142,7 +146,7 @@ export function HeroSection() {
               {sideImages.filter(img => img.position === "left").map((img, idx) => (
                 <div 
                   key={idx} 
-                  className="relative overflow-hidden will-change-transform"
+                  className="relative overflow-hidden will-change-transform bg-muted/20"
                   style={{
                     flex: img.span,
                     borderRadius: `${borderRadius}px`,
@@ -152,7 +156,9 @@ export function HeroSection() {
                     src={img.src || "/placeholder.svg"}
                     alt={img.alt}
                     fill
+                    sizes="(max-width: 1200px) 25vw, 20vw"
                     className="object-cover"
+                    loading="lazy"
                   />
                 </div>
               ))}
@@ -160,7 +166,7 @@ export function HeroSection() {
 
             {/* Main Hero Image - Center */}
             <div 
-              className="relative overflow-hidden will-change-transform"
+              className="relative overflow-hidden will-change-transform bg-muted/20"
               style={{
                 width: `${centerWidth}%`,
                 height: `${centerHeight}%`,
@@ -172,6 +178,8 @@ export function HeroSection() {
                 src="/hero-main.png"
                 alt="Hagriia Labs — Laboratório de tecnologia e inovação"
                 fill
+                sizes="(max-width: 1200px) 70vw, 55vw"
+                quality={85}
                 className="object-cover"
                 priority
               />
@@ -218,7 +226,7 @@ export function HeroSection() {
               {sideImages.filter(img => img.position === "right").map((img, idx) => (
                 <div 
                   key={idx} 
-                  className="relative overflow-hidden will-change-transform"
+                  className="relative overflow-hidden will-change-transform bg-muted/20"
                   style={{
                     flex: img.span,
                     borderRadius: `${borderRadius}px`,
@@ -228,7 +236,9 @@ export function HeroSection() {
                     src={img.src || "/placeholder.svg"}
                     alt={img.alt}
                     fill
+                    sizes="(max-width: 1200px) 25vw, 20vw"
                     className="object-cover"
+                    loading="lazy"
                   />
                 </div>
               ))}

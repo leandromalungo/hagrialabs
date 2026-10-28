@@ -43,6 +43,8 @@ export function TestimonialsSection() {
           src="/bgfull.jpg"
           alt="Horizonte de exploração tecnológica — Hagriia Labs"
           fill
+          sizes="100vw"
+          loading="lazy"
           className="object-cover"
         />
         {/* Fade gradient overlay - white at bottom fading to transparent at top */}

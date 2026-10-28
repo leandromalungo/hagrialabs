@@ -169,11 +169,13 @@ export function TechnologySection() {
     <section className="relative bg-background">
       {/* Mobile Static Layout (No scroll-jacking animations) */}
       <div className="px-4 pt-8 pb-2 md:hidden">
-        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl sm:aspect-[16/10]">
+        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-muted/20 sm:aspect-[16/10]">
           <Image
             src="/side5.png"
             alt="Hagriia Labs — Investigação aplicada e exploração tecnológica"
             fill
+            sizes="100vw"
+            loading="lazy"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-foreground/40" />
@@ -193,12 +195,14 @@ export function TechnologySection() {
           {sideImages.map((img, idx) => (
             <div
               key={idx}
-              className="relative aspect-[4/3] overflow-hidden rounded-xl"
+              className="relative aspect-[4/3] overflow-hidden rounded-xl bg-muted/20"
             >
               <Image
                 src={img.src || "/placeholder.svg"}
                 alt={img.alt}
                 fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                loading="lazy"
                 className="object-cover"
               />
             </div>
@@ -229,7 +233,7 @@ export function TechnologySection() {
                 {sideImages.filter(img => img.position === "left").map((img, idx) => (
                   <div 
                     key={idx} 
-                    className="relative overflow-hidden will-change-transform"
+                    className="relative overflow-hidden will-change-transform bg-muted/20"
                     style={{
                       flex: img.span,
                       borderRadius: `${borderRadius}px`,
@@ -239,6 +243,8 @@ export function TechnologySection() {
                       src={img.src || "/placeholder.svg"}
                       alt={img.alt}
                       fill
+                      sizes="(max-width: 1200px) 25vw, 20vw"
+                      loading="lazy"
                       className="object-cover"
                     />
                   </div>
@@ -247,7 +253,7 @@ export function TechnologySection() {
 
               {/* Main Center Image */}
               <div 
-                className="relative overflow-hidden will-change-transform"
+                className="relative overflow-hidden will-change-transform bg-muted/20"
                 style={{
                   width: `${centerWidth}%`,
                   height: "100%",
@@ -259,6 +265,8 @@ export function TechnologySection() {
                   src="/side5.png"
                   alt="Hagriia Labs — Investigação aplicada e exploração tecnológica"
                   fill
+                  sizes="(max-width: 1200px) 70vw, 55vw"
+                  loading="lazy"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-foreground/40" />
@@ -321,7 +329,7 @@ export function TechnologySection() {
                 {sideImages.filter(img => img.position === "right").map((img, idx) => (
                   <div 
                     key={idx} 
-                    className="relative overflow-hidden will-change-transform"
+                    className="relative overflow-hidden will-change-transform bg-muted/20"
                     style={{
                       flex: img.span,
                       borderRadius: `${borderRadius}px`,
@@ -331,6 +339,8 @@ export function TechnologySection() {
                       src={img.src || "/placeholder.svg"}
                       alt={img.alt}
                       fill
+                      sizes="(max-width: 1200px) 25vw, 20vw"
+                      loading="lazy"
                       className="object-cover"
                     />
                   </div>

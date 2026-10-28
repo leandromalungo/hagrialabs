@@ -136,11 +136,13 @@ export function PhilosophySection() {
         </h2>
         <p></p>
         <div className="grid grid-cols-1 gap-4">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted/20">
             <Image
               src="/ms1.jpg"
               alt="Missão do Hagriia Labs — Investigação e desenvolvimento tecnológico"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              loading="lazy"
               className="object-cover"
             />
             <div className="absolute bottom-4 left-4">
@@ -150,11 +152,13 @@ export function PhilosophySection() {
             </div>
           </div>
 
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted/20">
             <Image
               src="/ms2.jpg"
               alt="Visão do Hagriia Labs — Ecossistema de desenvolvimento tecnológico"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              loading="lazy"
               className="object-cover"
             />
             <div className="absolute bottom-4 left-4">
@@ -184,7 +188,7 @@ export function PhilosophySection() {
             <div className="relative z-10 grid grid-cols-1 gap-4 px-6 md:grid-cols-2 md:px-12 lg:px-20">
               {/* Left Image - comes from left */}
               <div 
-                className="relative aspect-[4/3] overflow-hidden rounded-2xl"
+                className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted/20"
                 style={{
                   transform: `translate3d(${alpineTranslateX}%, 0, 0)`,
                   WebkitTransform: `translate3d(${alpineTranslateX}%, 0, 0)`,
@@ -196,13 +200,15 @@ export function PhilosophySection() {
                   src="/ms1.jpg"
                   alt="Missão do Hagriia Labs — Investigação e desenvolvimento tecnológico"
                   fill
+                  sizes="(max-width: 1200px) 50vw, 40vw"
+                  loading="lazy"
                   className="object-cover"
                 />
               </div>
 
               {/* Right Image - comes from right */}
               <div 
-                className="relative aspect-[4/3] overflow-hidden rounded-2xl"
+                className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted/20"
                 style={{
                   transform: `translate3d(${forestTranslateX}%, 0, 0)`,
                   WebkitTransform: `translate3d(${forestTranslateX}%, 0, 0)`,
@@ -214,6 +220,8 @@ export function PhilosophySection() {
                   src="/ms2.jpg"
                   alt="Visão do Hagriia Labs — Ecossistema de desenvolvimento tecnológico"
                   fill
+                  sizes="(max-width: 1200px) 50vw, 40vw"
+                  loading="lazy"
                   className="object-cover"
                 />
               </div>
